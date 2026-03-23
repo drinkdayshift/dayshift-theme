@@ -8,6 +8,32 @@
  * ------------------------------------------------------------
  */
 {
-  "sections": {},
-  "order": []
+  "sections": {
+    "hero": {
+      "type": "dayshift-hero",
+      "blocks": {
+        "trust_1": { "type": "trust_item", "settings": { "icon": "check", "text": "No artificial flavors" } },
+        "trust_2": { "type": "trust_item", "settings": { "icon": "check", "text": "Clinically dosed" } },
+        "trust_3": { "type": "trust_item", "settings": { "icon": "star", "text": "4.9 stars" } }
+      },
+      "block_order": ["trust_1", "trust_2", "trust_3"],
+      "settings": {
+        "eyebrow": "The Workday Performance Drink",
+        "headline": "Fuel The Day.\nFeel The Shift.",
+        "body": "A precision-dosed liquid sachet with 2,500mg Lion's Mane, Rhodiola, and 120mg clean caffeine. Built for the people who can't afford an off day.",
+        "cta_primary_label": "Shop Now",
+        "cta_primary_url": "/collections/all",
+        "cta_secondary_label": "See What's Inside",
+        "background_color": "#0a0a0a",
+        "headline_color": "#ffffff",
+        "body_color": "#999999",
+        "accent_color": "#ffffff",
+        "show_ticker": true,
+        "ticker_background": "#111111",
+        "ticker_text_color": "#ffffff",
+        "ticker_speed": 30
+      }
+    }
+  },
+  "order": ["hero"]
 }

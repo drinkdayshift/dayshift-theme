@@ -1,0 +1,504 @@
+{% comment %} DayShift — Hero Section v2 {% endcomment %}
+
+<section class="ds-hero" id="ds-hero-{{ section.id }}">
+  <div class="ds-hero__inner page-width">
+
+    <div class="ds-hero__copy">
+      {% if section.settings.eyebrow != blank %}
+        <p class="ds-hero__eyebrow">{{ section.settings.eyebrow }}</p>
+      {% endif %}
+
+      <h1 class="ds-hero__headline">{{ section.settings.headline | newline_to_br }}</h1>
+
+      {% if section.settings.body != blank %}
+        <p class="ds-hero__body">{{ section.settings.body }}</p>
+      {% endif %}
+
+      <div class="ds-hero__cta-group">
+        {% if section.settings.cta_primary_label != blank %}
+          <a href="{{ section.settings.cta_primary_url }}" class="ds-btn ds-btn--primary">
+            {{ section.settings.cta_primary_label }}
+          </a>
+        {% endif %}
+        {% if section.settings.cta_secondary_label != blank %}
+          <a href="{{ section.settings.cta_secondary_url }}" class="ds-btn ds-btn--secondary">
+            {{ section.settings.cta_secondary_label }}
+          </a>
+        {% endif %}
+      </div>
+
+      {% assign trust_blocks = section.blocks | where: 'type', 'trust_item' %}
+      {% if trust_blocks.size > 0 %}
+        <div class="ds-hero__trust">
+          {% for block in trust_blocks %}
+            <span class="ds-hero__trust-item" {{ block.shopify_attributes }}>
+              {% if block.settings.icon == 'check' %}
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="7" cy="7" r="7" fill="currentColor" opacity="0.15"/>
+                  <path d="M4 7L6.2 9.5L10 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              {% elsif block.settings.icon == 'star' %}
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M7 1l1.545 3.09L12 4.635l-2.5 2.455.59 3.41L7 8.91l-3.09 1.59.59-3.41L2 4.635l3.455-.545L7 1z"/>
+                </svg>
+              {% endif %}
+              {{ block.settings.text }}
+            </span>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="ds-hero__media">
+      {% if section.settings.product_image != blank %}
+        {{
+          section.settings.product_image
+          | image_url: width: 1000
+          | image_tag:
+            loading: 'eager',
+            alt: section.settings.product_image.alt | default: 'DayShift',
+            class: 'ds-hero__img',
+            widths: '400, 600, 800, 1000',
+            sizes: '(max-width: 768px) 90vw, 45vw'
+        }}
+      {% else %}
+        <div class="ds-hero__placeholder">
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="64" height="64" rx="8" fill="white" fill-opacity="0.05"/>
+            <path d="M20 44L28 32L34 40L40 28L44 44H20Z" fill="white" fill-opacity="0.15"/>
+            <circle cx="26" cy="24" r="4" fill="white" fill-opacity="0.15"/>
+          </svg>
+          <p>Product image</p>
+        </div>
+      {% endif %}
+    </div>
+
+  </div>
+</section>
+
+{% if section.settings.show_ticker %}
+  <div class="ds-ticker" id="ds-ticker-{{ section.id }}" aria-hidden="true">
+    <div class="ds-ticker__track">
+      {% assign ticker_items = "Boosts Focus, Clean Energy, Sharpens Clarity, Manages Stress, Elevates Mood, Supports Cognition, No Crash, Clinically Dosed, 8 Active Ingredients, 5 Days On / 2 Off" | split: ", " %}
+      {% comment %} Duplicate for seamless loop {% endcomment %}
+      {% for i in (1..2) %}
+        {% for item in ticker_items %}
+          <span class="ds-ticker__item">
+            <svg class="ds-ticker__dot" width="6" height="6" viewBox="0 0 6 6" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><circle cx="3" cy="3" r="3"/></svg>
+            {{ item }}
+          </span>
+        {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}
+
+<style>
+  /* ── Hero ── */
+  .ds-hero {
+    background-color: {{ section.settings.background_color }};
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .ds-hero__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    width: 100%;
+  }
+
+  /* Copy */
+  .ds-hero__eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: {{ section.settings.accent_color }};
+    margin: 0 0 1.25rem;
+    opacity: 0;
+    animation: ds-fade-up 0.6s ease forwards 0.1s;
+  }
+
+  .ds-hero__headline {
+    font-size: clamp(2.8rem, 5.5vw, 5rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: {{ section.settings.headline_color }};
+    margin: 0 0 1.5rem;
+    opacity: 0;
+    animation: ds-fade-up 0.6s ease forwards 0.25s;
+  }
+
+  .ds-hero__headline em {
+    color: {{ section.settings.accent_color }};
+    font-style: normal;
+  }
+
+  .ds-hero__body {
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    color: {{ section.settings.body_color }};
+    max-width: 480px;
+    margin: 0 0 2.25rem;
+    opacity: 0;
+    animation: ds-fade-up 0.6s ease forwards 0.4s;
+  }
+
+  /* Buttons */
+  .ds-hero__cta-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.875rem;
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    animation: ds-fade-up 0.6s ease forwards 0.55s;
+  }
+
+  .ds-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.875rem 2rem;
+    border-radius: 100px;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    cursor: pointer;
+  }
+
+  .ds-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+  }
+
+  .ds-btn--primary {
+    background: {{ section.settings.headline_color }};
+    color: {{ section.settings.background_color }};
+  }
+
+  .ds-btn--secondary {
+    background: transparent;
+    color: {{ section.settings.headline_color }};
+    border: 1.5px solid rgba(255,255,255,0.25);
+  }
+
+  .ds-btn--secondary:hover {
+    border-color: rgba(255,255,255,0.6);
+  }
+
+  /* Trust */
+  .ds-hero__trust {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    opacity: 0;
+    animation: ds-fade-up 0.6s ease forwards 0.7s;
+  }
+
+  .ds-hero__trust-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: {{ section.settings.body_color }};
+  }
+
+  /* Media */
+  .ds-hero__media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    animation: ds-fade-up 0.7s ease forwards 0.3s;
+  }
+
+  .ds-hero__img {
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    display: block;
+    border-radius: 16px;
+  }
+
+  .ds-hero__placeholder {
+    width: 100%;
+    max-width: 480px;
+    min-height: 480px;
+    border: 1.5px dashed rgba(255,255,255,0.12);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: rgba(255,255,255,0.3);
+    font-size: 0.875rem;
+  }
+
+  .ds-hero__placeholder p {
+    margin: 0;
+  }
+
+  /* ── Ticker ── */
+  .ds-ticker {
+    background: {{ section.settings.ticker_background }};
+    overflow: hidden;
+    padding: 0.875rem 0;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .ds-ticker__track {
+    display: flex;
+    width: max-content;
+    animation: ds-ticker-scroll {{ section.settings.ticker_speed }}s linear infinite;
+  }
+
+  .ds-ticker__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    padding: 0 2.5rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: {{ section.settings.ticker_text_color }};
+    white-space: nowrap;
+  }
+
+  .ds-ticker__dot {
+    opacity: 0.4;
+    flex-shrink: 0;
+  }
+
+  /* ── Animations ── */
+  @keyframes ds-fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes ds-ticker-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ── Mobile ── */
+  @media (max-width: 768px) {
+    .ds-hero {
+      min-height: auto;
+    }
+
+    .ds-hero__inner {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      padding-top: 4rem;
+      padding-bottom: 3rem;
+      text-align: center;
+    }
+
+    .ds-hero__copy {
+      order: 2;
+    }
+
+    .ds-hero__media {
+      order: 1;
+    }
+
+    .ds-hero__body {
+      max-width: 100%;
+    }
+
+    .ds-hero__cta-group {
+      justify-content: center;
+    }
+
+    .ds-hero__trust {
+      justify-content: center;
+    }
+
+    .ds-hero__img {
+      max-width: 320px;
+    }
+
+    .ds-hero__placeholder {
+      min-height: 280px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "DayShift Hero",
+  "tag": "section",
+  "class": "ds-hero-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "The Workday Performance Drink"
+    },
+    {
+      "type": "textarea",
+      "id": "headline",
+      "label": "Headline (use <em> for accent color)",
+      "default": "Fuel The Day.\nFeel The Shift."
+    },
+    {
+      "type": "textarea",
+      "id": "body",
+      "label": "Body text",
+      "default": "A precision-dosed liquid sachet with 2,500mg Lion's Mane, Rhodiola, and 120mg clean caffeine. Built for the people who can't afford an off day."
+    },
+    {
+      "type": "header",
+      "content": "Buttons"
+    },
+    {
+      "type": "text",
+      "id": "cta_primary_label",
+      "label": "Primary button",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "cta_primary_url",
+      "label": "Primary button link"
+    },
+    {
+      "type": "text",
+      "id": "cta_secondary_label",
+      "label": "Secondary button",
+      "default": "See What's Inside"
+    },
+    {
+      "type": "url",
+      "id": "cta_secondary_url",
+      "label": "Secondary button link"
+    },
+    {
+      "type": "header",
+      "content": "Product Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Product image"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#0a0a0a"
+    },
+    {
+      "type": "color",
+      "id": "headline_color",
+      "label": "Headline / primary text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "body_color",
+      "label": "Body / secondary text",
+      "default": "#999999"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Benefits Ticker"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_ticker",
+      "label": "Show benefits ticker",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "ticker_background",
+      "label": "Ticker background",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "ticker_text_color",
+      "label": "Ticker text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "ticker_speed",
+      "label": "Ticker speed (seconds)",
+      "min": 15,
+      "max": 60,
+      "step": 5,
+      "default": 30
+    }
+  ],
+  "blocks": [
+    {
+      "type": "trust_item",
+      "name": "Trust Badge",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "check", "label": "Checkmark" },
+            { "value": "star", "label": "Star" }
+          ],
+          "default": "check"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "No artificial flavors"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "DayShift Hero",
+      "blocks": [
+        { "type": "trust_item", "settings": { "icon": "check", "text": "No artificial flavors" } },
+        { "type": "trust_item", "settings": { "icon": "check", "text": "Clinically dosed" } },
+        { "type": "trust_item", "settings": { "icon": "star", "text": "4.9 stars" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

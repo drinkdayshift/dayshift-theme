@@ -1,53 +1,49 @@
 {
   "sections": {
     "hero": {
-      "type": "image-banner",
+      "type": "dayshift-hero",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "trust_1": {
+          "type": "trust_item",
           "settings": {
-            "heading": "DAYSHIFT",
-            "heading_size": "h0"
+            "icon": "check",
+            "text": "No artificial flavors"
           }
         },
-        "text": {
-          "type": "text",
+        "trust_2": {
+          "type": "trust_item",
           "settings": {
-            "text": "Fuel The Day. Feel The Shift.",
-            "text_style": "subtitle"
+            "icon": "check",
+            "text": "Clinically dosed"
           }
         },
-        "button": {
-          "type": "buttons",
+        "trust_3": {
+          "type": "trust_item",
           "settings": {
-            "button_label_1": "Shop Now",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "icon": "star",
+            "text": "4.9 stars"
           }
         }
       },
-      "block_order": [
-        "heading",
-        "text",
-        "button"
-      ],
+      "block_order": ["trust_1", "trust_2", "trust_3"],
       "settings": {
-        "image_overlay_opacity": 20,
-        "image_height": "large",
-        "desktop_content_position": "middle-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-1",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "eyebrow": "The Workday Performance Drink",
+        "headline": "Fuel The Day.\nFeel The Shift.",
+        "body": "A precision-dosed liquid sachet with 2,500mg Lion's Mane, Rhodiola, and 120mg clean caffeine. Built for the people who can't afford an off day.",
+        "cta_primary_label": "Shop Now",
+        "cta_primary_url": "/collections/all",
+        "cta_secondary_label": "See What's Inside",
+        "cta_secondary_url": "",
+        "background_color": "#0a0a0a",
+        "headline_color": "#ffffff",
+        "body_color": "#999999",
+        "accent_color": "#ffffff",
+        "show_ticker": true,
+        "ticker_background": "#111111",
+        "ticker_text_color": "#ffffff",
+        "ticker_speed": 30
       }
     }
   },
-  "order": [
-    "hero"
-  ]
+  "order": ["hero"]
 }

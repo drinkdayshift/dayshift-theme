@@ -1,0 +1,227 @@
+{% comment %} DayShift — Subscription CTA {% endcomment %}
+
+<section class="ds-sub-cta" id="ds-sub-cta-{{ section.id }}">
+  <div class="page-width ds-sub-cta__inner">
+    <div class="ds-sub-cta__copy">
+      <span class="ds-sub-cta__eyebrow">{{ section.settings.eyebrow }}</span>
+      <h2 class="ds-sub-cta__heading">{{ section.settings.heading }}</h2>
+      <p class="ds-sub-cta__body">{{ section.settings.body }}</p>
+      <div class="ds-sub-cta__perks">
+        {% for block in section.blocks %}
+          {% if block.type == 'perk' %}
+            <div class="ds-sub-cta__perk" {{ block.shopify_attributes }}>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2.5 8L6 11.5L13.5 4.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              {{ block.settings.text }}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <div class="ds-sub-cta__actions">
+        {% if section.settings.cta_primary_label != blank %}
+          <a href="{{ section.settings.cta_primary_url }}" class="ds-btn ds-btn--light">{{ section.settings.cta_primary_label }}</a>
+        {% endif %}
+        {% if section.settings.cta_secondary_label != blank %}
+          <a href="{{ section.settings.cta_secondary_url }}" class="ds-sub-cta__secondary-link">{{ section.settings.cta_secondary_label }}</a>
+        {% endif %}
+      </div>
+    </div>
+    <div class="ds-sub-cta__pricing">
+      <div class="ds-sub-cta__price-card">
+        <p class="ds-sub-cta__price-label">Subscribe & Save</p>
+        <p class="ds-sub-cta__price">{{ section.settings.subscribe_price }}</p>
+        <p class="ds-sub-cta__price-sub">{{ section.settings.subscribe_subtext }}</p>
+        <div class="ds-sub-cta__divider"></div>
+        <p class="ds-sub-cta__price-label">One-Time</p>
+        <p class="ds-sub-cta__price-one-time">{{ section.settings.one_time_price }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .ds-sub-cta {
+    background: {{ section.settings.background_color }};
+    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+  }
+
+  .ds-sub-cta__inner {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .ds-sub-cta__eyebrow {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: {{ section.settings.accent_color }};
+    margin-bottom: 1.25rem;
+  }
+
+  .ds-sub-cta__heading {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    color: {{ section.settings.heading_color }};
+    margin: 0 0 1.25rem;
+  }
+
+  .ds-sub-cta__body {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: {{ section.settings.body_color }};
+    margin: 0 0 2rem;
+  }
+
+  .ds-sub-cta__perks {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .ds-sub-cta__perk {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: {{ section.settings.body_color }};
+  }
+
+  .ds-sub-cta__perk svg {
+    flex-shrink: 0;
+    color: {{ section.settings.accent_color }};
+  }
+
+  .ds-sub-cta__actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .ds-btn--light {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.875rem 2rem;
+    border-radius: 100px;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-decoration: none;
+    background: {{ section.settings.heading_color }};
+    color: {{ section.settings.background_color }};
+    transition: opacity 0.2s;
+  }
+
+  .ds-btn--light:hover { opacity: 0.85; }
+
+  .ds-sub-cta__secondary-link {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: {{ section.settings.body_color }};
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .ds-sub-cta__price-card {
+    background: {{ section.settings.card_background }};
+    border: 1px solid {{ section.settings.card_border }};
+    border-radius: 20px;
+    padding: 2rem;
+  }
+
+  .ds-sub-cta__price-label {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: {{ section.settings.body_color }};
+    margin: 0 0 0.5rem;
+  }
+
+  .ds-sub-cta__price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: {{ section.settings.heading_color }};
+    margin: 0 0 0.25rem;
+  }
+
+  .ds-sub-cta__price-sub {
+    font-size: 0.8125rem;
+    color: {{ section.settings.body_color }};
+    margin: 0;
+  }
+
+  .ds-sub-cta__divider {
+    height: 1px;
+    background: {{ section.settings.card_border }};
+    margin: 1.5rem 0;
+  }
+
+  .ds-sub-cta__price-one-time {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: {{ section.settings.body_color }};
+    margin: 0;
+  }
+
+  @media (max-width: 900px) {
+    .ds-sub-cta__inner {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Subscription CTA",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Subscribe & Save" },
+    { "type": "textarea", "id": "heading", "label": "Heading", "default": "Never Run Out.\nNever Miss a Day." },
+    { "type": "textarea", "id": "body", "label": "Body", "default": "Subscribe and get 20 sachets delivered every 4 weeks. Pause, skip, or cancel any time — no questions asked." },
+    { "type": "text", "id": "cta_primary_label", "label": "Primary CTA", "default": "Subscribe Now" },
+    { "type": "url", "id": "cta_primary_url", "label": "Primary CTA link" },
+    { "type": "text", "id": "cta_secondary_label", "label": "Secondary link", "default": "Buy once instead" },
+    { "type": "url", "id": "cta_secondary_url", "label": "Secondary link URL" },
+    { "type": "text", "id": "subscribe_price", "label": "Subscription price", "default": "$44 / box" },
+    { "type": "text", "id": "subscribe_subtext", "label": "Subscription subtext", "default": "Save 10% vs one-time. Free shipping." },
+    { "type": "text", "id": "one_time_price", "label": "One-time price", "default": "$49 / box" },
+    { "type": "color", "id": "background_color", "label": "Background", "default": "#0a0a0a" },
+    { "type": "color", "id": "card_background", "label": "Card background", "default": "#141414" },
+    { "type": "color", "id": "card_border", "label": "Card border", "default": "#222222" },
+    { "type": "color", "id": "heading_color", "label": "Heading", "default": "#ffffff" },
+    { "type": "color", "id": "body_color", "label": "Body text", "default": "#888888" },
+    { "type": "color", "id": "accent_color", "label": "Accent", "default": "#ffffff" },
+    { "type": "range", "id": "padding_top", "label": "Padding top", "min": 40, "max": 120, "step": 8, "default": 96 },
+    { "type": "range", "id": "padding_bottom", "label": "Padding bottom", "min": 40, "max": 120, "step": 8, "default": 96 }
+  ],
+  "blocks": [
+    {
+      "type": "perk",
+      "name": "Perk",
+      "limit": 5,
+      "settings": [
+        { "type": "text", "id": "text", "label": "Perk text", "default": "Free shipping on every order" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Subscription CTA",
+      "blocks": [
+        { "type": "perk", "settings": { "text": "Free shipping on every order" } },
+        { "type": "perk", "settings": { "text": "Pause or cancel any time" } },
+        { "type": "perk", "settings": { "text": "Swap flavors each cycle" } },
+        { "type": "perk", "settings": { "text": "10% off vs one-time pricing" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

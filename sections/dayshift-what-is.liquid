@@ -1,0 +1,154 @@
+{% comment %} DayShift — What Is DayShift Section {% endcomment %}
+
+<section class="ds-what-is" id="ds-what-is-{{ section.id }}">
+  <div class="page-width ds-what-is__inner">
+    <div class="ds-what-is__label">{{ section.settings.eyebrow }}</div>
+    <h2 class="ds-what-is__heading">{{ section.settings.heading }}</h2>
+    <p class="ds-what-is__body">{{ section.settings.body }}</p>
+    {% if section.settings.stat_1_number != blank %}
+      <div class="ds-what-is__stats">
+        {% if section.settings.stat_1_number != blank %}
+          <div class="ds-what-is__stat">
+            <span class="ds-what-is__stat-number">{{ section.settings.stat_1_number }}</span>
+            <span class="ds-what-is__stat-label">{{ section.settings.stat_1_label }}</span>
+          </div>
+        {% endif %}
+        {% if section.settings.stat_2_number != blank %}
+          <div class="ds-what-is__stat">
+            <span class="ds-what-is__stat-number">{{ section.settings.stat_2_number }}</span>
+            <span class="ds-what-is__stat-label">{{ section.settings.stat_2_label }}</span>
+          </div>
+        {% endif %}
+        {% if section.settings.stat_3_number != blank %}
+          <div class="ds-what-is__stat">
+            <span class="ds-what-is__stat-number">{{ section.settings.stat_3_number }}</span>
+            <span class="ds-what-is__stat-label">{{ section.settings.stat_3_label }}</span>
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  .ds-what-is {
+    background: {{ section.settings.background_color }};
+    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+    text-align: center;
+  }
+
+  .ds-what-is__inner {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .ds-what-is__label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: {{ section.settings.accent_color }};
+    margin-bottom: 1.25rem;
+  }
+
+  .ds-what-is__heading {
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    color: {{ section.settings.heading_color }};
+    margin: 0 0 1.5rem;
+  }
+
+  .ds-what-is__body {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: {{ section.settings.body_color }};
+    margin: 0 0 3rem;
+  }
+
+  .ds-what-is__stats {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    border-top: 1px solid {{ section.settings.divider_color }};
+    padding-top: 2.5rem;
+  }
+
+  .ds-what-is__stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .ds-what-is__stat-number {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: {{ section.settings.heading_color }};
+    line-height: 1;
+  }
+
+  .ds-what-is__stat-label {
+    font-size: 0.8125rem;
+    color: {{ section.settings.body_color }};
+    font-weight: 500;
+  }
+
+  @media (max-width: 600px) {
+    .ds-what-is__stats {
+      gap: 2rem;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "What Is DayShift",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "The Product"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "What is DayShift?"
+    },
+    {
+      "type": "textarea",
+      "id": "body",
+      "label": "Body",
+      "default": "DayShift is a 12ml liquid nootropic sachet designed for working professionals. Pour it into water, shake, and within minutes you'll feel a clean, focused lift — no crash, no jitters. Just 8 clinically-dosed ingredients working together so you can do your best work."
+    },
+    { "type": "text", "id": "stat_1_number", "label": "Stat 1 number", "default": "8" },
+    { "type": "text", "id": "stat_1_label", "label": "Stat 1 label", "default": "Active Ingredients" },
+    { "type": "text", "id": "stat_2_number", "label": "Stat 2 number", "default": "12ml" },
+    { "type": "text", "id": "stat_2_label", "label": "Stat 2 label", "default": "Per Sachet" },
+    { "type": "text", "id": "stat_3_number", "label": "Stat 3 number", "default": "20" },
+    { "type": "text", "id": "stat_3_label", "label": "Stat 3 label", "default": "Sachets Per Box" },
+    {
+      "type": "color", "id": "background_color", "label": "Background", "default": "#0a0a0a"
+    },
+    {
+      "type": "color", "id": "heading_color", "label": "Heading", "default": "#ffffff"
+    },
+    {
+      "type": "color", "id": "body_color", "label": "Body text", "default": "#999999"
+    },
+    {
+      "type": "color", "id": "accent_color", "label": "Accent", "default": "#ffffff"
+    },
+    {
+      "type": "color", "id": "divider_color", "label": "Divider", "default": "#222222"
+    },
+    { "type": "range", "id": "padding_top", "label": "Padding top", "min": 40, "max": 120, "step": 8, "default": 96 },
+    { "type": "range", "id": "padding_bottom", "label": "Padding bottom", "min": 40, "max": 120, "step": 8, "default": 96 }
+  ],
+  "presets": [{ "name": "What Is DayShift" }]
+}
+{% endschema %}

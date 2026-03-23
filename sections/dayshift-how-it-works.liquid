@@ -1,0 +1,183 @@
+{% comment %} DayShift — How It Works {% endcomment %}
+
+<section class="ds-hiw" id="ds-hiw-{{ section.id }}">
+  <div class="page-width">
+    <div class="ds-hiw__header">
+      <span class="ds-hiw__eyebrow">{{ section.settings.eyebrow }}</span>
+      <h2 class="ds-hiw__heading">{{ section.settings.heading }}</h2>
+    </div>
+
+    <div class="ds-hiw__steps">
+      {% for block in section.blocks %}
+        {% if block.type == 'step' %}
+          <div class="ds-hiw__step" {{ block.shopify_attributes }}>
+            <div class="ds-hiw__step-number">{{ forloop.index }}</div>
+            {% if forloop.index < section.blocks.size %}
+              <div class="ds-hiw__connector"></div>
+            {% endif %}
+            <div class="ds-hiw__step-icon">
+              {% if block.settings.icon_svg != blank %}
+                {{ block.settings.icon_svg }}
+              {% else %}
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="14" cy="14" r="10" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+              {% endif %}
+            </div>
+            <h3 class="ds-hiw__step-title">{{ block.settings.title }}</h3>
+            <p class="ds-hiw__step-desc">{{ block.settings.description }}</p>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+  .ds-hiw {
+    background: {{ section.settings.background_color }};
+    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+  }
+
+  .ds-hiw__header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .ds-hiw__eyebrow {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: {{ section.settings.accent_color }};
+    margin-bottom: 1rem;
+  }
+
+  .ds-hiw__heading {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: {{ section.settings.heading_color }};
+    margin: 0;
+  }
+
+  .ds-hiw__steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    position: relative;
+  }
+
+  .ds-hiw__step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 2rem;
+    position: relative;
+  }
+
+  .ds-hiw__step-number {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: {{ section.settings.accent_color }};
+    color: {{ section.settings.background_color }};
+    font-size: 0.875rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .ds-hiw__connector {
+    position: absolute;
+    top: 18px;
+    left: calc(50% + 18px);
+    right: calc(-50% + 18px);
+    height: 1px;
+    background: {{ section.settings.divider_color }};
+    z-index: 0;
+  }
+
+  .ds-hiw__step-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 20px;
+    background: {{ section.settings.card_background }};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: {{ section.settings.heading_color }};
+    margin-bottom: 1.25rem;
+  }
+
+  .ds-hiw__step-title {
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: {{ section.settings.heading_color }};
+    margin: 0 0 0.625rem;
+  }
+
+  .ds-hiw__step-desc {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: {{ section.settings.body_color }};
+    margin: 0;
+  }
+
+  @media (max-width: 700px) {
+    .ds-hiw__steps {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    .ds-hiw__connector {
+      display: none;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "How It Works",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Simple by Design" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "How It Works" },
+    { "type": "color", "id": "background_color", "label": "Background", "default": "#0a0a0a" },
+    { "type": "color", "id": "card_background", "label": "Icon background", "default": "#1a1a1a" },
+    { "type": "color", "id": "heading_color", "label": "Heading", "default": "#ffffff" },
+    { "type": "color", "id": "body_color", "label": "Body text", "default": "#888888" },
+    { "type": "color", "id": "accent_color", "label": "Accent", "default": "#ffffff" },
+    { "type": "color", "id": "divider_color", "label": "Connector line", "default": "#333333" },
+    { "type": "range", "id": "padding_top", "label": "Padding top", "min": 40, "max": 120, "step": 8, "default": 96 },
+    { "type": "range", "id": "padding_bottom", "label": "Padding bottom", "min": 40, "max": 120, "step": 8, "default": 96 }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "limit": 3,
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Pour Into Water" },
+        { "type": "textarea", "id": "description", "label": "Description", "default": "Tear open one sachet and pour the 12ml liquid into 12–16oz of water." },
+        { "type": "html", "id": "icon_svg", "label": "Icon SVG (optional)" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "How It Works",
+      "blocks": [
+        { "type": "step", "settings": { "title": "Pour Into Water", "description": "Tear open one sachet and pour the 12ml liquid into 12–16oz of cold water." } },
+        { "type": "step", "settings": { "title": "Give It a Quick Shake", "description": "Shake or stir for a few seconds. No blender, no prep, no mess." } },
+        { "type": "step", "settings": { "title": "Feel The Shift", "description": "Within minutes, a clean focused lift begins. No jitters. No crash. Just on." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

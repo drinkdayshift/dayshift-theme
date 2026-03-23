@@ -1,0 +1,241 @@
+{% comment %} DayShift — Comparison Table {% endcomment %}
+
+<section class="ds-compare" id="ds-compare-{{ section.id }}">
+  <div class="page-width">
+    <div class="ds-compare__header">
+      <span class="ds-compare__eyebrow">{{ section.settings.eyebrow }}</span>
+      <h2 class="ds-compare__heading">{{ section.settings.heading }}</h2>
+    </div>
+
+    <div class="ds-compare__table-wrap">
+      <table class="ds-compare__table">
+        <thead>
+          <tr>
+            <th class="ds-compare__th ds-compare__th--feature"></th>
+            <th class="ds-compare__th ds-compare__th--dayshift">
+              <span class="ds-compare__badge">DayShift</span>
+            </th>
+            {% for block in section.blocks %}
+              {% if block.type == 'competitor' %}
+                <th class="ds-compare__th">{{ block.settings.name }}</th>
+              {% endif %}
+            {% endfor %}
+          </tr>
+        </thead>
+        <tbody>
+          {% assign feature_blocks = section.blocks | where: 'type', 'feature' %}
+          {% for feat in feature_blocks %}
+            <tr class="ds-compare__row">
+              <td class="ds-compare__td ds-compare__td--label">{{ feat.settings.label }}</td>
+              <td class="ds-compare__td ds-compare__td--dayshift">
+                {% if feat.settings.dayshift_value == 'yes' %}
+                  <span class="ds-compare__icon ds-compare__icon--yes">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                {% elsif feat.settings.dayshift_value == 'no' %}
+                  <span class="ds-compare__icon ds-compare__icon--no">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                  </span>
+                {% else %}
+                  <span class="ds-compare__text">{{ feat.settings.dayshift_value }}</span>
+                {% endif %}
+              </td>
+              {% assign comp_values = feat.settings.competitor_values | split: ',' %}
+              {% for val in comp_values %}
+                <td class="ds-compare__td">
+                  {% assign val_trim = val | strip %}
+                  {% if val_trim == 'yes' %}
+                    <span class="ds-compare__icon ds-compare__icon--yes">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </span>
+                  {% elsif val_trim == 'no' %}
+                    <span class="ds-compare__icon ds-compare__icon--no">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    </span>
+                  {% else %}
+                    <span class="ds-compare__text">{{ val_trim }}</span>
+                  {% endif %}
+                </td>
+              {% endfor %}
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<style>
+  .ds-compare {
+    background: {{ section.settings.background_color }};
+    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+  }
+
+  .ds-compare__header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .ds-compare__eyebrow {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: {{ section.settings.accent_color }};
+    margin-bottom: 1rem;
+  }
+
+  .ds-compare__heading {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: {{ section.settings.heading_color }};
+    margin: 0;
+  }
+
+  .ds-compare__table-wrap {
+    overflow-x: auto;
+    border-radius: 16px;
+    border: 1px solid {{ section.settings.border_color }};
+  }
+
+  .ds-compare__table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 560px;
+  }
+
+  .ds-compare__th {
+    padding: 1.25rem 1.5rem;
+    text-align: center;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: {{ section.settings.body_color }};
+    background: {{ section.settings.header_background }};
+    border-bottom: 1px solid {{ section.settings.border_color }};
+  }
+
+  .ds-compare__th--feature {
+    text-align: left;
+    width: 35%;
+  }
+
+  .ds-compare__th--dayshift {
+    background: color-mix(in srgb, {{ section.settings.accent_color }} 8%, {{ section.settings.header_background }});
+  }
+
+  .ds-compare__badge {
+    display: inline-block;
+    background: {{ section.settings.heading_color }};
+    color: {{ section.settings.background_color }};
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    padding: 0.3rem 0.875rem;
+    border-radius: 100px;
+  }
+
+  .ds-compare__row {
+    border-bottom: 1px solid {{ section.settings.border_color }};
+  }
+
+  .ds-compare__row:last-child {
+    border-bottom: none;
+  }
+
+  .ds-compare__td {
+    padding: 1rem 1.5rem;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .ds-compare__td--label {
+    text-align: left;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: {{ section.settings.heading_color }};
+  }
+
+  .ds-compare__td--dayshift {
+    background: color-mix(in srgb, {{ section.settings.accent_color }} 4%, {{ section.settings.background_color }});
+  }
+
+  .ds-compare__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+  }
+
+  .ds-compare__icon--yes {
+    background: color-mix(in srgb, #22c55e 15%, transparent);
+    color: #22c55e;
+  }
+
+  .ds-compare__icon--no {
+    background: color-mix(in srgb, #ef4444 10%, transparent);
+    color: #ef4444;
+  }
+
+  .ds-compare__text {
+    font-size: 0.8125rem;
+    color: {{ section.settings.body_color }};
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Comparison",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Why DayShift" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Not All Focus Is Created Equal" },
+    { "type": "color", "id": "background_color", "label": "Background", "default": "#ffffff" },
+    { "type": "color", "id": "header_background", "label": "Table header background", "default": "#f7f7f5" },
+    { "type": "color", "id": "heading_color", "label": "Heading", "default": "#0a0a0a" },
+    { "type": "color", "id": "body_color", "label": "Body text", "default": "#888888" },
+    { "type": "color", "id": "accent_color", "label": "Accent", "default": "#0a0a0a" },
+    { "type": "color", "id": "border_color", "label": "Border", "default": "#e5e5e5" },
+    { "type": "range", "id": "padding_top", "label": "Padding top", "min": 40, "max": 120, "step": 8, "default": 80 },
+    { "type": "range", "id": "padding_bottom", "label": "Padding bottom", "min": 40, "max": 120, "step": 8, "default": 80 }
+  ],
+  "blocks": [
+    {
+      "type": "competitor",
+      "name": "Competitor Column",
+      "limit": 3,
+      "settings": [
+        { "type": "text", "id": "name", "label": "Competitor name", "default": "Energy Drink" }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Feature Row",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Feature label", "default": "Clinically dosed" },
+        { "type": "text", "id": "dayshift_value", "label": "DayShift value (yes/no/text)", "default": "yes" },
+        { "type": "text", "id": "competitor_values", "label": "Competitor values (comma-separated, yes/no/text)", "default": "no, no, no" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Comparison",
+      "blocks": [
+        { "type": "competitor", "settings": { "name": "Energy Drinks" } },
+        { "type": "competitor", "settings": { "name": "Coffee" } },
+        { "type": "competitor", "settings": { "name": "Other Nootropics" } },
+        { "type": "feature", "settings": { "label": "Clinically dosed ingredients", "dayshift_value": "yes", "competitor_values": "no, no, partial" } },
+        { "type": "feature", "settings": { "label": "No artificial flavors", "dayshift_value": "yes", "competitor_values": "no, yes, partial" } },
+        { "type": "feature", "settings": { "label": "No crash", "dayshift_value": "yes", "competitor_values": "no, no, yes" } },
+        { "type": "feature", "settings": { "label": "Long-term cognitive support", "dayshift_value": "yes", "competitor_values": "no, no, partial" } },
+        { "type": "feature", "settings": { "label": "5-day protocol", "dayshift_value": "yes", "competitor_values": "no, no, no" } },
+        { "type": "feature", "settings": { "label": "Portable format", "dayshift_value": "yes", "competitor_values": "yes, no, no" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

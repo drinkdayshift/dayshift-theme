@@ -1,0 +1,161 @@
+{% comment %} DayShift — Founder Section {% endcomment %}
+
+<section class="ds-founder" id="ds-founder-{{ section.id }}">
+  <div class="page-width ds-founder__inner">
+    <div class="ds-founder__image-col">
+      {% if section.settings.founder_image != blank %}
+        {{ section.settings.founder_image | image_url: width: 800 | image_tag:
+          loading: 'lazy',
+          alt: section.settings.founder_name,
+          class: 'ds-founder__img',
+          widths: '400, 600, 800'
+        }}
+      {% else %}
+        <div class="ds-founder__placeholder">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="18" r="9" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M6 42c0-9.941 8.059-18 18-18s18 8.059 18 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <p>Founder photo</p>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="ds-founder__copy">
+      <span class="ds-founder__eyebrow">{{ section.settings.eyebrow }}</span>
+      <h2 class="ds-founder__heading">{{ section.settings.heading }}</h2>
+      <div class="ds-founder__body">{{ section.settings.body }}</div>
+      <div class="ds-founder__sig">
+        <span class="ds-founder__name">{{ section.settings.founder_name }}</span>
+        {% if section.settings.founder_title != blank %}
+          <span class="ds-founder__title">{{ section.settings.founder_title }}</span>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .ds-founder {
+    background: {{ section.settings.background_color }};
+    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+  }
+
+  .ds-founder__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .ds-founder__image-col {
+    position: relative;
+  }
+
+  .ds-founder__img {
+    width: 100%;
+    border-radius: 20px;
+    display: block;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+  }
+
+  .ds-founder__placeholder {
+    aspect-ratio: 4/5;
+    border: 1.5px dashed {{ section.settings.divider_color }};
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: {{ section.settings.body_color }};
+    font-size: 0.875rem;
+  }
+
+  .ds-founder__placeholder p { margin: 0; }
+
+  .ds-founder__eyebrow {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: {{ section.settings.accent_color }};
+    margin-bottom: 1.25rem;
+  }
+
+  .ds-founder__heading {
+    font-size: clamp(1.75rem, 3vw, 2.75rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    color: {{ section.settings.heading_color }};
+    margin: 0 0 1.5rem;
+  }
+
+  .ds-founder__body {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: {{ section.settings.body_color }};
+    margin-bottom: 2rem;
+  }
+
+  .ds-founder__body p { margin: 0 0 1em; }
+  .ds-founder__body p:last-child { margin: 0; }
+
+  .ds-founder__sig {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid {{ section.settings.divider_color }};
+  }
+
+  .ds-founder__name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: {{ section.settings.heading_color }};
+  }
+
+  .ds-founder__title {
+    font-size: 0.8125rem;
+    color: {{ section.settings.body_color }};
+  }
+
+  @media (max-width: 768px) {
+    .ds-founder__inner {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+    .ds-founder__img,
+    .ds-founder__placeholder {
+      aspect-ratio: 1/1;
+      max-width: 360px;
+      margin: 0 auto;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Founder",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "From the Founder" },
+    { "type": "textarea", "id": "heading", "label": "Heading", "default": "Built Because Nothing Else Worked" },
+    { "type": "richtext", "id": "body", "label": "Story", "default": "<p>I built DayShift after years of testing every supplement, energy drink, and nootropic stack I could find. Most were either underdosed, full of junk, or just didn't work when I needed them most.</p><p>The idea was simple: what if the thing you reach for every morning was actually built around the science, not the marketing? That's DayShift.</p>" },
+    { "type": "text", "id": "founder_name", "label": "Founder name", "default": "Jack" },
+    { "type": "text", "id": "founder_title", "label": "Founder title", "default": "Founder, DayShift" },
+    { "type": "image_picker", "id": "founder_image", "label": "Founder photo" },
+    { "type": "color", "id": "background_color", "label": "Background", "default": "#ffffff" },
+    { "type": "color", "id": "heading_color", "label": "Heading", "default": "#0a0a0a" },
+    { "type": "color", "id": "body_color", "label": "Body text", "default": "#666666" },
+    { "type": "color", "id": "accent_color", "label": "Accent", "default": "#0a0a0a" },
+    { "type": "color", "id": "divider_color", "label": "Divider", "default": "#e5e5e5" },
+    { "type": "range", "id": "padding_top", "label": "Padding top", "min": 40, "max": 120, "step": 8, "default": 96 },
+    { "type": "range", "id": "padding_bottom", "label": "Padding bottom", "min": 40, "max": 120, "step": 8, "default": 96 }
+  ],
+  "presets": [{ "name": "Founder" }]
+}
+{% endschema %}

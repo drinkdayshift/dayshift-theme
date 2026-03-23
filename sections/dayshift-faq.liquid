@@ -1,0 +1,192 @@
+{% comment %} DayShift — FAQ Accordion {% endcomment %}
+
+<section class="ds-faq" id="ds-faq-{{ section.id }}">
+  <div class="page-width ds-faq__inner">
+    <div class="ds-faq__header">
+      <span class="ds-faq__eyebrow">{{ section.settings.eyebrow }}</span>
+      <h2 class="ds-faq__heading">{{ section.settings.heading }}</h2>
+    </div>
+
+    <div class="ds-faq__list">
+      {% for block in section.blocks %}
+        {% if block.type == 'question' %}
+          <div class="ds-faq__item" {{ block.shopify_attributes }}>
+            <button class="ds-faq__question" aria-expanded="false">
+              {{ block.settings.question }}
+              <span class="ds-faq__icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+            <div class="ds-faq__answer">
+              <div class="ds-faq__answer-inner">{{ block.settings.answer }}</div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+  .ds-faq {
+    background: {{ section.settings.background_color }};
+    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+  }
+
+  .ds-faq__inner {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .ds-faq__eyebrow {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: {{ section.settings.accent_color }};
+    margin-bottom: 1rem;
+  }
+
+  .ds-faq__heading {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    color: {{ section.settings.heading_color }};
+    margin: 0;
+  }
+
+  .ds-faq__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ds-faq__item {
+    border-bottom: 1px solid {{ section.settings.border_color }};
+  }
+
+  .ds-faq__item:first-child {
+    border-top: 1px solid {{ section.settings.border_color }};
+  }
+
+  .ds-faq__question {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.25rem 0;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: {{ section.settings.heading_color }};
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+
+  .ds-faq__question:hover {
+    color: {{ section.settings.accent_color }};
+  }
+
+  .ds-faq__icon {
+    flex-shrink: 0;
+    color: {{ section.settings.body_color }};
+    transition: transform 0.3s ease;
+  }
+
+  .ds-faq__question[aria-expanded="true"] .ds-faq__icon {
+    transform: rotate(180deg);
+  }
+
+  .ds-faq__answer {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease;
+  }
+
+  .ds-faq__answer.open {
+    grid-template-rows: 1fr;
+  }
+
+  .ds-faq__answer-inner {
+    overflow: hidden;
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: {{ section.settings.body_color }};
+    padding-bottom: 1.25rem;
+  }
+
+  @media (max-width: 768px) {
+    .ds-faq__inner {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+  }
+</style>
+
+<script>
+  document.querySelectorAll('#ds-faq-{{ section.id }} .ds-faq__question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var isOpen = btn.getAttribute('aria-expanded') === 'true';
+      var answer = btn.nextElementSibling;
+
+      // Close all
+      document.querySelectorAll('#ds-faq-{{ section.id }} .ds-faq__question').forEach(function(b) {
+        b.setAttribute('aria-expanded', 'false');
+        b.nextElementSibling.classList.remove('open');
+      });
+
+      // Toggle clicked
+      if (!isOpen) {
+        btn.setAttribute('aria-expanded', 'true');
+        answer.classList.add('open');
+      }
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "FAQ",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "FAQ" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Questions? We've Got Answers." },
+    { "type": "color", "id": "background_color", "label": "Background", "default": "#ffffff" },
+    { "type": "color", "id": "heading_color", "label": "Heading", "default": "#0a0a0a" },
+    { "type": "color", "id": "body_color", "label": "Body text", "default": "#666666" },
+    { "type": "color", "id": "accent_color", "label": "Accent", "default": "#0a0a0a" },
+    { "type": "color", "id": "border_color", "label": "Border", "default": "#e5e5e5" },
+    { "type": "range", "id": "padding_top", "label": "Padding top", "min": 40, "max": 120, "step": 8, "default": 96 },
+    { "type": "range", "id": "padding_bottom", "label": "Padding bottom", "min": 40, "max": 120, "step": 8, "default": 96 }
+  ],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "Question",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question", "default": "How long until I feel effects?" },
+        { "type": "richtext", "id": "answer", "label": "Answer", "default": "<p>Most people feel the initial lift within 15–30 minutes of taking DayShift. The clean caffeine and L-Theanine combination activates quickly. Longer-term cognitive benefits from Lion's Mane and Cordyceps build over the first 1–2 weeks of consistent use.</p>" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ",
+      "blocks": [
+        { "type": "question", "settings": { "question": "How long until I feel effects?", "answer": "<p>Most people feel the initial lift within 15–30 minutes. The caffeine and L-Theanine activate quickly. Longer-term benefits from Lion's Mane and Cordyceps build over 1–2 weeks of consistent use.</p>" } },
+        { "type": "question", "settings": { "question": "What is the 5-day protocol?", "answer": "<p>DayShift is designed to be taken Monday through Friday — your workdays. The 2-day rest period prevents tolerance buildup and lets your system reset, so each dose stays effective.</p>" } },
+        { "type": "question", "settings": { "question": "Can I take it with coffee?", "answer": "<p>DayShift already contains 120mg of caffeine, roughly equivalent to a small coffee. You can combine it with coffee but be mindful of your total caffeine intake — we'd suggest skipping the extra coffee for the first week to assess your personal response.</p>" } },
+        { "type": "question", "settings": { "question": "Is it safe to take every day?", "answer": "<p>Yes — within the 5-on/2-off protocol. All 8 ingredients have strong safety profiles at these doses. If you have a medical condition or take prescription medications, check with your doctor first.</p>" } },
+        { "type": "question", "settings": { "question": "What does it taste like?", "answer": "<p>Each flavor is designed to be clean, refreshing, and easy to drink — not sweet or artificial. Watermelon Lime is crisp and bright. Citrus Yuzu is light and citrusy. Mixed Berry is smooth and full-bodied.</p>" } },
+        { "type": "question", "settings": { "question": "How do I cancel my subscription?", "answer": "<p>Log in to your account and manage your subscription from the Subscription portal. You can pause, skip a cycle, swap flavors, or cancel entirely — no phone calls, no friction.</p>" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

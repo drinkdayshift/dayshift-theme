@@ -97,7 +97,7 @@
   /* ── Hero ── */
   .ds-hero {
     background-color: {{ section.settings.background_color }};
-    min-height: 90vh;
+    min-height: calc(100vh - 70px);
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -108,8 +108,8 @@
     grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 4rem;
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
     width: 100%;
   }
 
@@ -255,11 +255,15 @@
     overflow: hidden;
     padding: 0.875rem 0;
     border-top: 1px solid rgba(255,255,255,0.06);
+    display: block;
+    width: 100%;
   }
 
   .ds-ticker__track {
     display: flex;
+    flex-wrap: nowrap;
     width: max-content;
+    will-change: transform;
     animation: ds-ticker-scroll {{ section.settings.ticker_speed }}s linear infinite;
   }
 

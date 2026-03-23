@@ -1,0 +1,410 @@
+{% comment %} DayShift — Shop Grid (4 SKUs) {% endcomment %}
+
+<section class="ds-shop-grid" id="ds-shop-grid-{{ section.id }}">
+  <div class="page-width">
+    {% if section.settings.heading != blank %}
+      <div class="ds-shop-grid__header">
+        <h2 class="ds-shop-grid__heading">{{ section.settings.heading }}</h2>
+        {% if section.settings.subtext != blank %}
+          <p class="ds-shop-grid__subtext">{{ section.settings.subtext }}</p>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="ds-shop-grid__grid">
+      {% for block in section.blocks %}
+        {% if block.type == 'product_card' %}
+          <div class="ds-product-card" {{ block.shopify_attributes }}>
+            <a href="{{ block.settings.product_url }}" class="ds-product-card__link">
+              <div class="ds-product-card__image-wrap" style="--accent: {{ block.settings.accent_color }};">
+                {% if block.settings.product_image != blank %}
+                  {{ block.settings.product_image | image_url: width: 600 | image_tag:
+                    loading: 'lazy',
+                    alt: block.settings.product_name,
+                    class: 'ds-product-card__img',
+                    widths: '300, 400, 600'
+                  }}
+                {% else %}
+                  <div class="ds-product-card__placeholder">
+                    <span>{{ block.settings.product_name }}</span>
+                  </div>
+                {% endif %}
+                {% if block.settings.badge != blank %}
+                  <span class="ds-product-card__badge">{{ block.settings.badge }}</span>
+                {% endif %}
+              </div>
+              <div class="ds-product-card__info">
+                <p class="ds-product-card__flavor">{{ block.settings.flavor_label }}</p>
+                <h3 class="ds-product-card__name">{{ block.settings.product_name }}</h3>
+                <p class="ds-product-card__desc">{{ block.settings.description }}</p>
+                <div class="ds-product-card__footer">
+                  <span class="ds-product-card__price">{{ block.settings.price }}</span>
+                  <span class="ds-product-card__cta">Shop →</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    {% if section.settings.cta_label != blank %}
+      <div class="ds-shop-grid__cta">
+        <a href="{{ section.settings.cta_url }}" class="ds-btn ds-btn--outline">{{ section.settings.cta_label }}</a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  .ds-shop-grid {
+    background: {{ section.settings.background_color }};
+    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+  }
+
+  .ds-shop-grid__header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .ds-shop-grid__heading {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: {{ section.settings.heading_color }};
+    margin: 0 0 0.75rem;
+  }
+
+  .ds-shop-grid__subtext {
+    font-size: 1rem;
+    color: {{ section.settings.subtext_color }};
+    margin: 0;
+  }
+
+  .ds-shop-grid__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+  }
+
+  .ds-product-card {
+    border-radius: 16px;
+    overflow: hidden;
+    background: {{ section.settings.card_background }};
+    transition: transform 0.25s ease;
+  }
+
+  .ds-product-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .ds-product-card__link {
+    text-decoration: none;
+    display: block;
+  }
+
+  .ds-product-card__image-wrap {
+    position: relative;
+    aspect-ratio: 3/4;
+    background: color-mix(in srgb, var(--accent, #e5e5e5) 12%, {{ section.settings.card_background }});
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .ds-product-card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .ds-product-card__placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+    color: {{ section.settings.subtext_color }};
+    font-weight: 500;
+  }
+
+  .ds-product-card__badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: {{ section.settings.heading_color }};
+    color: {{ section.settings.background_color }};
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.65rem;
+    border-radius: 100px;
+  }
+
+  .ds-product-card__info {
+    padding: 1.25rem;
+  }
+
+  .ds-product-card__flavor {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent, {{ section.settings.subtext_color }});
+    margin: 0 0 0.35rem;
+  }
+
+  .ds-product-card__name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: {{ section.settings.heading_color }};
+    margin: 0 0 0.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .ds-product-card__desc {
+    font-size: 0.8125rem;
+    color: {{ section.settings.subtext_color }};
+    margin: 0 0 1rem;
+    line-height: 1.5;
+  }
+
+  .ds-product-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .ds-product-card__price {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: {{ section.settings.heading_color }};
+  }
+
+  .ds-product-card__cta {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: {{ section.settings.subtext_color }};
+    transition: color 0.2s;
+  }
+
+  .ds-product-card:hover .ds-product-card__cta {
+    color: {{ section.settings.heading_color }};
+  }
+
+  .ds-shop-grid__cta {
+    text-align: center;
+    margin-top: 2.5rem;
+  }
+
+  .ds-btn--outline {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.875rem 2rem;
+    border-radius: 100px;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1.5px solid currentColor;
+    color: {{ section.settings.heading_color }};
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .ds-btn--outline:hover {
+    background: {{ section.settings.heading_color }};
+    color: {{ section.settings.background_color }};
+  }
+
+  @media (max-width: 900px) {
+    .ds-shop-grid__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .ds-shop-grid__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Shop Grid",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Choose Your Flavor"
+    },
+    {
+      "type": "text",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "All flavors ship with 20 sachets per box — 5 days on, 2 days off."
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "CTA button text",
+      "default": "View All Products"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "CTA button link"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Card background",
+      "default": "#f7f7f5"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#0a0a0a"
+    },
+    {
+      "type": "color",
+      "id": "subtext_color",
+      "label": "Subtext / secondary color",
+      "default": "#888888"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 40,
+      "max": 120,
+      "step": 8,
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 40,
+      "max": 120,
+      "step": 8,
+      "default": 80
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product_card",
+      "name": "Product Card",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "text",
+          "id": "product_name",
+          "label": "Product name",
+          "default": "DayShift"
+        },
+        {
+          "type": "text",
+          "id": "flavor_label",
+          "label": "Flavor label",
+          "default": "Watermelon Lime"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Short description",
+          "default": "Crisp and refreshing. The everyday go-to."
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Price",
+          "default": "$49 / box"
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Badge (optional)"
+        },
+        {
+          "type": "color",
+          "id": "accent_color",
+          "label": "Accent color",
+          "default": "#f87171"
+        },
+        {
+          "type": "image_picker",
+          "id": "product_image",
+          "label": "Product image"
+        },
+        {
+          "type": "url",
+          "id": "product_url",
+          "label": "Product link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shop Grid",
+      "blocks": [
+        {
+          "type": "product_card",
+          "settings": {
+            "product_name": "Variety Pack",
+            "flavor_label": "All Flavors",
+            "description": "Can't pick one? Get them all. Perfect for first-timers.",
+            "price": "$54 / box",
+            "badge": "Best Seller",
+            "accent_color": "#0a0a0a"
+          }
+        },
+        {
+          "type": "product_card",
+          "settings": {
+            "product_name": "Watermelon Lime",
+            "flavor_label": "Pink",
+            "description": "Crisp and refreshing. The everyday go-to.",
+            "price": "$49 / box",
+            "accent_color": "#f87171"
+          }
+        },
+        {
+          "type": "product_card",
+          "settings": {
+            "product_name": "Citrus Yuzu",
+            "flavor_label": "Orange",
+            "description": "Bright and citrusy. Morning energy, refined.",
+            "price": "$49 / box",
+            "accent_color": "#fb923c"
+          }
+        },
+        {
+          "type": "product_card",
+          "settings": {
+            "product_name": "Mixed Berry",
+            "flavor_label": "Purple",
+            "description": "Bold and smooth. For the ones who mean business.",
+            "price": "$49 / box",
+            "accent_color": "#a855f7"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

@@ -1,59 +1,54 @@
-{% comment %} DayShift — Comparison Table {% endcomment %}
+{% comment %} DayShift — Comparison Table v2 {% endcomment %}
 
 <section class="ds-compare" id="ds-compare-{{ section.id }}">
   <div class="page-width">
     <div class="ds-compare__header">
-      <span class="ds-compare__eyebrow">{{ section.settings.eyebrow }}</span>
+      {% if section.settings.eyebrow != blank %}
+        <span class="ds-compare__eyebrow">{{ section.settings.eyebrow }}</span>
+      {% endif %}
       <h2 class="ds-compare__heading">{{ section.settings.heading }}</h2>
     </div>
+
+    {%- assign competitors = section.blocks | where: 'type', 'competitor' -%}
+    {%- assign features = section.blocks | where: 'type', 'feature' -%}
 
     <div class="ds-compare__table-wrap">
       <table class="ds-compare__table">
         <thead>
           <tr>
-            <th class="ds-compare__th ds-compare__th--feature"></th>
+            <th class="ds-compare__th ds-compare__th--label"></th>
             <th class="ds-compare__th ds-compare__th--dayshift">
-              <span class="ds-compare__badge">DayShift</span>
+              <span class="ds-compare__brand-name">DayShift</span>
             </th>
-            {% for block in section.blocks %}
-              {% if block.type == 'competitor' %}
-                <th class="ds-compare__th">{{ block.settings.name }}</th>
-              {% endif %}
+            {% for block in competitors %}
+              <th class="ds-compare__th ds-compare__th--comp" {{ block.shopify_attributes }}>{{ block.settings.name }}</th>
             {% endfor %}
           </tr>
         </thead>
         <tbody>
-          {% assign feature_blocks = section.blocks | where: 'type', 'feature' %}
-          {% for feat in feature_blocks %}
-            <tr class="ds-compare__row">
-              <td class="ds-compare__td ds-compare__td--label">{{ feat.settings.label }}</td>
+          {% for block in features %}
+            <tr class="ds-compare__row" {{ block.shopify_attributes }}>
+              <td class="ds-compare__td ds-compare__td--label">{{ block.settings.label }}</td>
               <td class="ds-compare__td ds-compare__td--dayshift">
-                {% if feat.settings.dayshift_value == 'yes' %}
-                  <span class="ds-compare__icon ds-compare__icon--yes">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  </span>
-                {% elsif feat.settings.dayshift_value == 'no' %}
-                  <span class="ds-compare__icon ds-compare__icon--no">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-                  </span>
-                {% else %}
-                  <span class="ds-compare__text">{{ feat.settings.dayshift_value }}</span>
-                {% endif %}
+                <span class="ds-compare__check ds-compare__check--yes" aria-label="Yes">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="currentColor" opacity="0.15"/><path d="M5 8L7.2 10.5L11 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
               </td>
-              {% assign comp_values = feat.settings.competitor_values | split: ',' %}
-              {% for val in comp_values %}
-                <td class="ds-compare__td">
-                  {% assign val_trim = val | strip %}
-                  {% if val_trim == 'yes' %}
-                    <span class="ds-compare__icon ds-compare__icon--yes">
-                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              {%- assign comp_vals = block.settings.competitor_values | split: ', ' -%}
+              {% for val in comp_vals %}
+                <td class="ds-compare__td ds-compare__td--comp">
+                  {% if val == 'yes' %}
+                    <span class="ds-compare__check ds-compare__check--yes" aria-label="Yes">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="currentColor" opacity="0.15"/><path d="M5 8L7.2 10.5L11 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </span>
-                  {% elsif val_trim == 'no' %}
-                    <span class="ds-compare__icon ds-compare__icon--no">
-                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                  {% elsif val == 'partial' %}
+                    <span class="ds-compare__check ds-compare__check--partial" aria-label="Partial">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="currentColor" opacity="0.15"/><path d="M5 8h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
                     </span>
                   {% else %}
-                    <span class="ds-compare__text">{{ val_trim }}</span>
+                    <span class="ds-compare__check ds-compare__check--no" aria-label="No">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="currentColor" opacity="0.1"/><path d="M5.5 5.5l5 5M10.5 5.5l-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    </span>
                   {% endif %}
                 </td>
               {% endfor %}
@@ -62,6 +57,12 @@
         </tbody>
       </table>
     </div>
+
+    {% if section.settings.cta_label != blank %}
+      <div class="ds-compare__cta">
+        <a href="{{ section.settings.cta_url }}" class="ds-compare__cta-btn">{{ section.settings.cta_label }}</a>
+      </div>
+    {% endif %}
   </div>
 </section>
 
@@ -78,24 +79,26 @@
 
   .ds-compare__eyebrow {
     display: block;
-    font-size: 0.75rem;
-    font-weight: 600;
+    font-size: 0.6875rem;
+    font-weight: 700;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: {{ section.settings.accent_color }};
-    margin-bottom: 1rem;
+    margin-bottom: 0.875rem;
+    opacity: 0.6;
   }
 
   .ds-compare__heading {
     font-size: clamp(1.75rem, 3vw, 2.5rem);
     font-weight: 800;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
     color: {{ section.settings.heading_color }};
     margin: 0;
   }
 
   .ds-compare__table-wrap {
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
     border-radius: 16px;
     border: 1px solid {{ section.settings.border_color }};
   }
@@ -103,102 +106,113 @@
   .ds-compare__table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 560px;
+    font-size: 0.9375rem;
+    min-width: 500px;
   }
 
   .ds-compare__th {
-    padding: 1.25rem 1.5rem;
-    text-align: center;
-    font-size: 0.875rem;
+    padding: 1rem 1.25rem;
+    font-size: 0.75rem;
     font-weight: 700;
-    color: {{ section.settings.body_color }};
-    background: {{ section.settings.header_background }};
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     border-bottom: 1px solid {{ section.settings.border_color }};
+    text-align: center;
+    white-space: nowrap;
   }
 
-  .ds-compare__th--feature {
+  .ds-compare__th--label {
     text-align: left;
-    width: 35%;
+    background: {{ section.settings.background_color }};
+    color: {{ section.settings.body_color }};
+    width: 40%;
   }
 
   .ds-compare__th--dayshift {
-    background: color-mix(in srgb, {{ section.settings.accent_color }} 8%, {{ section.settings.header_background }});
-  }
-
-  .ds-compare__badge {
-    display: inline-block;
     background: {{ section.settings.heading_color }};
     color: {{ section.settings.background_color }};
-    font-size: 0.75rem;
+  }
+
+  .ds-compare__th--comp {
+    background: {{ section.settings.header_background }};
+    color: {{ section.settings.body_color }};
+  }
+
+  .ds-compare__brand-name {
+    font-size: 0.875rem;
     font-weight: 800;
     letter-spacing: 0.05em;
-    padding: 0.3rem 0.875rem;
-    border-radius: 100px;
   }
 
-  .ds-compare__row {
-    border-bottom: 1px solid {{ section.settings.border_color }};
-  }
-
-  .ds-compare__row:last-child {
-    border-bottom: none;
-  }
+  .ds-compare__row:last-child .ds-compare__td { border-bottom: none; }
 
   .ds-compare__td {
-    padding: 1rem 1.5rem;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid {{ section.settings.border_color }};
     text-align: center;
     vertical-align: middle;
   }
 
   .ds-compare__td--label {
     text-align: left;
-    font-size: 0.875rem;
-    font-weight: 600;
+    font-size: 0.9375rem;
+    font-weight: 500;
     color: {{ section.settings.heading_color }};
+    background: {{ section.settings.background_color }};
   }
 
   .ds-compare__td--dayshift {
-    background: color-mix(in srgb, {{ section.settings.accent_color }} 4%, {{ section.settings.background_color }});
+    background: color-mix(in srgb, {{ section.settings.heading_color }} 4%, {{ section.settings.background_color }});
   }
 
-  .ds-compare__icon {
+  .ds-compare__td--comp { background: {{ section.settings.background_color }}; }
+
+  .ds-compare__check {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
   }
 
-  .ds-compare__icon--yes {
-    background: color-mix(in srgb, #22c55e 15%, transparent);
-    color: #22c55e;
+  .ds-compare__check--yes { color: #22c55e; }
+  .ds-compare__check--partial { color: #f59e0b; }
+  .ds-compare__check--no { color: #888888; }
+
+  .ds-compare__cta {
+    text-align: center;
+    margin-top: 2.5rem;
   }
 
-  .ds-compare__icon--no {
-    background: color-mix(in srgb, #ef4444 10%, transparent);
-    color: #ef4444;
+  .ds-compare__cta-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.875rem 2.25rem;
+    border-radius: 100px;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    text-decoration: none;
+    background: {{ section.settings.heading_color }};
+    color: {{ section.settings.background_color }};
+    transition: opacity 0.2s;
   }
 
-  .ds-compare__text {
-    font-size: 0.8125rem;
-    color: {{ section.settings.body_color }};
-  }
+  .ds-compare__cta-btn:hover { opacity: 0.85; }
 </style>
 
 {% schema %}
 {
-  "name": "Comparison",
+  "name": "Comparison Table",
   "tag": "section",
   "settings": [
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Why DayShift" },
     { "type": "text", "id": "heading", "label": "Heading", "default": "Not All Focus Is Created Equal" },
+    { "type": "text", "id": "cta_label", "label": "CTA label", "default": "Try DayShift Today" },
+    { "type": "url", "id": "cta_url", "label": "CTA link" },
     { "type": "color", "id": "background_color", "label": "Background", "default": "#ffffff" },
-    { "type": "color", "id": "header_background", "label": "Table header background", "default": "#f7f7f5" },
-    { "type": "color", "id": "heading_color", "label": "Heading", "default": "#0a0a0a" },
-    { "type": "color", "id": "body_color", "label": "Body text", "default": "#888888" },
-    { "type": "color", "id": "accent_color", "label": "Accent", "default": "#0a0a0a" },
-    { "type": "color", "id": "border_color", "label": "Border", "default": "#e5e5e5" },
+    { "type": "color", "id": "header_background", "label": "Competitor header bg", "default": "#f7f7f5" },
+    { "type": "color", "id": "heading_color", "label": "Heading / DayShift color", "default": "#0a0a0a" },
+    { "type": "color", "id": "body_color", "label": "Body color", "default": "#888888" },
+    { "type": "color", "id": "accent_color", "label": "Accent", "default": "#888888" },
+    { "type": "color", "id": "border_color", "label": "Border color", "default": "#e5e5e5" },
     { "type": "range", "id": "padding_top", "label": "Padding top", "min": 40, "max": 120, "step": 8, "default": 80 },
     { "type": "range", "id": "padding_bottom", "label": "Padding bottom", "min": 40, "max": 120, "step": 8, "default": 80 }
   ],
@@ -208,7 +222,7 @@
       "name": "Competitor Column",
       "limit": 3,
       "settings": [
-        { "type": "text", "id": "name", "label": "Competitor name", "default": "Energy Drink" }
+        { "type": "text", "id": "name", "label": "Competitor name", "default": "Energy Drinks" }
       ]
     },
     {
@@ -216,14 +230,14 @@
       "name": "Feature Row",
       "settings": [
         { "type": "text", "id": "label", "label": "Feature label", "default": "Clinically dosed" },
-        { "type": "text", "id": "dayshift_value", "label": "DayShift value (yes/no/text)", "default": "yes" },
-        { "type": "text", "id": "competitor_values", "label": "Competitor values (comma-separated, yes/no/text)", "default": "no, no, no" }
+        { "type": "text", "id": "dayshift_value", "label": "DayShift value (yes/no/partial)", "default": "yes" },
+        { "type": "text", "id": "competitor_values", "label": "Competitor values (comma-separated: yes/no/partial)", "default": "no, no, partial" }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Comparison",
+      "name": "Comparison Table",
       "blocks": [
         { "type": "competitor", "settings": { "name": "Energy Drinks" } },
         { "type": "competitor", "settings": { "name": "Coffee" } },
@@ -232,8 +246,8 @@
         { "type": "feature", "settings": { "label": "No artificial flavors", "dayshift_value": "yes", "competitor_values": "no, yes, partial" } },
         { "type": "feature", "settings": { "label": "No crash", "dayshift_value": "yes", "competitor_values": "no, no, yes" } },
         { "type": "feature", "settings": { "label": "Long-term cognitive support", "dayshift_value": "yes", "competitor_values": "no, no, partial" } },
-        { "type": "feature", "settings": { "label": "5-day protocol", "dayshift_value": "yes", "competitor_values": "no, no, no" } },
-        { "type": "feature", "settings": { "label": "Portable format", "dayshift_value": "yes", "competitor_values": "yes, no, no" } }
+        { "type": "feature", "settings": { "label": "5-day workday protocol", "dayshift_value": "yes", "competitor_values": "no, no, no" } },
+        { "type": "feature", "settings": { "label": "Portable sachet format", "dayshift_value": "yes", "competitor_values": "yes, no, no" } }
       ]
     }
   ]

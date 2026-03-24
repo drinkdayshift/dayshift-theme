@@ -1,0 +1,103 @@
+{% comment %} DayShift — Social Proof Strip {% endcomment %}
+
+<div class="ds-proof" id="ds-proof-{{ section.id }}">
+  <div class="page-width">
+    <div class="ds-proof__grid">
+      {% for block in section.blocks %}
+        {% if block.type == 'stat' %}
+          <div class="ds-proof__item" {{ block.shopify_attributes }}>
+            <span class="ds-proof__value">{{ block.settings.value }}</span>
+            <span class="ds-proof__label">{{ block.settings.label }}</span>
+          </div>
+          {% unless forloop.last %}
+            <div class="ds-proof__divider"></div>
+          {% endunless %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<style>
+  .ds-proof {
+    background: {{ section.settings.background_color }};
+    border-top: 1px solid {{ section.settings.border_color }};
+    border-bottom: 1px solid {{ section.settings.border_color }};
+    padding: 1.25rem 0;
+  }
+
+  .ds-proof__grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    flex-wrap: wrap;
+  }
+
+  .ds-proof__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    padding: 0.5rem 2.5rem;
+    text-align: center;
+  }
+
+  .ds-proof__value {
+    font-size: 1.125rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: {{ section.settings.value_color }};
+    white-space: nowrap;
+  }
+
+  .ds-proof__label {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: {{ section.settings.label_color }};
+    white-space: nowrap;
+  }
+
+  .ds-proof__divider {
+    width: 1px;
+    height: 2rem;
+    background: {{ section.settings.border_color }};
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 600px) {
+    .ds-proof__item {
+      padding: 0.5rem 1.25rem;
+    }
+
+    .ds-proof__divider {
+      height: 1.5rem;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Social Proof Strip",
+  "tag": "section",
+  "settings": [
+    { "type": "color", "id": "background_color", "label": "Background", "default": "#0a0a0a" },
+    { "type": "color", "id": "border_color", "label": "Border / divider color", "default": "#1f1f1f" },
+    { "type": "color", "id": "value_color", "label": "Value color", "default": "#ffffff" },
+    { "type": "color", "id": "label_color", "label": "Label color", "default": "#666666" }
+  ],
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Stat",
+      "settings": [
+        { "type": "text", "id": "value", "label": "Value", "default": "4.9 ★" },
+        { "type": "text", "id": "label", "label": "Label", "default": "Average Rating" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Social Proof Strip" }]
+}
+{% endschema %}

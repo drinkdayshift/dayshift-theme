@@ -35,13 +35,29 @@
         "ticker_speed": 30
       }
     },
+    "social_proof": {
+      "type": "dayshift-social-proof",
+      "blocks": {
+        "stat_1": { "type": "stat", "settings": { "value": "4.9 ★", "label": "Average Rating" } },
+        "stat_2": { "type": "stat", "settings": { "value": "500+", "label": "5-Star Reviews" } },
+        "stat_3": { "type": "stat", "settings": { "value": "20,000+", "label": "Orders Shipped" } },
+        "stat_4": { "type": "stat", "settings": { "value": "5-Day", "label": "Protocol" } }
+      },
+      "block_order": ["stat_1", "stat_2", "stat_3", "stat_4"],
+      "settings": {
+        "background_color": "#0a0a0a",
+        "border_color": "#1f1f1f",
+        "value_color": "#ffffff",
+        "label_color": "#666666"
+      }
+    },
     "shop_grid": {
       "type": "dayshift-shop-grid",
       "blocks": {
-        "sku_1": { "type": "product_card", "settings": { "product_name": "Variety Pack", "flavor_label": "All Flavors", "description": "Can't pick one? Get them all. Perfect for first-timers.", "price": "$54 / box", "badge": "Best Seller", "accent_color": "#0a0a0a" } },
-        "sku_2": { "type": "product_card", "settings": { "product_name": "Watermelon Lime", "flavor_label": "Pink", "description": "Crisp and refreshing. The everyday go-to.", "price": "$49 / box", "accent_color": "#f87171" } },
-        "sku_3": { "type": "product_card", "settings": { "product_name": "Citrus Yuzu", "flavor_label": "Orange", "description": "Bright and citrusy. Morning energy, refined.", "price": "$49 / box", "accent_color": "#fb923c" } },
-        "sku_4": { "type": "product_card", "settings": { "product_name": "Mixed Berry", "flavor_label": "Purple", "description": "Bold and smooth. For the ones who mean business.", "price": "$49 / box", "accent_color": "#a855f7" } }
+        "sku_1": { "type": "product_card", "settings": { "product_name": "Variety Pack", "flavor_label": "All Flavors", "description": "Can't pick one? Get them all. Perfect for first-timers.", "price": "$54 / box", "subscribe_price": "$48", "badge": "Best Seller", "accent_color": "#0a0a0a" } },
+        "sku_2": { "type": "product_card", "settings": { "product_name": "Watermelon Lime", "flavor_label": "Pink", "description": "Crisp and refreshing. The everyday go-to.", "price": "$49 / box", "subscribe_price": "$44", "accent_color": "#f87171" } },
+        "sku_3": { "type": "product_card", "settings": { "product_name": "Citrus Yuzu", "flavor_label": "Orange", "description": "Bright and citrusy. Morning energy, refined.", "price": "$49 / box", "subscribe_price": "$44", "accent_color": "#fb923c" } },
+        "sku_4": { "type": "product_card", "settings": { "product_name": "Mixed Berry", "flavor_label": "Purple", "description": "Bold and smooth. For the ones who mean business.", "price": "$49 / box", "subscribe_price": "$44", "accent_color": "#a855f7" } }
       },
       "block_order": ["sku_1", "sku_2", "sku_3", "sku_4"],
       "settings": {
@@ -115,12 +131,14 @@
       "settings": {
         "eyebrow": "Simple by Design",
         "heading": "How It Works",
+        "cta_label": "Shop Now",
+        "cta_url": "/collections/all",
+        "cta_note": "Free shipping on all orders.",
         "background_color": "#0a0a0a",
-        "card_background": "#1a1a1a",
         "heading_color": "#ffffff",
         "body_color": "#888888",
         "accent_color": "#ffffff",
-        "divider_color": "#333333",
+        "divider_color": "#2a2a2a",
         "padding_top": 96,
         "padding_bottom": 96
       }
@@ -161,6 +179,9 @@
       "settings": {
         "eyebrow": "Real Results",
         "heading": "What People Are Saying",
+        "aggregate_text": "4.9 out of 5 — 500+ reviews",
+        "cta_label": "Try DayShift Today",
+        "cta_url": "/collections/all",
         "autoplay_speed": 5,
         "background_color": "#0a0a0a",
         "card_background": "#141414",
@@ -181,6 +202,8 @@
         "body": "<p>I built DayShift after years of testing every supplement, energy drink, and nootropic stack I could find. Most were either underdosed, full of junk, or just didn't work when I needed them most.</p><p>The idea was simple: what if the thing you reach for every morning was actually built around the science, not the marketing? That's DayShift.</p>",
         "founder_name": "Jack",
         "founder_title": "Founder, DayShift",
+        "cta_label": "Try DayShift",
+        "cta_url": "/collections/all",
         "background_color": "#ffffff",
         "heading_color": "#0a0a0a",
         "body_color": "#666666",
@@ -207,6 +230,8 @@
       "settings": {
         "eyebrow": "Why DayShift",
         "heading": "Not All Focus Is Created Equal",
+        "cta_label": "Try DayShift Today",
+        "cta_url": "/collections/all",
         "background_color": "#ffffff",
         "header_background": "#f7f7f5",
         "heading_color": "#0a0a0a",
@@ -230,14 +255,17 @@
         "eyebrow": "Subscribe & Save",
         "heading": "Never Run Out.\nNever Miss a Day.",
         "body": "Subscribe and get 20 sachets delivered every 4 weeks. Pause, skip, or cancel any time — no questions asked.",
-        "cta_primary_label": "Subscribe Now",
-        "cta_secondary_label": "Buy once instead",
-        "subscribe_price": "$44 / box",
+        "cta_primary_label": "Subscribe & Save 10%",
+        "cta_primary_url": "/collections/all",
+        "cta_secondary_label": "Buy Once",
+        "cta_secondary_url": "/collections/all",
+        "subscribe_price": "$44",
         "subscribe_subtext": "Save 10% vs one-time. Free shipping.",
-        "one_time_price": "$49 / box",
+        "one_time_price": "$49",
+        "guarantee": "✓ Free shipping  ·  ✓ Cancel any time  ·  ✓ Swap flavors each cycle",
         "background_color": "#0a0a0a",
         "card_background": "#141414",
-        "card_border": "#222222",
+        "card_border": "#2a2a2a",
         "heading_color": "#ffffff",
         "body_color": "#888888",
         "accent_color": "#ffffff",
@@ -297,6 +325,7 @@
   },
   "order": [
     "hero",
+    "social_proof",
     "shop_grid",
     "what_is",
     "ingredients",

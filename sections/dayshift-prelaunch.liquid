@@ -1,0 +1,271 @@
+{% comment %}
+  DayShift — Prelaunch Section
+  Minimal: full-screen photo + centered email signup. No nav, no footer.
+{% endcomment %}
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,900;1,900&family=Barlow:wght@400;500&display=swap');
+
+  /* Hide Shopify header, announcement bar, and footer on this page */
+  .shopify-section-header,
+  #shopify-section-header,
+  header.header,
+  .header-wrapper,
+  .announcement-bar,
+  #shopify-section-announcement-bar,
+  .shopify-section-group-header-group,
+  .shopify-section-group-footer-group,
+  footer.footer,
+  #shopify-section-footer {
+    display: none !important;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: #0a0a0a;
+  }
+
+  .ds-pl {
+    min-height: 100vh;
+    background: #0a0a0a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 24px;
+    font-family: 'Barlow', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-align: center;
+  }
+
+  .ds-pl__img-wrap {
+    width: 100%;
+    max-width: {{ section.settings.image_max_width }}px;
+    margin: 0 auto 52px;
+  }
+
+  .ds-pl__img-wrap img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: {{ section.settings.image_radius }}px;
+  }
+
+  .ds-pl__logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(48px, 8vw, 96px);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .ds-pl__tagline {
+    font-family: 'Barlow', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 40px;
+  }
+
+  .ds-pl__form-wrap {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .ds-pl__form {
+    display: flex;
+    gap: 0;
+    width: 100%;
+  }
+
+  .ds-pl__input {
+    flex: 1;
+    background: transparent;
+    border: 1px solid #333;
+    border-right: none;
+    border-radius: 6px 0 0 6px;
+    padding: 14px 18px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 14px;
+    color: #ffffff;
+    outline: none;
+    transition: border-color 0.2s;
+    -webkit-appearance: none;
+    min-width: 0;
+  }
+
+  .ds-pl__input::placeholder { color: #3a3a3a; }
+  .ds-pl__input:focus { border-color: #555; }
+
+  .ds-pl__submit {
+    background: #ffffff;
+    color: #0a0a0a;
+    border: 1px solid #ffffff;
+    border-radius: 0 6px 6px 0;
+    padding: 14px 24px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: background 0.15s;
+  }
+
+  .ds-pl__submit:hover { background: #ddd; }
+
+  .ds-pl__fine {
+    margin-top: 14px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #333;
+  }
+
+  .ds-pl__success {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #888;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+  }
+
+  .ds-pl__success svg { color: #4ade80; }
+
+  @media (max-width: 500px) {
+    .ds-pl { padding: 40px 20px; }
+    .ds-pl__form { flex-direction: column; }
+    .ds-pl__input {
+      border-right: 1px solid #333;
+      border-radius: 6px;
+      margin-bottom: 8px;
+    }
+    .ds-pl__submit { border-radius: 6px; }
+  }
+</style>
+
+<div class="ds-pl">
+
+  {% if section.settings.hero_image != blank %}
+    <div class="ds-pl__img-wrap">
+      {{ section.settings.hero_image | image_url: width: 1600 | image_tag: loading: 'eager', alt: 'DayShift' }}
+    </div>
+  {% endif %}
+
+  <div class="ds-pl__logo">DAYSHIFT</div>
+  <div class="ds-pl__tagline">{{ section.settings.tagline }}</div>
+
+  <div class="ds-pl__form-wrap">
+    <form class="ds-pl__form" id="ds-pl-form" action="/contact#contact_form" method="post" accept-charset="UTF-8">
+      <input type="hidden" name="form_type" value="customer">
+      <input type="hidden" name="utf8" value="✓">
+      <input type="hidden" name="contact[tags]" value="waitlist">
+      <input
+        class="ds-pl__input"
+        type="email"
+        name="contact[email]"
+        placeholder="{{ section.settings.placeholder }}"
+        required
+        aria-label="Email address"
+      >
+      <button class="ds-pl__submit" type="submit">{{ section.settings.button_text }}</button>
+    </form>
+
+    <div class="ds-pl__success" id="ds-pl-success" role="alert">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"/>
+      </svg>
+      {{ section.settings.success_text }}
+    </div>
+
+    <p class="ds-pl__fine">{{ section.settings.fine_print }}</p>
+  </div>
+
+</div>
+
+<script>
+  if (window.location.hash === '#contact_form') {
+    document.getElementById('ds-pl-form').style.display = 'none';
+    document.getElementById('ds-pl-success').style.display = 'flex';
+  }
+</script>
+
+{% schema %}
+{
+  "name": "DayShift Prelaunch",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Photo"
+    },
+    {
+      "type": "range",
+      "id": "image_max_width",
+      "min": 300,
+      "max": 1000,
+      "step": 20,
+      "unit": "px",
+      "label": "Photo max width",
+      "default": 680
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "min": 0,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Photo corner radius",
+      "default": 12
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline (below wordmark)",
+      "default": "Fuel The Day. Feel The Shift."
+    },
+    {
+      "type": "text",
+      "id": "placeholder",
+      "label": "Input placeholder",
+      "default": "your@email.com"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Notify Me"
+    },
+    {
+      "type": "text",
+      "id": "success_text",
+      "label": "Success message",
+      "default": "You're on the list."
+    },
+    {
+      "type": "text",
+      "id": "fine_print",
+      "label": "Fine print",
+      "default": "No spam. Unsubscribe anytime."
+    }
+  ],
+  "presets": [
+    {
+      "name": "DayShift Prelaunch"
+    }
+  ]
+}
+{% endschema %}

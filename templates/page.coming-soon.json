@@ -15,9 +15,23 @@
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "dayshift_prelaunch_LMjTLe": {
+      "type": "dayshift-prelaunch",
+      "name": "DayShift Prelaunch",
+      "settings": {
+        "image_max_width": 680,
+        "image_radius": 12,
+        "tagline": "Fuel The Day. Feel The Shift.",
+        "placeholder": "your@email.com",
+        "button_text": "Notify Me",
+        "success_text": "You're on the list.",
+        "fine_print": "No spam. Unsubscribe anytime."
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "dayshift_prelaunch_LMjTLe"
   ]
 }

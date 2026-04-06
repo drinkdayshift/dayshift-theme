@@ -1,0 +1,780 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "dayshift-hero",
+      "blocks": {
+        "trust_1": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "check",
+            "text": "No artificial flavors"
+          }
+        },
+        "trust_2": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "check",
+            "text": "Clinically dosed"
+          }
+        },
+        "trust_3": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "star",
+            "text": "4.9 stars"
+          }
+        }
+      },
+      "block_order": [
+        "trust_1",
+        "trust_2",
+        "trust_3"
+      ],
+      "settings": {
+        "eyebrow": "The Workday Performance Drink",
+        "headline": "Fuel The Day.\nFeel The Shift.",
+        "body": "A precision-dosed liquid sachet with 2,500mg Lion's Mane, Rhodiola, and 120mg clean caffeine. Built for the people who can't afford an off day.",
+        "cta_primary_label": "Shop Now",
+        "cta_primary_url": "\/collections\/all",
+        "cta_secondary_label": "See What's Inside",
+        "cta_secondary_url": "",
+        "background_color": "#0a0a0a",
+        "headline_color": "#ffffff",
+        "body_color": "#999999",
+        "accent_color": "#ffffff",
+        "show_ticker": true,
+        "ticker_background": "#111111",
+        "ticker_text_color": "#ffffff",
+        "ticker_speed": 30
+      }
+    },
+    "social_proof": {
+      "type": "dayshift-social-proof",
+      "blocks": {
+        "stat_1": {
+          "type": "stat",
+          "settings": {
+            "value": "4.9 ★",
+            "label": "Average Rating"
+          }
+        },
+        "stat_2": {
+          "type": "stat",
+          "settings": {
+            "value": "500+",
+            "label": "5-Star Reviews"
+          }
+        },
+        "stat_3": {
+          "type": "stat",
+          "settings": {
+            "value": "20,000+",
+            "label": "Orders Shipped"
+          }
+        },
+        "stat_4": {
+          "type": "stat",
+          "settings": {
+            "value": "5-Day",
+            "label": "Protocol"
+          }
+        }
+      },
+      "block_order": [
+        "stat_1",
+        "stat_2",
+        "stat_3",
+        "stat_4"
+      ],
+      "settings": {
+        "background_color": "#0a0a0a",
+        "border_color": "#1f1f1f",
+        "value_color": "#ffffff",
+        "label_color": "#666666"
+      }
+    },
+    "shop_grid": {
+      "type": "dayshift-shop-grid",
+      "blocks": {
+        "sku_1": {
+          "type": "product_card",
+          "settings": {
+            "product_name": "Variety Pack",
+            "flavor_label": "All Flavors",
+            "description": "Can't pick one? Get them all. Perfect for first-timers.",
+            "price": "$54 \/ box",
+            "subscribe_price": "$48",
+            "badge": "Best Seller",
+            "accent_color": "#0a0a0a"
+          }
+        },
+        "sku_2": {
+          "type": "product_card",
+          "settings": {
+            "product_name": "Watermelon Lime",
+            "flavor_label": "Pink",
+            "description": "Crisp and refreshing. The everyday go-to.",
+            "price": "$49 \/ box",
+            "subscribe_price": "$44",
+            "accent_color": "#f87171"
+          }
+        },
+        "sku_3": {
+          "type": "product_card",
+          "settings": {
+            "product_name": "Citrus Yuzu",
+            "flavor_label": "Orange",
+            "description": "Bright and citrusy. Morning energy, refined.",
+            "price": "$49 \/ box",
+            "subscribe_price": "$44",
+            "accent_color": "#fb923c"
+          }
+        },
+        "sku_4": {
+          "type": "product_card",
+          "settings": {
+            "product_name": "Mixed Berry",
+            "flavor_label": "Purple",
+            "description": "Bold and smooth. For the ones who mean business.",
+            "price": "$49 \/ box",
+            "subscribe_price": "$44",
+            "accent_color": "#a855f7"
+          }
+        }
+      },
+      "block_order": [
+        "sku_1",
+        "sku_2",
+        "sku_3",
+        "sku_4"
+      ],
+      "settings": {
+        "heading": "Choose Your Flavor",
+        "subtext": "All flavors ship with 20 sachets per box — 5 days on, 2 days off.",
+        "cta_label": "View All Products",
+        "background_color": "#ffffff",
+        "card_background": "#f7f7f5",
+        "heading_color": "#0a0a0a",
+        "subtext_color": "#888888",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "what_is": {
+      "type": "dayshift-what-is",
+      "settings": {
+        "eyebrow": "The Product",
+        "heading": "What is DayShift?",
+        "body": "DayShift is a 12ml liquid nootropic sachet designed for working professionals. Pour it into water, shake, and within minutes you'll feel a clean, focused lift — no crash, no jitters. Just 8 clinically-dosed ingredients working together so you can do your best work.",
+        "stat_1_number": "8",
+        "stat_1_label": "Active Ingredients",
+        "stat_2_number": "12ml",
+        "stat_2_label": "Per Sachet",
+        "stat_3_number": "20",
+        "stat_3_label": "Sachets Per Box",
+        "background_color": "#0a0a0a",
+        "heading_color": "#ffffff",
+        "body_color": "#999999",
+        "accent_color": "#ffffff",
+        "divider_color": "#222222",
+        "padding_top": 96,
+        "padding_bottom": 96
+      }
+    },
+    "ingredients": {
+      "type": "dayshift-ingredients",
+      "blocks": {
+        "ing_1": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Lion's Mane",
+            "dose": "2,500 mg",
+            "benefit": "Supports memory, focus, and nerve growth factor.",
+            "detail": "Lion's Mane mushroom (Hericium erinaceus) stimulates Nerve Growth Factor (NGF), supporting long-term cognitive function, memory consolidation, and mental clarity. At 2,500mg, DayShift uses one of the highest doses available in any daily supplement.",
+            "color": "#f59e0b"
+          }
+        },
+        "ing_2": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Cordyceps",
+            "dose": "1,500 mg",
+            "benefit": "Boosts ATP energy production and physical stamina.",
+            "detail": "Cordyceps militaris increases ATP synthesis — the cellular fuel your body runs on. The result is a smoother, more sustained energy that complements caffeine without the spike-and-crash cycle.",
+            "color": "#ef4444"
+          }
+        },
+        "ing_3": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Alpha-GPC",
+            "dose": "300 mg",
+            "benefit": "Elevates acetylcholine for sharper focus and recall.",
+            "detail": "Alpha-GPC is the most bioavailable form of choline available. It rapidly crosses the blood-brain barrier to raise acetylcholine levels — the neurotransmitter most responsible for attention, learning speed, and working memory.",
+            "color": "#3b82f6"
+          }
+        },
+        "ing_4": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Rhodiola Extract",
+            "dose": "250 mg",
+            "benefit": "Reduces mental fatigue and stress-induced burnout.",
+            "detail": "Rhodiola rosea is an adaptogen with decades of research behind it. It directly reduces cortisol's impact on the brain, helping you stay sharp under pressure without the anxious edge that caffeine alone can create.",
+            "color": "#8b5cf6"
+          }
+        },
+        "ing_5": {
+          "type": "ingredient",
+          "settings": {
+            "name": "L-Theanine",
+            "dose": "240 mg",
+            "benefit": "Smooth focus without the jitter or anxiety.",
+            "detail": "L-Theanine is the amino acid found in green tea that produces calm alertness. Paired with caffeine at a 2:1 ratio, it eliminates jitters and anxiety while amplifying the cognitive benefits of stimulation.",
+            "color": "#10b981"
+          }
+        },
+        "ing_6": {
+          "type": "ingredient",
+          "settings": {
+            "name": "NALT",
+            "dose": "600 mg",
+            "benefit": "Precursor to dopamine and norepinephrine.",
+            "detail": "N-Acetyl L-Tyrosine (NALT) is a highly bioavailable form of L-Tyrosine. It's the direct precursor to dopamine and norepinephrine — the brain chemicals that drive motivation, mood, and stress resilience.",
+            "color": "#f97316"
+          }
+        },
+        "ing_7": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Panax Ginseng",
+            "dose": "200 mg",
+            "benefit": "Enhances working memory and mental performance.",
+            "detail": "Panax ginseng has been shown in multiple trials to improve reaction time, working memory, and cognitive performance under fatigue. It pairs with Lion's Mane to produce compounding long-term benefits.",
+            "color": "#ec4899"
+          }
+        },
+        "ing_8": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Caffeine",
+            "dose": "120 mg",
+            "benefit": "Clean, precisely dosed stimulation without the crash.",
+            "detail": "120mg is the cognitive sweet spot — enough to sharpen alertness and block adenosine, but low enough to avoid the crash. Combined with L-Theanine, it becomes clean, sustained focus.",
+            "color": "#6366f1"
+          }
+        }
+      },
+      "block_order": [
+        "ing_1",
+        "ing_2",
+        "ing_3",
+        "ing_4",
+        "ing_5",
+        "ing_6",
+        "ing_7",
+        "ing_8"
+      ],
+      "settings": {
+        "eyebrow": "The Formula",
+        "heading": "8 Ingredients. One Goal.",
+        "subtext": "Every ingredient is clinically dosed and chosen for a specific reason. Tap any card to learn more.",
+        "background_color": "#ffffff",
+        "card_background": "#f7f7f5",
+        "card_border": "#e5e5e5",
+        "heading_color": "#0a0a0a",
+        "body_color": "#888888",
+        "accent_color": "#0a0a0a",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "how_it_works": {
+      "type": "dayshift-how-it-works",
+      "blocks": {
+        "step_1": {
+          "type": "step",
+          "settings": {
+            "title": "Pour Into Water",
+            "description": "Tear open one sachet and pour the 12ml liquid into 12–16oz of cold water."
+          }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": {
+            "title": "Give It a Quick Shake",
+            "description": "Shake or stir for a few seconds. No blender, no prep, no mess."
+          }
+        },
+        "step_3": {
+          "type": "step",
+          "settings": {
+            "title": "Feel The Shift",
+            "description": "Within minutes, a clean focused lift begins. No jitters. No crash. Just on."
+          }
+        }
+      },
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3"
+      ],
+      "settings": {
+        "eyebrow": "Simple by Design",
+        "heading": "How It Works",
+        "cta_label": "Shop Now",
+        "cta_url": "\/collections\/all",
+        "cta_note": "Free shipping on all orders.",
+        "background_color": "#0a0a0a",
+        "heading_color": "#ffffff",
+        "body_color": "#888888",
+        "accent_color": "#ffffff",
+        "divider_color": "#2a2a2a",
+        "padding_top": 96,
+        "padding_bottom": 96
+      }
+    },
+    "timeline": {
+      "type": "dayshift-timeline",
+      "blocks": {
+        "m1": {
+          "type": "milestone",
+          "settings": {
+            "time_label": "Minutes 15–30",
+            "title": "First Lift",
+            "description": "Caffeine + L-Theanine activate. Clear, calm focus replaces mental fog."
+          }
+        },
+        "m2": {
+          "type": "milestone",
+          "settings": {
+            "time_label": "Hour 1–3",
+            "title": "Peak Performance",
+            "description": "Alpha-GPC and NALT fully active. Working memory, motivation, and output at their highest."
+          }
+        },
+        "m3": {
+          "type": "milestone",
+          "settings": {
+            "time_label": "Hour 4–6",
+            "title": "Sustained Clarity",
+            "description": "No crash. Rhodiola keeps cortisol in check while effects taper cleanly."
+          }
+        },
+        "m4": {
+          "type": "milestone",
+          "settings": {
+            "time_label": "Day 3",
+            "title": "Noticeable Shift",
+            "description": "Lion's Mane begins compounding. Mental stamina and recovery between sessions improves."
+          }
+        },
+        "m5": {
+          "type": "milestone",
+          "settings": {
+            "time_label": "Week 2+",
+            "title": "Cognitive Edge",
+            "description": "Consistent users report sharper recall, better stress response, and faster mental processing."
+          }
+        }
+      },
+      "block_order": [
+        "m1",
+        "m2",
+        "m3",
+        "m4",
+        "m5"
+      ],
+      "settings": {
+        "eyebrow": "What to Expect",
+        "heading": "Feel the Difference Over Time",
+        "subtext": "Some effects are felt immediately. Others build the longer you stay consistent.",
+        "background_color": "#ffffff",
+        "heading_color": "#0a0a0a",
+        "body_color": "#888888",
+        "accent_color": "#0a0a0a",
+        "line_color": "#e5e5e5",
+        "padding_top": 96,
+        "padding_bottom": 96
+      }
+    },
+    "reviews": {
+      "type": "dayshift-reviews",
+      "blocks": {
+        "r1": {
+          "type": "review",
+          "settings": {
+            "review_text": "I've tried every nootropic on the market. DayShift is the first one where I feel a noticeable difference every single time.",
+            "author_name": "Alex R.",
+            "author_title": "Founder, 3x startup"
+          }
+        },
+        "r2": {
+          "type": "review",
+          "settings": {
+            "review_text": "No crash at 3pm for the first time in years. I thought I was just wired that way. Turns out I was just under-fueled.",
+            "author_name": "Morgan T.",
+            "author_title": "Senior PM, tech company"
+          }
+        },
+        "r3": {
+          "type": "review",
+          "settings": {
+            "review_text": "The citrus yuzu flavor actually tastes good. That was the first surprise. The focus was the second.",
+            "author_name": "Jamie L.",
+            "author_title": "Designer"
+          }
+        },
+        "r4": {
+          "type": "review",
+          "settings": {
+            "review_text": "I replaced my afternoon coffee with DayShift. Sleeping better, working sharper. I'm not going back.",
+            "author_name": "Sam K.",
+            "author_title": "Attorney"
+          }
+        },
+        "r5": {
+          "type": "review",
+          "settings": {
+            "review_text": "Week two is when it clicks. Day one is good. Week two is when you realize this is a different gear entirely.",
+            "author_name": "Chris D.",
+            "author_title": "Operations lead"
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2",
+        "r3",
+        "r4",
+        "r5"
+      ],
+      "settings": {
+        "eyebrow": "Real Results",
+        "heading": "What People Are Saying",
+        "aggregate_text": "4.9 out of 5 — 500+ reviews",
+        "cta_label": "Try DayShift Today",
+        "cta_url": "\/collections\/all",
+        "autoplay_speed": 5,
+        "background_color": "#0a0a0a",
+        "card_background": "#141414",
+        "card_border": "#222222",
+        "heading_color": "#ffffff",
+        "body_color": "#888888",
+        "accent_color": "#ffffff",
+        "star_color": "#f59e0b",
+        "padding_top": 96,
+        "padding_bottom": 96
+      }
+    },
+    "founder": {
+      "type": "dayshift-founder",
+      "settings": {
+        "eyebrow": "From the Founder",
+        "heading": "Built Because Nothing Else Worked",
+        "body": "<p>I built DayShift after years of testing every supplement, energy drink, and nootropic stack I could find. Most were either underdosed, full of junk, or just didn't work when I needed them most.<\/p><p>The idea was simple: what if the thing you reach for every morning was actually built around the science, not the marketing? That's DayShift.<\/p>",
+        "founder_name": "Jack",
+        "founder_title": "Founder, DayShift",
+        "cta_label": "Try DayShift",
+        "cta_url": "\/collections\/all",
+        "background_color": "#ffffff",
+        "heading_color": "#0a0a0a",
+        "body_color": "#666666",
+        "accent_color": "#0a0a0a",
+        "divider_color": "#e5e5e5",
+        "padding_top": 96,
+        "padding_bottom": 96
+      }
+    },
+    "comparison": {
+      "type": "dayshift-comparison",
+      "blocks": {
+        "comp_1": {
+          "type": "competitor",
+          "settings": {
+            "name": "Energy Drinks"
+          }
+        },
+        "comp_2": {
+          "type": "competitor",
+          "settings": {
+            "name": "Coffee"
+          }
+        },
+        "comp_3": {
+          "type": "competitor",
+          "settings": {
+            "name": "Other Nootropics"
+          }
+        },
+        "feat_1": {
+          "type": "feature",
+          "settings": {
+            "label": "Clinically dosed ingredients",
+            "dayshift_value": "yes",
+            "competitor_values": "no, no, partial"
+          }
+        },
+        "feat_2": {
+          "type": "feature",
+          "settings": {
+            "label": "No artificial flavors",
+            "dayshift_value": "yes",
+            "competitor_values": "no, yes, partial"
+          }
+        },
+        "feat_3": {
+          "type": "feature",
+          "settings": {
+            "label": "No crash",
+            "dayshift_value": "yes",
+            "competitor_values": "no, no, yes"
+          }
+        },
+        "feat_4": {
+          "type": "feature",
+          "settings": {
+            "label": "Long-term cognitive support",
+            "dayshift_value": "yes",
+            "competitor_values": "no, no, partial"
+          }
+        },
+        "feat_5": {
+          "type": "feature",
+          "settings": {
+            "label": "5-day workday protocol",
+            "dayshift_value": "yes",
+            "competitor_values": "no, no, no"
+          }
+        },
+        "feat_6": {
+          "type": "feature",
+          "settings": {
+            "label": "Portable sachet format",
+            "dayshift_value": "yes",
+            "competitor_values": "yes, no, no"
+          }
+        }
+      },
+      "block_order": [
+        "comp_1",
+        "comp_2",
+        "comp_3",
+        "feat_1",
+        "feat_2",
+        "feat_3",
+        "feat_4",
+        "feat_5",
+        "feat_6"
+      ],
+      "settings": {
+        "eyebrow": "Why DayShift",
+        "heading": "Not All Focus Is Created Equal",
+        "cta_label": "Try DayShift Today",
+        "cta_url": "\/collections\/all",
+        "background_color": "#ffffff",
+        "header_background": "#f7f7f5",
+        "heading_color": "#0a0a0a",
+        "body_color": "#888888",
+        "accent_color": "#0a0a0a",
+        "border_color": "#e5e5e5",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "subscribe_cta": {
+      "type": "dayshift-subscribe-cta",
+      "blocks": {
+        "perk_1": {
+          "type": "perk",
+          "settings": {
+            "text": "Free shipping on every order"
+          }
+        },
+        "perk_2": {
+          "type": "perk",
+          "settings": {
+            "text": "Pause or cancel any time"
+          }
+        },
+        "perk_3": {
+          "type": "perk",
+          "settings": {
+            "text": "Swap flavors each cycle"
+          }
+        },
+        "perk_4": {
+          "type": "perk",
+          "settings": {
+            "text": "10% off vs one-time pricing"
+          }
+        }
+      },
+      "block_order": [
+        "perk_1",
+        "perk_2",
+        "perk_3",
+        "perk_4"
+      ],
+      "settings": {
+        "eyebrow": "Subscribe & Save",
+        "heading": "Never Run Out.\nNever Miss a Day.",
+        "body": "Subscribe and get 20 sachets delivered every 4 weeks. Pause, skip, or cancel any time — no questions asked.",
+        "cta_primary_label": "Subscribe & Save 10%",
+        "cta_primary_url": "\/collections\/all",
+        "cta_secondary_label": "Buy Once",
+        "cta_secondary_url": "\/collections\/all",
+        "subscribe_price": "$44",
+        "subscribe_subtext": "Save 10% vs one-time. Free shipping.",
+        "one_time_price": "$49",
+        "guarantee": "✓ Free shipping  ·  ✓ Cancel any time  ·  ✓ Swap flavors each cycle",
+        "background_color": "#0a0a0a",
+        "card_background": "#141414",
+        "card_border": "#2a2a2a",
+        "heading_color": "#ffffff",
+        "body_color": "#888888",
+        "accent_color": "#ffffff",
+        "padding_top": 96,
+        "padding_bottom": 96
+      }
+    },
+    "faq": {
+      "type": "dayshift-faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "How long until I feel effects?",
+            "answer": "<p>Most people feel the initial lift within 15–30 minutes. The caffeine and L-Theanine activate quickly. Longer-term benefits from Lion's Mane and Cordyceps build over 1–2 weeks of consistent use.<\/p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "What is the 5-day protocol?",
+            "answer": "<p>DayShift is designed to be taken Monday through Friday — your workdays. The 2-day rest period prevents tolerance buildup and lets your system reset, so each dose stays effective.<\/p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Can I take it with coffee?",
+            "answer": "<p>DayShift already contains 120mg of caffeine. You can combine it with coffee but be mindful of your total caffeine intake. We'd suggest skipping the extra coffee for the first week to assess your personal response.<\/p>"
+          }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "question": "Is it safe to take every day?",
+            "answer": "<p>Yes — within the 5-on\/2-off protocol. All 8 ingredients have strong safety profiles at these doses. If you have a medical condition or take prescription medications, check with your doctor first.<\/p>"
+          }
+        },
+        "q5": {
+          "type": "question",
+          "settings": {
+            "question": "What does it taste like?",
+            "answer": "<p>Each flavor is clean, refreshing, and not overly sweet. Watermelon Lime is crisp and bright. Citrus Yuzu is light and citrusy. Mixed Berry is smooth and full-bodied.<\/p>"
+          }
+        },
+        "q6": {
+          "type": "question",
+          "settings": {
+            "question": "How do I cancel my subscription?",
+            "answer": "<p>Log in to your account and manage your subscription from the portal. You can pause, skip a cycle, swap flavors, or cancel entirely — no phone calls, no friction.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6"
+      ],
+      "settings": {
+        "eyebrow": "FAQ",
+        "heading": "Questions? We've Got Answers.",
+        "background_color": "#ffffff",
+        "heading_color": "#0a0a0a",
+        "body_color": "#666666",
+        "accent_color": "#0a0a0a",
+        "border_color": "#e5e5e5",
+        "padding_top": 96,
+        "padding_bottom": 96
+      }
+    },
+    "closing_hero": {
+      "type": "dayshift-hero",
+      "blocks": {
+        "trust_1": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "check",
+            "text": "Free shipping"
+          }
+        },
+        "trust_2": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "check",
+            "text": "Cancel any time"
+          }
+        },
+        "trust_3": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "star",
+            "text": "4.9 stars"
+          }
+        }
+      },
+      "block_order": [
+        "trust_1",
+        "trust_2",
+        "trust_3"
+      ],
+      "settings": {
+        "eyebrow": "Ready to Shift?",
+        "headline": "Your Best Work\nStarts Here.",
+        "body": "Join thousands of founders, operators, and professionals who start every workday with DayShift.",
+        "cta_primary_label": "Shop Now",
+        "cta_primary_url": "\/collections\/all",
+        "cta_secondary_label": "Learn More",
+        "cta_secondary_url": "",
+        "background_color": "#0a0a0a",
+        "headline_color": "#ffffff",
+        "body_color": "#999999",
+        "accent_color": "#ffffff",
+        "show_ticker": false,
+        "ticker_background": "#111111",
+        "ticker_text_color": "#ffffff",
+        "ticker_speed": 30
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "social_proof",
+    "shop_grid",
+    "what_is",
+    "ingredients",
+    "how_it_works",
+    "timeline",
+    "reviews",
+    "founder",
+    "comparison",
+    "subscribe_cta",
+    "faq",
+    "closing_hero"
+  ]
+}

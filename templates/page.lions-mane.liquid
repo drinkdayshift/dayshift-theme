@@ -1,6 +1,7 @@
-{%- comment -%} Lion's Mane — clean rebuild with px sizes {%- endcomment -%}
+{%- comment -%} Lion's Mane — clean rebuild, all final fixes baked in {%- endcomment -%}
 
 <style>
+/* Fonts (from Settings → Files) */
 @font-face { font-family: "Aeonik"; src: url("{{ 'aeonik-regular.woff2' | file_url }}") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
 @font-face { font-family: "Aeonik"; src: url("{{ 'aeonik-italic.woff2' | file_url }}") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
 @font-face { font-family: "Aeonik"; src: url("{{ 'aeonik-medium.woff2' | file_url }}") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
@@ -8,32 +9,42 @@
 @font-face { font-family: "Aeonik Condensed"; src: url("{{ 'aeonik-condensed-regular.woff2' | file_url }}") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
 @font-face { font-family: "Aeonik Condensed"; src: url("{{ 'aeonik-condensed-bold.woff2' | file_url }}") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
 
-/* Reset everything inside our scope */
+/* === BASELINE === */
 html body .ds-lions-mane,
 html body .ds-lions-mane *,
 html body .ds-lions-mane *::before,
 html body .ds-lions-mane *::after {
-  font-family: "Aeonik", -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-family: "Aeonik", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
   color: #0A0A0A !important;
   box-sizing: border-box !important;
   font-style: normal;
 }
 html body .ds-lions-mane em,
-html body .ds-lions-mane i { font-style: italic !important; }
+html body .ds-lions-mane i,
+html body .ds-lions-mane .hero-eyebrow,
+html body .ds-lions-mane .mechanism-footnote em { font-style: italic !important; }
 
-/* Layout */
+/* Only small uppercase labels in Aeonik Condensed */
+html body .ds-lions-mane .study-meta,
+html body .ds-lions-mane .mechanism-eyebrow,
+html body .ds-lions-mane .focus-block h3,
+html body .ds-lions-mane .dose-cell-label {
+  font-family: "Aeonik Condensed", "Aeonik", sans-serif !important;
+}
+
+/* === LAYOUT === */
 html body .ds-lions-mane { background: #fff; }
 html body .ds-lions-mane .wrap { max-width: 1100px; margin: 0 auto; padding: 80px 32px; }
 html body .ds-lions-mane section { margin-bottom: 120px; }
 
-/* Headings — Aeonik Condensed Bold for the chunky look */
+/* === HEADINGS — Aeonik Bold === */
 html body .ds-lions-mane .hero-title,
 html body .ds-lions-mane .mechanism h2,
 html body .ds-lions-mane .split h2,
 html body .ds-lions-mane .dose h2,
 html body .ds-lions-mane .learn h2,
 html body .ds-lions-mane .cta-wrap h2 {
-  font-family: "Aeonik Condensed", "Aeonik", sans-serif !important;
+  font-family: "Aeonik", sans-serif !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
   letter-spacing: -0.01em !important;
@@ -41,14 +52,14 @@ html body .ds-lions-mane .cta-wrap h2 {
   margin: 0 !important;
   color: #0A0A0A !important;
 }
-html body .ds-lions-mane .hero-title { font-size: 72px !important; margin-bottom: 14px !important; }
+html body .ds-lions-mane .hero-title { font-size: 64px !important; margin-bottom: 14px !important; }
 html body .ds-lions-mane .mechanism h2,
 html body .ds-lions-mane .learn h2,
-html body .ds-lions-mane .cta-wrap h2 { font-size: 44px !important; margin-bottom: 16px !important; }
+html body .ds-lions-mane .cta-wrap h2 { font-size: 40px !important; margin-bottom: 16px !important; }
 html body .ds-lions-mane .split h2,
-html body .ds-lions-mane .dose h2 { font-size: 36px !important; margin-bottom: 16px !important; }
+html body .ds-lions-mane .dose h2 { font-size: 32px !important; margin-bottom: 16px !important; }
 
-/* Hero */
+/* === HERO === */
 html body .ds-lions-mane .hero { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
 html body .ds-lions-mane .hero-eyebrow {
   font-style: italic !important; font-weight: 700 !important;
@@ -63,7 +74,7 @@ html body .ds-lions-mane .hero-image {
   border-radius: 18px; object-fit: contain; background: #fff;
 }
 
-/* Mechanism */
+/* === MECHANISM === */
 html body .ds-lions-mane .mechanism { text-align: center; }
 html body .ds-lions-mane .mechanism-intro {
   font-size: 18px !important; line-height: 1.6 !important;
@@ -88,7 +99,7 @@ html body .ds-lions-mane .mechanism-footnote {
 }
 html body .ds-lions-mane .mechanism-footnote em { color: #0A0A0A !important; }
 
-/* Why We Use It */
+/* === WHY WE USE IT === */
 html body .ds-lions-mane .split { display: grid; grid-template-columns: 1fr 1.1fr; gap: 64px; align-items: center; }
 html body .ds-lions-mane .split-image {
   width: 100%; height: auto; max-height: 480px;
@@ -100,7 +111,6 @@ html body .ds-lions-mane .split p {
 }
 html body .ds-lions-mane .focus-block { margin-top: 32px; }
 html body .ds-lions-mane .focus-block h3 {
-  font-family: "Aeonik Condensed", "Aeonik", sans-serif !important;
   font-size: 14px !important; font-weight: 700 !important;
   text-transform: uppercase !important; letter-spacing: 0.1em !important;
   margin: 0 0 16px 0 !important; color: #0A0A0A !important;
@@ -116,7 +126,7 @@ html body .ds-lions-mane .focus-list li::before {
   background-size: contain; background-repeat: no-repeat;
 }
 
-/* Dose */
+/* === DOSE === */
 html body .ds-lions-mane .dose-sub {
   font-size: 17px !important; color: #555 !important;
   margin: 0 0 32px 0 !important;
@@ -128,22 +138,31 @@ html body .ds-lions-mane .dose-table {
 html body .ds-lions-mane .dose-cell { padding: 32px 28px; border-right: 1px solid #E5E5E5; }
 html body .ds-lions-mane .dose-cell:last-child { border-right: none; }
 html body .ds-lions-mane .dose-cell-label {
-  font-family: "Aeonik Condensed", "Aeonik", sans-serif !important;
   font-size: 13px !important; text-transform: uppercase !important;
   letter-spacing: 0.12em !important; color: #555 !important;
   font-weight: 600 !important; margin: 0 0 14px 0 !important;
 }
+/* Clinical Studies + Typical Supplement values NOT bolded */
 html body .ds-lions-mane .dose-cell-value {
-  font-size: 24px !important; font-weight: 600 !important; color: #0A0A0A !important;
+  font-size: 24px !important; font-weight: 400 !important; color: #0A0A0A !important;
 }
 html body .ds-lions-mane .dose-cell.highlight { background: #FFD9B3; }
-html body .ds-lions-mane .dose-cell.highlight .dose-cell-label { color: #0A0A0A !important; font-weight: 700 !important; }
-html body .ds-lions-mane .dose-cell.highlight .dose-cell-value { font-size: 28px !important; font-weight: 800 !important; }
+/* DAYSHIFT label: Aeonik Bold, larger */
+html body .ds-lions-mane .dose-cell.highlight .dose-cell-label {
+  font-family: "Aeonik", sans-serif !important;
+  font-size: 18px !important; font-weight: 800 !important;
+  letter-spacing: 0.04em !important; color: #0A0A0A !important;
+  margin: 0 0 16px 0 !important;
+}
+/* DAYSHIFT value bolded */
+html body .ds-lions-mane .dose-cell.highlight .dose-cell-value {
+  font-size: 28px !important; font-weight: 700 !important;
+}
 html body .ds-lions-mane .dose-note {
   font-size: 14px !important; color: #555 !important; margin-top: 16px !important;
 }
 
-/* Studies */
+/* === STUDIES === */
 html body .ds-lions-mane .learn { text-align: center; margin-bottom: 96px !important; }
 html body .ds-lions-mane .learn-intro {
   font-size: 18px !important; color: #555 !important;
@@ -158,7 +177,6 @@ html body .ds-lions-mane .study {
 }
 html body .ds-lions-mane .study:hover { border-color: #0A0A0A; }
 html body .ds-lions-mane .study-meta {
-  font-family: "Aeonik Condensed", "Aeonik", sans-serif !important;
   font-size: 12px !important; text-transform: uppercase !important;
   letter-spacing: 0.12em !important; color: #555 !important;
   font-weight: 700 !important; margin: 0 0 12px 0 !important;
@@ -175,7 +193,7 @@ html body .ds-lions-mane .study-arrow {
   font-size: 15px !important; color: #0A0A0A !important; font-weight: 600 !important;
 }
 
-/* Final CTA */
+/* === FINAL CTA === */
 html body .ds-lions-mane .cta-wrap {
   text-align: center; padding: 80px 32px; border-radius: 18px; margin-bottom: 64px;
   background: linear-gradient(135deg, #FFD9DC 0%, #F8B7C5 50%, #F5A0B8 100%);
@@ -183,16 +201,18 @@ html body .ds-lions-mane .cta-wrap {
 html body .ds-lions-mane .cta-wrap p {
   font-size: 18px !important; color: #1f1f1f !important; margin: 0 0 32px 0 !important;
 }
+/* Button: lighter Aeonik weight */
 html body .ds-lions-mane .btn {
   display: inline-flex !important; align-items: center !important; gap: 10px !important;
   background: #0A0A0A !important; color: #fff !important;
   text-decoration: none !important; padding: 18px 36px !important;
   border-radius: 999px !important; font-size: 16px !important;
-  font-weight: 600 !important;
+  font-weight: 400 !important; font-family: "Aeonik", sans-serif !important;
+  letter-spacing: 0 !important;
 }
 html body .ds-lions-mane .btn:hover { background: #000 !important; }
 
-/* Ingredient nav */
+/* === INGREDIENT NAV === */
 html body .ds-lions-mane .ingredient-nav {
   display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
 }
@@ -207,17 +227,18 @@ html body .ds-lions-mane .ingredient-nav a:hover {
   background: #fff !important; border-color: #0A0A0A !important; color: #0A0A0A !important;
 }
 
+/* === MOBILE === */
 @media (max-width: 820px) {
   html body .ds-lions-mane .wrap { padding: 56px 22px; }
   html body .ds-lions-mane section { margin-bottom: 80px; }
   html body .ds-lions-mane .hero,
   html body .ds-lions-mane .split { grid-template-columns: 1fr; gap: 32px; }
-  html body .ds-lions-mane .hero-title { font-size: 48px !important; }
+  html body .ds-lions-mane .hero-title { font-size: 44px !important; }
   html body .ds-lions-mane .mechanism h2,
   html body .ds-lions-mane .learn h2,
-  html body .ds-lions-mane .cta-wrap h2 { font-size: 32px !important; }
+  html body .ds-lions-mane .cta-wrap h2 { font-size: 30px !important; }
   html body .ds-lions-mane .split h2,
-  html body .ds-lions-mane .dose h2 { font-size: 28px !important; }
+  html body .ds-lions-mane .dose h2 { font-size: 26px !important; }
   html body .ds-lions-mane .mechanism-card { padding: 32px 24px; }
   html body .ds-lions-mane .dose-table { grid-template-columns: 1fr; }
   html body .ds-lions-mane .dose-cell { border-right: none; border-bottom: 1px solid #E5E5E5; }

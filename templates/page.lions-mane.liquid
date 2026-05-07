@@ -1,0 +1,208 @@
+{{ 'lions-mane.css' | asset_url | stylesheet_tag }}
+
+{%- comment -%} Open Graph + Twitter + JSON-LD for Lion's Mane page {%- endcomment -%}
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DayShift">
+<meta property="og:title" content="Lion's Mane Mushroom: Benefits, Dosage & Research">
+<meta property="og:description" content="How Lion's Mane (Hericium erinaceus) supports focus, memory, and long-term brain health. 2,500 mg per packet, 8:1 concentrated fruiting body extract.">
+<meta property="og:url" content="https://drinkdayshift.com/pages/lions-mane">
+<meta property="og:image" content="{{ 'lions-mane-hero.png' | asset_url }}">
+<meta property="og:image:alt" content="Lion's Mane mushroom close-up">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lion's Mane Mushroom: Benefits, Dosage & Research | DayShift">
+<meta name="twitter:description" content="How Lion's Mane (Hericium erinaceus) supports focus, memory, and long-term brain health. 2,500 mg per packet.">
+<meta name="twitter:image" content="{{ 'lions-mane-hero.png' | asset_url }}">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Lion's Mane Mushroom: Benefits, Dosage & Research",
+  "description": "How Lion's Mane (Hericium erinaceus) supports focus, memory, and long-term brain health. Includes mechanism of action, dosing comparison, and peer-reviewed research.",
+  "image": "{{ 'lions-mane-hero.png' | asset_url }}",
+  "author": { "@type": "Organization", "name": "DayShift" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DayShift",
+    "logo": { "@type": "ImageObject", "url": "{{ shop.url }}{{ shop.brand.logo | image_url }}" }
+  },
+  "mainEntityOfPage": "{{ shop.url }}/pages/lions-mane",
+  "about": {
+    "@type": "Substance",
+    "name": "Lion's Mane",
+    "alternateName": "Hericium erinaceus"
+  },
+  "citation": [
+    { "@type": "ScholarlyArticle", "name": "Acute and chronic effects of Lion's Mane on cognition in healthy adults", "datePublished": "2023", "publisher": "Nutrients", "url": "https://pubmed.ncbi.nlm.nih.gov/37999903/" },
+    { "@type": "ScholarlyArticle", "name": "Improving effects of Lion's Mane on mild cognitive impairment", "datePublished": "2009", "publisher": "Phytotherapy Research", "url": "https://pubmed.ncbi.nlm.nih.gov/18844328/" },
+    { "@type": "ScholarlyArticle", "name": "Reduction of depression and anxiety", "datePublished": "2010", "publisher": "Biomedical Research", "url": "https://pubmed.ncbi.nlm.nih.gov/20834180/" }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "DayShift", "item": "{{ shop.url }}/" },
+    { "@type": "ListItem", "position": 2, "name": "Ingredients", "item": "{{ shop.url }}/pages/ingredients" },
+    { "@type": "ListItem", "position": 3, "name": "Lion's Mane", "item": "{{ shop.url }}/pages/lions-mane" }
+  ]
+}
+</script>
+
+<div class="ds-lions-mane">
+  <div class="wrap">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-body">
+        <h1 class="hero-title">Lion's Mane</h1>
+        <p class="hero-eyebrow">The Focus Mushroom</p>
+        <p>Lion's Mane (<em>Hericium erinaceus</em>) has been used in traditional Chinese and Japanese practices for centuries, valued for its ability to support focus and mental clarity. It was often consumed as a tea, including by monks during long periods of meditation.</p>
+        <p>Today, it's one of the most widely studied functional mushrooms for cognitive performance, connecting centuries of use with modern research on brain health.</p>
+      </div>
+      <img class="hero-image" src="{{ 'lions-mane-hero.png' | asset_url }}" alt="Lion's Mane mushroom close-up" />
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="mechanism">
+      <h2>How Lion's Mane Works</h2>
+      <p class="mechanism-intro">Most nootropics give you a temporary lift. Lion's Mane works at a structural level, supporting the systems that determine how well your brain and body perform over time.</p>
+
+      <div class="mechanism-card">
+        <div class="mechanism-points">
+          <div class="point">
+            <h4><span class="point-num">1.</span>Supports Nerve Growth Factor (NGF).</h4>
+            <p>Lion's Mane is one of the few natural compounds known to support the body's production of Nerve Growth Factor, the protein your brain uses to keep neurons growing, connected, and healthy. Its active compounds, hericenones and erinacines, have been studied for this effect for decades.</p>
+          </div>
+          <div class="point">
+            <h4><span class="point-num">2.</span>Promotes neurogenesis and neural plasticity.</h4>
+            <p>Lion's Mane plays a role in the formation of new neurons and the connections between them. Together, these are the biological foundation of how your brain learns, adapts, and stores memory.</p>
+          </div>
+          <div class="point">
+            <h4><span class="point-num">3.</span>Helps combat oxidative stress.</h4>
+            <p>The fruiting body contains antioxidant compounds that help neutralize the kind of daily free-radical damage that accumulates in nerve cells and contributes to cognitive aging.</p>
+          </div>
+          <div class="point">
+            <h4><span class="point-num">4.</span>Nourishes the gut-brain axis.</h4>
+            <p>Lion's Mane acts as a prebiotic for beneficial gut bacteria, which produce neurotransmitters and short-chain fatty acids that influence mood and cognition. What's good for your gut is often good for your brain.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="mechanism-footnote">Summarized from published research on <em>Hericium erinaceus</em> and neurological function.</p>
+    </section>
+
+    <!-- WHY WE USE IT -->
+    <section class="split">
+      <img class="split-image" src="{{ 'lions-mane-cluster.png' | asset_url }}" alt="Lion's Mane fruiting body cluster" />
+      <div>
+        <h2>Why We Use It</h2>
+        <p>Lion's Mane is the most studied nootropic mushroom, with clinical research showing meaningful improvements in cognitive function in adults using it daily for 8 to 16 weeks. We use an 8:1 concentrated fruiting body extract, not mycelium grown on grain, because the active compounds (hericenones and erinacines) live in the fruiting body of the mushroom.</p>
+
+        <div class="focus-block">
+          <h3>Key Focus Areas</h3>
+          <ul class="focus-list">
+            <li>Cognitive Performance</li>
+            <li>Memory &amp; Recall</li>
+            <li>Long-Term Brain Health</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOSE -->
+    <section class="dose">
+      <h2>How Our Dose Stacks Up.</h2>
+      <p class="dose-sub">A clinical-grade dose, delivered daily.</p>
+      <div class="dose-table">
+        <div class="dose-cell">
+          <div class="dose-cell-label">Clinical Studies</div>
+          <div class="dose-cell-value">1,000 to 3,000 mg</div>
+        </div>
+        <div class="dose-cell">
+          <div class="dose-cell-label">Typical Supplement</div>
+          <div class="dose-cell-value">500 mg</div>
+        </div>
+        <div class="dose-cell highlight">
+          <div class="dose-cell-label">DayShift</div>
+          <div class="dose-cell-value">2,500 mg</div>
+        </div>
+      </div>
+      <p class="dose-note">DayShift dose is a 2,500 mg equivalent from an 8:1 concentrated fruiting body extract.</p>
+    </section>
+
+    <!-- LEARN MORE -->
+    <section class="learn">
+      <h2>Want to Learn More?</h2>
+      <p class="learn-intro">Explore the peer-reviewed research on Lion's Mane (<em>Hericium erinaceus</em>) and cognitive function.</p>
+
+      <div class="study-grid">
+
+        <a class="study" href="https://pubmed.ncbi.nlm.nih.gov/37999903/" target="_blank" rel="noopener">
+          <div class="study-meta">RCT &middot; Nutrients, 2023</div>
+          <div class="study-title">Acute and chronic effects of Lion's Mane on cognition in healthy adults</div>
+          <p class="study-desc">A single serving of Lion's Mane was associated with improved mental processing speed in healthy adults within an hour, with continued effects over 28 days.</p>
+          <span class="study-arrow">Read on PubMed <span class="arrow">&rarr;</span></span>
+        </a>
+
+        <a class="study" href="https://pubmed.ncbi.nlm.nih.gov/18844328/" target="_blank" rel="noopener">
+          <div class="study-meta">RCT &middot; Phytotherapy Research, 2009</div>
+          <div class="study-title">Improving effects of Lion's Mane on mild cognitive impairment</div>
+          <p class="study-desc">Mori et al. Adults taking Lion's Mane daily for 16 weeks scored higher on cognitive function tests than the placebo group, with improvements building over time.</p>
+          <span class="study-arrow">Read on PubMed <span class="arrow">&rarr;</span></span>
+        </a>
+
+        <a class="study" href="https://pubmed.ncbi.nlm.nih.gov/20834180/" target="_blank" rel="noopener">
+          <div class="study-meta">RCT &middot; Biomedical Research, 2010</div>
+          <div class="study-title">Lion's Mane and reduction of depression and anxiety</div>
+          <p class="study-desc">Nagano et al. Daily Lion's Mane for four weeks was associated with reductions in self-reported anxiety and irritability versus placebo, suggesting benefits beyond cognition.</p>
+          <span class="study-arrow">Read on PubMed <span class="arrow">&rarr;</span></span>
+        </a>
+
+        <a class="study" href="https://pubmed.ncbi.nlm.nih.gov/23735479/" target="_blank" rel="noopener">
+          <div class="study-meta">Review &middot; Int. J. Med. Mushrooms, 2013</div>
+          <div class="study-title">Neurotrophic properties of Lion's Mane compounds</div>
+          <p class="study-desc">A review of how hericenones and erinacines, the bioactive compounds in Lion's Mane, support Nerve Growth Factor activity and neuronal health.</p>
+          <span class="study-arrow">Read on PubMed <span class="arrow">&rarr;</span></span>
+        </a>
+
+        <a class="study" href="https://pubmed.ncbi.nlm.nih.gov/31413233/" target="_blank" rel="noopener">
+          <div class="study-meta">Review &middot; Biomolecules, 2019</div>
+          <div class="study-title">Bioactive compounds in Lion's Mane and brain health</div>
+          <p class="study-desc">An overview of the neuroprotective and cognitive-supporting compounds in Lion's Mane, including their roles in neurogenesis, NGF, and oxidative balance.</p>
+          <span class="study-arrow">Read on PubMed <span class="arrow">&rarr;</span></span>
+        </a>
+
+        <a class="study" href="https://pubmed.ncbi.nlm.nih.gov/33549965/" target="_blank" rel="noopener">
+          <div class="study-meta">Review &middot; Antioxidants, 2021</div>
+          <div class="study-title">Lion's Mane, antioxidant activity, and the gut-brain axis</div>
+          <p class="study-desc">A summary of how Lion's Mane polysaccharides support antioxidant pathways and influence the gut-brain axis through prebiotic activity.</p>
+          <span class="study-arrow">Read on PubMed <span class="arrow">&rarr;</span></span>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <div class="cta-wrap">
+      <h2>Make The Shift Today.</h2>
+      <p>2,500 mg of Lion's Mane and clinical doses of seven other ingredients in every packet.</p>
+      <a class="btn" href="/products">Try DayShift <span class="arrow">&rarr;</span></a>
+    </div>
+
+    <!-- INGREDIENT NAV -->
+    <nav class="ingredient-nav" aria-label="Other ingredient pages">
+      <a href="/pages/cordyceps">Cordyceps</a>
+      <a href="/pages/caffeine">Caffeine</a>
+      <a href="/pages/l-theanine">L-Theanine</a>
+      <a href="/pages/alpha-gpc">Alpha-GPC</a>
+      <a href="/pages/nalt">NALT</a>
+      <a href="/pages/rhodiola">Rhodiola Rosea</a>
+      <a href="/pages/panax-ginseng">Panax Ginseng</a>
+    </nav>
+
+  </div>
+</div>

@@ -262,4 +262,49 @@
   .ds-lions-mane .dose-cell:last-child { border-bottom: none; }
   .ds-lions-mane .study-grid { grid-template-columns: 1fr; }
   .ds-lions-mane .cta-wrap { padding: 48px 22px; }
+
+/* ============================================
+   OVERRIDES — beats theme's global body{font-weight:normal !important}
+   Scoped to .ds-lions-mane only.
+   ============================================ */
+
+.ds-lions-mane,
+.ds-lions-mane *,
+.ds-lions-mane *::before,
+.ds-lions-mane *::after {
+  font-family: "Aeonik", -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif !important;
+}
+
+.ds-lions-mane .study-meta,
+.ds-lions-mane .mechanism-eyebrow,
+.ds-lions-mane .dose-cell-label,
+.ds-lions-mane .focus-block h3 {
+  font-family: "Aeonik Condensed", "Aeonik", -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+.ds-lions-mane h1,
+.ds-lions-mane h2,
+.ds-lions-mane h3,
+.ds-lions-mane h4,
+.ds-lions-mane strong,
+.ds-lions-mane b { font-weight: 700 !important; }
+
+.ds-lions-mane .hero-title { font-weight: 800 !important; }
+.ds-lions-mane .hero-eyebrow { font-weight: 700 !important; font-style: italic !important; }
+.ds-lions-mane .point h4,
+.ds-lions-mane .point-num,
+.ds-lions-mane .study-title,
+.ds-lions-mane .focus-block h3,
+.ds-lions-mane .mechanism-eyebrow,
+.ds-lions-mane .study-meta { font-weight: 700 !important; }
+.ds-lions-mane .dose-cell-label { font-weight: 600 !important; }
+.ds-lions-mane .dose-cell-value { font-weight: 600 !important; }
+.ds-lions-mane .dose-cell.highlight .dose-cell-label { font-weight: 700 !important; }
+.ds-lions-mane .dose-cell.highlight .dose-cell-value { font-weight: 800 !important; }
+.ds-lions-mane .btn { font-weight: 600 !important; }
+.ds-lions-mane .ingredient-nav a { font-weight: 500 !important; }
+.ds-lions-mane .study-arrow { font-weight: 600 !important; }
+.ds-lions-mane p { font-weight: 400 !important; }
+.ds-lions-mane em,
+.ds-lions-mane i { font-style: italic !important; }
 }

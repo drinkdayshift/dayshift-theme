@@ -1,4 +1,4 @@
-{%- comment -%} Lion's Mane — fully self-contained ingredient page {%- endcomment -%}
+{%- comment -%} Lion's Mane — clean rebuild with px sizes {%- endcomment -%}
 
 <style>
 @font-face { font-family: "Aeonik"; src: url("{{ 'aeonik-regular.woff2' | file_url }}") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
@@ -8,194 +8,25 @@
 @font-face { font-family: "Aeonik Condensed"; src: url("{{ 'aeonik-condensed-regular.woff2' | file_url }}") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
 @font-face { font-family: "Aeonik Condensed"; src: url("{{ 'aeonik-condensed-bold.woff2' | file_url }}") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
 
-.ds-lions-mane { --ink:#0A0A0A; --ink-soft:#1f1f1f; --muted:#555; --line:#E5E5E5; --bg:#fff; --bg-soft:#F5F5F4; --purple-soft:#EDE5FF; --radius:18px; --max:1100px; background:var(--bg); }
-.ds-lions-mane, .ds-lions-mane *, .ds-lions-mane *::before, .ds-lions-mane *::after { font-family: "Aeonik", -apple-system, BlinkMacSystemFont, sans-serif !important; box-sizing: border-box; }
-.ds-lions-mane .study-meta, .ds-lions-mane .mechanism-eyebrow, .ds-lions-mane .dose-cell-label, .ds-lions-mane .focus-block h3 { font-family: "Aeonik Condensed", "Aeonik", sans-serif !important; }
-.ds-lions-mane h1, .ds-lions-mane h2, .ds-lions-mane h3, .ds-lions-mane h4 { margin:0; font-weight:700 !important; letter-spacing:-0.01em; color:var(--ink); }
-.ds-lions-mane p { color: var(--ink-soft); margin: 0 0 16px 0; font-weight: 400 !important; }
-.ds-lions-mane a { color: var(--ink); }
-.ds-lions-mane .wrap { max-width: var(--max); margin: 0 auto; padding: 72px 32px; line-height: 1.55; color: var(--ink); }
-.ds-lions-mane section { margin-bottom: 112px; }
-.ds-lions-mane .btn { display:inline-flex; align-items:center; gap:10px; background:var(--ink); color:#fff !important; text-decoration:none; padding:14px 28px; border-radius:999px; font-weight:600 !important; font-size:0.95rem; }
-.ds-lions-mane .btn:hover { background:#000; }
-.ds-lions-mane .hero { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
-.ds-lions-mane .hero-eyebrow { font-style: italic !important; font-weight: 700 !important; color: var(--ink); margin: 0 0 20px 0; font-size: 1.05rem; }
-.ds-lions-mane .hero-title { font-size: 3.4rem !important; font-weight: 800 !important; text-transform: uppercase; letter-spacing: -0.015em; line-height: 1; margin: 0 0 14px 0; }
-.ds-lions-mane .hero-body p { font-size: 1rem; line-height: 1.65; }
-.ds-lions-mane .hero-image { width: 100%; height: auto; max-height: 540px; border-radius: var(--radius); object-fit: contain; background: #fff; }
-.ds-lions-mane .mechanism { text-align: center; }
-.ds-lions-mane .mechanism h2 { text-transform: uppercase; font-size: 2rem !important; margin-bottom: 16px; }
-.ds-lions-mane .mechanism-intro { color: var(--muted); max-width: 620px; margin: 0 auto 40px; }
-.ds-lions-mane .mechanism-card { background: var(--purple-soft); border-radius: var(--radius); padding: 56px; text-align: left; }
-.ds-lions-mane .mechanism-points { display: grid; gap: 24px; }
-.ds-lions-mane .point-num { display: inline-block; color: var(--ink); font-weight: 700 !important; margin-right: 4px; }
-.ds-lions-mane .point h4 { font-size: 1rem; margin: 0 0 4px 0; font-weight: 700 !important; }
-.ds-lions-mane .point p { margin: 0; color: var(--ink-soft); font-size: 0.97rem; line-height: 1.6; }
-.ds-lions-mane .mechanism-footnote { font-size: 0.82rem; color: var(--muted); margin: 32px auto 0; text-align: center; }
-.ds-lions-mane .mechanism-footnote em { color: var(--ink); font-style: italic !important; }
-.ds-lions-mane .split { display: grid; grid-template-columns: 1fr 1.1fr; gap: 64px; align-items: center; }
-.ds-lions-mane .split-image { width: 100%; height: auto; max-height: 480px; object-fit: contain; border-radius: var(--radius); background: #fff; }
-.ds-lions-mane .split h2 { text-transform: uppercase; font-size: 1.7rem !important; margin-bottom: 16px; }
-.ds-lions-mane .focus-block { margin-top: 28px; }
-.ds-lions-mane .focus-block h3 { text-transform: uppercase; font-size: 0.95rem; margin-bottom: 14px; font-weight: 700 !important; letter-spacing: 0.04em; }
-.ds-lions-mane .focus-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
-.ds-lions-mane .focus-list li { display: flex; align-items: center; gap: 12px; color: var(--ink-soft); font-size: 1rem; }
-.ds-lions-mane .focus-list li::before { content: ""; width: 18px; height: 18px; flex: 0 0 18px; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%230A0A0A' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'><polyline points='4 11 8 15 16 5'/></svg>"); background-size: contain; background-repeat: no-repeat; }
-.ds-lions-mane .dose h2 { text-transform: uppercase; font-size: 1.7rem !important; margin-bottom: 8px; }
-.ds-lions-mane .dose-sub { color: var(--muted); margin-bottom: 32px; }
-.ds-lions-mane .dose-table { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
-.ds-lions-mane .dose-cell { padding: 32px 28px; border-right: 1px solid var(--line); }
-.ds-lions-mane .dose-cell:last-child { border-right: none; }
-.ds-lions-mane .dose-cell-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); font-weight: 600 !important; margin-bottom: 12px; }
-.ds-lions-mane .dose-cell-value { font-size: 1.4rem; font-weight: 600 !important; color: var(--ink); }
-.ds-lions-mane .dose-cell.highlight { background: #FFD9B3; }
-.ds-lions-mane .dose-cell.highlight .dose-cell-label { color: var(--ink); font-weight: 700 !important; opacity: 0.75; }
-.ds-lions-mane .dose-cell.highlight .dose-cell-value { font-weight: 800 !important; font-size: 1.7rem; }
-.ds-lions-mane .dose-note { font-size: 0.82rem; color: var(--muted); margin-top: 16px; }
-.ds-lions-mane .learn { text-align: center; margin-bottom: 80px; }
-.ds-lions-mane .learn h2 { text-transform: uppercase; font-size: 2rem !important; margin-bottom: 16px; }
-.ds-lions-mane .learn-intro { color: var(--muted); max-width: 600px; margin: 0 auto 40px; }
-.ds-lions-mane .study-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; text-align: left; }
-.ds-lions-mane .study { display: block; padding: 26px 28px; border: 1px solid var(--line); border-radius: 14px; text-decoration: none; background: #fff; }
-.ds-lions-mane .study:hover { border-color: var(--ink); }
-.ds-lions-mane .study-meta { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); font-weight: 700 !important; margin-bottom: 10px; }
-.ds-lions-mane .study-title { font-size: 1rem; font-weight: 700 !important; color: var(--ink); margin-bottom: 8px; line-height: 1.4; }
-.ds-lions-mane .study-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.55; margin: 0 0 14px 0; }
-.ds-lions-mane .study-arrow { display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--ink); font-weight: 600 !important; }
-.ds-lions-mane .cta-wrap { text-align: center; padding: 72px 32px; border-radius: var(--radius); margin-bottom: 64px; background: linear-gradient(135deg, #FFD9DC 0%, #F8B7C5 50%, #F5A0B8 100%); }
-.ds-lions-mane .cta-wrap h2 { text-transform: uppercase; font-size: 2rem !important; margin-bottom: 12px; color: var(--ink); }
-.ds-lions-mane .cta-wrap p { color: var(--ink-soft); margin-bottom: 28px; }
-.ds-lions-mane .ingredient-nav { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 40px; }
-.ds-lions-mane .ingredient-nav a { display: inline-block; padding: 8px 16px; border-radius: 999px; background: var(--bg-soft); color: var(--ink-soft); text-decoration: none; font-size: 0.85rem; font-weight: 500 !important; }
-.ds-lions-mane .ingredient-nav a:hover { background: #fff; border: 1px solid var(--ink); color: var(--ink); }
-.ds-lions-mane em, .ds-lions-mane i { font-style: italic !important; }
-@media (max-width: 820px) {
-  .ds-lions-mane .wrap { padding: 56px 22px; }
-  .ds-lions-mane section { margin-bottom: 80px; }
-  .ds-lions-mane .hero, .ds-lions-mane .split { grid-template-columns: 1fr; gap: 32px; }
-  .ds-lions-mane .hero-title { font-size: 2.4rem !important; }
-  .ds-lions-mane .mechanism h2, .ds-lions-mane .learn h2, .ds-lions-mane .cta-wrap h2 { font-size: 1.6rem !important; }
-  .ds-lions-mane .mechanism-card { padding: 32px 24px; }
-  .ds-lions-mane .dose-table { grid-template-columns: 1fr; }
-  .ds-lions-mane .dose-cell { border-right: none; border-bottom: 1px solid var(--line); }
-  .ds-lions-mane .dose-cell:last-child { border-bottom: none; }
-  .ds-lions-mane .study-grid { grid-template-columns: 1fr; }
-  .ds-lions-mane .cta-wrap { padding: 48px 22px; }
-}
-.ds-lions-mane h1.hero-title {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  font-size: 3.4rem !important;
-  font-weight: 800 !important;
-  color: #0A0A0A !important;
-  text-transform: uppercase !important;
-  line-height: 1 !important;
-  margin: 0 0 14px 0 !important;
-}
-.ds-lions-mane p {
-  font-size: 1rem !important;
-}
-.ds-lions-mane .mechanism-intro {
-  font-size: 1rem !important;
-  line-height: 1.55 !important;
-}
-.ds-lions-mane .hero-body p {
-  font-size: 1rem !important;
-  line-height: 1.65 !important;
-}
-.ds-lions-mane .point p {
-  font-size: 0.97rem !important;
-  line-height: 1.6 !important;
-}
-.ds-lions-mane .study-desc {
-  font-size: 0.9rem !important;
-}/* === FINAL OVERRIDES — force visible black text + correct font sizes === */
-.ds-lions-mane,
-.ds-lions-mane h1,
-.ds-lions-mane h2,
-.ds-lions-mane h3,
-.ds-lions-mane h4,
-.ds-lions-mane p,
-.ds-lions-mane li,
-.ds-lions-mane span,
-.ds-lions-mane div,
-.ds-lions-mane a,
-.ds-lions-mane em,
-.ds-lions-mane strong {
-  color: #0A0A0A !important;
-}
-.ds-lions-mane h1.hero-title,
-.ds-lions-mane .mechanism h2,
-.ds-lions-mane .split h2,
-.ds-lions-mane .dose h2,
-.ds-lions-mane .learn h2,
-.ds-lions-mane .cta-wrap h2 {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  color: #0A0A0A !important;
-}
-
-/* Muted text (gray) */
-.ds-lions-mane .mechanism-intro,
-.ds-lions-mane .dose-sub,
-.ds-lions-mane .dose-note,
-.ds-lions-mane .learn-intro,
-.ds-lions-mane .mechanism-footnote,
-.ds-lions-mane .study-desc,
-.ds-lions-mane .study-meta,
-.ds-lions-mane .dose-cell-label {
-  color: #555 !important;
-}
-
-/* Font sizes (Dawn defaults p to 1.5rem - we need to override) */
-.ds-lions-mane p { font-size: 1rem !important; line-height: 1.55 !important; }
-.ds-lions-mane .hero-title { font-size: 3.4rem !important; line-height: 1 !important; }
-.ds-lions-mane .hero-eyebrow { font-size: 1.05rem !important; }
-.ds-lions-mane .hero-body p { font-size: 1rem !important; line-height: 1.65 !important; }
-.ds-lions-mane .mechanism h2,
-.ds-lions-mane .learn h2,
-.ds-lions-mane .cta-wrap h2 { font-size: 2rem !important; }
-.ds-lions-mane .split h2,
-.ds-lions-mane .dose h2 { font-size: 1.7rem !important; }
-.ds-lions-mane .mechanism-intro { font-size: 1rem !important; line-height: 1.55 !important; }
-.ds-lions-mane .point h4 { font-size: 1rem !important; }
-.ds-lions-mane .point p { font-size: 0.97rem !important; line-height: 1.6 !important; }
-.ds-lions-mane .focus-block h3 { font-size: 0.95rem !important; }
-.ds-lions-mane .focus-list li { font-size: 1rem !important; }
-.ds-lions-mane .dose-cell-label { font-size: 0.72rem !important; }
-.ds-lions-mane .dose-cell-value { font-size: 1.4rem !important; }
-.ds-lions-mane .dose-cell.highlight .dose-cell-value { font-size: 1.7rem !important; }
-.ds-lions-mane .dose-note { font-size: 0.82rem !important; }
-.ds-lions-mane .mechanism-footnote { font-size: 0.82rem !important; }
-.ds-lions-mane .learn-intro { font-size: 1rem !important; }
-.ds-lions-mane .study-meta { font-size: 0.7rem !important; }
-.ds-lions-mane .study-title { font-size: 1rem !important; }
-.ds-lions-mane .study-desc { font-size: 0.9rem !important; }
-.ds-lions-mane .study-arrow { font-size: 0.85rem !important; }
-.ds-lions-mane .ingredient-nav a { font-size: 0.85rem !important; }
-.ds-lions-mane .btn { font-size: 0.95rem !important; }
-.ds-lions-mane .cta-wrap p { font-size: 1rem !important; }
-
-/* Mechanism eyebrow opacity (was being inherited weirdly) */
-.ds-lions-mane .mechanism-eyebrow { color: #0A0A0A !important; opacity: 0.7; font-size: 0.72rem !important; }
-/* === NUCLEAR OVERRIDE: html body wrapper for max specificity === */
+/* Reset everything inside our scope */
 html body .ds-lions-mane,
 html body .ds-lions-mane *,
 html body .ds-lions-mane *::before,
 html body .ds-lions-mane *::after {
-  font-family: "Aeonik", -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif !important;
+  font-family: "Aeonik", -apple-system, BlinkMacSystemFont, sans-serif !important;
   color: #0A0A0A !important;
+  box-sizing: border-box !important;
+  font-style: normal;
 }
+html body .ds-lions-mane em,
+html body .ds-lions-mane i { font-style: italic !important; }
 
-html body .ds-lions-mane .study-meta,
-html body .ds-lions-mane .mechanism-eyebrow,
-html body .ds-lions-mane .dose-cell-label,
-html body .ds-lions-mane .focus-block h3 {
-  font-family: "Aeonik Condensed", "Aeonik", sans-serif !important;
-}
+/* Layout */
+html body .ds-lions-mane { background: #fff; }
+html body .ds-lions-mane .wrap { max-width: 1100px; margin: 0 auto; padding: 80px 32px; }
+html body .ds-lions-mane section { margin-bottom: 120px; }
 
+/* Headings — Aeonik Condensed Bold for the chunky look */
 html body .ds-lions-mane .hero-title,
 html body .ds-lions-mane .mechanism h2,
 html body .ds-lions-mane .split h2,
@@ -204,49 +35,201 @@ html body .ds-lions-mane .learn h2,
 html body .ds-lions-mane .cta-wrap h2 {
   font-family: "Aeonik Condensed", "Aeonik", sans-serif !important;
   font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.05 !important;
+  margin: 0 !important;
+  color: #0A0A0A !important;
 }
-
-/* Body text */
-html body .ds-lions-mane p,
-html body .ds-lions-mane li,
-html body .ds-lions-mane span,
-html body .ds-lions-mane a,
-html body .ds-lions-mane div { font-size: 1rem !important; line-height: 1.55 !important; color: #1f1f1f !important; }
-
-/* Specific font sizes */
-html body .ds-lions-mane .hero-title { font-size: 3.4rem !important; line-height: 1 !important; font-weight: 800 !important; color: #0A0A0A !important; }
+html body .ds-lions-mane .hero-title { font-size: 72px !important; margin-bottom: 14px !important; }
 html body .ds-lions-mane .mechanism h2,
 html body .ds-lions-mane .learn h2,
-html body .ds-lions-mane .cta-wrap h2 { font-size: 2.4rem !important; line-height: 1.1 !important; font-weight: 700 !important; color: #0A0A0A !important; }
+html body .ds-lions-mane .cta-wrap h2 { font-size: 44px !important; margin-bottom: 16px !important; }
 html body .ds-lions-mane .split h2,
-html body .ds-lions-mane .dose h2 { font-size: 2rem !important; line-height: 1.1 !important; font-weight: 700 !important; color: #0A0A0A !important; }
-html body .ds-lions-mane .hero-eyebrow { font-size: 1.05rem !important; font-style: italic !important; font-weight: 700 !important; }
-html body .ds-lions-mane .mechanism-intro { font-size: 1.05rem !important; line-height: 1.6 !important; color: #555 !important; }
-html body .ds-lions-mane .hero-body p { font-size: 1.05rem !important; line-height: 1.65 !important; }
-html body .ds-lions-mane .point h4 { font-size: 1.05rem !important; font-weight: 700 !important; color: #0A0A0A !important; }
-html body .ds-lions-mane .point p { font-size: 1rem !important; line-height: 1.6 !important; color: #1f1f1f !important; }
-html body .ds-lions-mane .focus-block h3 { font-size: 0.95rem !important; font-weight: 700 !important; letter-spacing: 0.04em !important; color: #0A0A0A !important; }
-html body .ds-lions-mane .focus-list li { font-size: 1.05rem !important; color: #1f1f1f !important; }
-html body .ds-lions-mane .dose-cell-label { font-size: 0.78rem !important; color: #555 !important; font-weight: 600 !important; letter-spacing: 0.12em !important; }
-html body .ds-lions-mane .dose-cell-value { font-size: 1.5rem !important; font-weight: 600 !important; color: #0A0A0A !important; }
-html body .ds-lions-mane .dose-cell.highlight .dose-cell-value { font-size: 1.8rem !important; font-weight: 800 !important; }
+html body .ds-lions-mane .dose h2 { font-size: 36px !important; margin-bottom: 16px !important; }
+
+/* Hero */
+html body .ds-lions-mane .hero { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+html body .ds-lions-mane .hero-eyebrow {
+  font-style: italic !important; font-weight: 700 !important;
+  font-size: 18px !important; margin: 0 0 24px 0 !important;
+}
+html body .ds-lions-mane .hero-body p {
+  font-size: 18px !important; line-height: 1.6 !important;
+  margin: 0 0 18px 0 !important; color: #1f1f1f !important;
+}
+html body .ds-lions-mane .hero-image {
+  width: 100%; height: auto; max-height: 540px;
+  border-radius: 18px; object-fit: contain; background: #fff;
+}
+
+/* Mechanism */
+html body .ds-lions-mane .mechanism { text-align: center; }
+html body .ds-lions-mane .mechanism-intro {
+  font-size: 18px !important; line-height: 1.6 !important;
+  color: #555 !important; max-width: 640px; margin: 0 auto 48px !important;
+}
+html body .ds-lions-mane .mechanism-card {
+  background: #EDE5FF; border-radius: 18px; padding: 56px; text-align: left;
+}
+html body .ds-lions-mane .mechanism-points { display: grid; gap: 28px; }
+html body .ds-lions-mane .point h4 {
+  font-size: 18px !important; font-weight: 700 !important;
+  margin: 0 0 6px 0 !important; color: #0A0A0A !important;
+}
+html body .ds-lions-mane .point-num { font-weight: 700 !important; margin-right: 4px; color: #0A0A0A !important; }
+html body .ds-lions-mane .point p {
+  font-size: 17px !important; line-height: 1.6 !important;
+  color: #1f1f1f !important; margin: 0 !important;
+}
+html body .ds-lions-mane .mechanism-footnote {
+  font-size: 14px !important; color: #555 !important;
+  margin: 32px auto 0 !important; text-align: center;
+}
+html body .ds-lions-mane .mechanism-footnote em { color: #0A0A0A !important; }
+
+/* Why We Use It */
+html body .ds-lions-mane .split { display: grid; grid-template-columns: 1fr 1.1fr; gap: 64px; align-items: center; }
+html body .ds-lions-mane .split-image {
+  width: 100%; height: auto; max-height: 480px;
+  object-fit: contain; border-radius: 18px; background: #fff;
+}
+html body .ds-lions-mane .split p {
+  font-size: 17px !important; line-height: 1.6 !important;
+  color: #1f1f1f !important; margin: 0 0 16px 0 !important;
+}
+html body .ds-lions-mane .focus-block { margin-top: 32px; }
+html body .ds-lions-mane .focus-block h3 {
+  font-family: "Aeonik Condensed", "Aeonik", sans-serif !important;
+  font-size: 14px !important; font-weight: 700 !important;
+  text-transform: uppercase !important; letter-spacing: 0.1em !important;
+  margin: 0 0 16px 0 !important; color: #0A0A0A !important;
+}
+html body .ds-lions-mane .focus-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+html body .ds-lions-mane .focus-list li {
+  display: flex; align-items: center; gap: 12px;
+  font-size: 17px !important; color: #1f1f1f !important;
+}
+html body .ds-lions-mane .focus-list li::before {
+  content: ""; width: 20px; height: 20px; flex: 0 0 20px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%230A0A0A' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'><polyline points='4 11 8 15 16 5'/></svg>");
+  background-size: contain; background-repeat: no-repeat;
+}
+
+/* Dose */
+html body .ds-lions-mane .dose-sub {
+  font-size: 17px !important; color: #555 !important;
+  margin: 0 0 32px 0 !important;
+}
+html body .ds-lions-mane .dose-table {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  border: 1px solid #E5E5E5; border-radius: 18px; overflow: hidden;
+}
+html body .ds-lions-mane .dose-cell { padding: 32px 28px; border-right: 1px solid #E5E5E5; }
+html body .ds-lions-mane .dose-cell:last-child { border-right: none; }
+html body .ds-lions-mane .dose-cell-label {
+  font-family: "Aeonik Condensed", "Aeonik", sans-serif !important;
+  font-size: 13px !important; text-transform: uppercase !important;
+  letter-spacing: 0.12em !important; color: #555 !important;
+  font-weight: 600 !important; margin: 0 0 14px 0 !important;
+}
+html body .ds-lions-mane .dose-cell-value {
+  font-size: 24px !important; font-weight: 600 !important; color: #0A0A0A !important;
+}
+html body .ds-lions-mane .dose-cell.highlight { background: #FFD9B3; }
 html body .ds-lions-mane .dose-cell.highlight .dose-cell-label { color: #0A0A0A !important; font-weight: 700 !important; }
-html body .ds-lions-mane .dose-note { font-size: 0.85rem !important; color: #555 !important; }
-html body .ds-lions-mane .dose-sub { font-size: 1rem !important; color: #555 !important; }
-html body .ds-lions-mane .mechanism-footnote { font-size: 0.85rem !important; color: #555 !important; }
-html body .ds-lions-mane .learn-intro { font-size: 1.05rem !important; color: #555 !important; }
-html body .ds-lions-mane .study-meta { font-size: 0.75rem !important; color: #555 !important; font-weight: 700 !important; letter-spacing: 0.12em !important; }
-html body .ds-lions-mane .study-title { font-size: 1.05rem !important; font-weight: 700 !important; color: #0A0A0A !important; line-height: 1.4 !important; }
-html body .ds-lions-mane .study-desc { font-size: 0.95rem !important; color: #555 !important; line-height: 1.55 !important; }
-html body .ds-lions-mane .study-arrow { font-size: 0.9rem !important; font-weight: 600 !important; color: #0A0A0A !important; }
-html body .ds-lions-mane .cta-wrap p { font-size: 1.05rem !important; color: #1f1f1f !important; }
-html body .ds-lions-mane .btn { font-size: 0.95rem !important; font-weight: 600 !important; color: #ffffff !important; background: #0A0A0A !important; padding: 16px 32px !important; }
-html body .ds-lions-mane .ingredient-nav a { font-size: 0.9rem !important; font-weight: 500 !important; color: #1f1f1f !important; padding: 10px 18px !important; }
-html body .ds-lions-mane .ingredient-nav a:hover { color: #0A0A0A !important; }
+html body .ds-lions-mane .dose-cell.highlight .dose-cell-value { font-size: 28px !important; font-weight: 800 !important; }
+html body .ds-lions-mane .dose-note {
+  font-size: 14px !important; color: #555 !important; margin-top: 16px !important;
+}
+
+/* Studies */
+html body .ds-lions-mane .learn { text-align: center; margin-bottom: 96px !important; }
+html body .ds-lions-mane .learn-intro {
+  font-size: 18px !important; color: #555 !important;
+  max-width: 640px; margin: 0 auto 48px !important;
+}
+html body .ds-lions-mane .study-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; text-align: left;
+}
+html body .ds-lions-mane .study {
+  display: block; padding: 28px; border: 1px solid #E5E5E5;
+  border-radius: 14px; text-decoration: none; background: #fff;
+}
+html body .ds-lions-mane .study:hover { border-color: #0A0A0A; }
+html body .ds-lions-mane .study-meta {
+  font-family: "Aeonik Condensed", "Aeonik", sans-serif !important;
+  font-size: 12px !important; text-transform: uppercase !important;
+  letter-spacing: 0.12em !important; color: #555 !important;
+  font-weight: 700 !important; margin: 0 0 12px 0 !important;
+}
+html body .ds-lions-mane .study-title {
+  font-size: 18px !important; font-weight: 700 !important;
+  color: #0A0A0A !important; margin: 0 0 10px 0 !important; line-height: 1.4 !important;
+}
+html body .ds-lions-mane .study-desc {
+  font-size: 15px !important; color: #555 !important;
+  line-height: 1.55 !important; margin: 0 0 16px 0 !important;
+}
+html body .ds-lions-mane .study-arrow {
+  font-size: 15px !important; color: #0A0A0A !important; font-weight: 600 !important;
+}
+
+/* Final CTA */
+html body .ds-lions-mane .cta-wrap {
+  text-align: center; padding: 80px 32px; border-radius: 18px; margin-bottom: 64px;
+  background: linear-gradient(135deg, #FFD9DC 0%, #F8B7C5 50%, #F5A0B8 100%);
+}
+html body .ds-lions-mane .cta-wrap p {
+  font-size: 18px !important; color: #1f1f1f !important; margin: 0 0 32px 0 !important;
+}
+html body .ds-lions-mane .btn {
+  display: inline-flex !important; align-items: center !important; gap: 10px !important;
+  background: #0A0A0A !important; color: #fff !important;
+  text-decoration: none !important; padding: 18px 36px !important;
+  border-radius: 999px !important; font-size: 16px !important;
+  font-weight: 600 !important;
+}
+html body .ds-lions-mane .btn:hover { background: #000 !important; }
+
+/* Ingredient nav */
+html body .ds-lions-mane .ingredient-nav {
+  display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
+}
+html body .ds-lions-mane .ingredient-nav a {
+  display: inline-block !important; padding: 12px 22px !important;
+  border-radius: 999px !important; background: #F5F5F4 !important;
+  color: #1f1f1f !important; text-decoration: none !important;
+  font-size: 15px !important; font-weight: 500 !important;
+  border: 1px solid transparent !important;
+}
+html body .ds-lions-mane .ingredient-nav a:hover {
+  background: #fff !important; border-color: #0A0A0A !important; color: #0A0A0A !important;
+}
+
+@media (max-width: 820px) {
+  html body .ds-lions-mane .wrap { padding: 56px 22px; }
+  html body .ds-lions-mane section { margin-bottom: 80px; }
+  html body .ds-lions-mane .hero,
+  html body .ds-lions-mane .split { grid-template-columns: 1fr; gap: 32px; }
+  html body .ds-lions-mane .hero-title { font-size: 48px !important; }
+  html body .ds-lions-mane .mechanism h2,
+  html body .ds-lions-mane .learn h2,
+  html body .ds-lions-mane .cta-wrap h2 { font-size: 32px !important; }
+  html body .ds-lions-mane .split h2,
+  html body .ds-lions-mane .dose h2 { font-size: 28px !important; }
+  html body .ds-lions-mane .mechanism-card { padding: 32px 24px; }
+  html body .ds-lions-mane .dose-table { grid-template-columns: 1fr; }
+  html body .ds-lions-mane .dose-cell { border-right: none; border-bottom: 1px solid #E5E5E5; }
+  html body .ds-lions-mane .dose-cell:last-child { border-bottom: none; }
+  html body .ds-lions-mane .study-grid { grid-template-columns: 1fr; }
+  html body .ds-lions-mane .cta-wrap { padding: 56px 22px; }
+}
 </style>
 
 <div class="ds-lions-mane">
   <div class="wrap">
+
     <section class="hero">
       <div class="hero-body">
         <h1 class="hero-title">Lion's Mane</h1>
@@ -326,5 +309,6 @@ html body .ds-lions-mane .ingredient-nav a:hover { color: #0A0A0A !important; }
       <a href="/pages/rhodiola">Rhodiola Rosea</a>
       <a href="/pages/panax-ginseng">Panax Ginseng</a>
     </nav>
+
   </div>
 </div>

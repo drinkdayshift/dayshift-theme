@@ -110,7 +110,76 @@
 }
 .ds-lions-mane .study-desc {
   font-size: 0.9rem !important;
+}/* === FINAL OVERRIDES — force visible black text + correct font sizes === */
+.ds-lions-mane,
+.ds-lions-mane h1,
+.ds-lions-mane h2,
+.ds-lions-mane h3,
+.ds-lions-mane h4,
+.ds-lions-mane p,
+.ds-lions-mane li,
+.ds-lions-mane span,
+.ds-lions-mane div,
+.ds-lions-mane a,
+.ds-lions-mane em,
+.ds-lions-mane strong {
+  color: #0A0A0A !important;
 }
+.ds-lions-mane h1.hero-title,
+.ds-lions-mane .mechanism h2,
+.ds-lions-mane .split h2,
+.ds-lions-mane .dose h2,
+.ds-lions-mane .learn h2,
+.ds-lions-mane .cta-wrap h2 {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  color: #0A0A0A !important;
+}
+
+/* Muted text (gray) */
+.ds-lions-mane .mechanism-intro,
+.ds-lions-mane .dose-sub,
+.ds-lions-mane .dose-note,
+.ds-lions-mane .learn-intro,
+.ds-lions-mane .mechanism-footnote,
+.ds-lions-mane .study-desc,
+.ds-lions-mane .study-meta,
+.ds-lions-mane .dose-cell-label {
+  color: #555 !important;
+}
+
+/* Font sizes (Dawn defaults p to 1.5rem - we need to override) */
+.ds-lions-mane p { font-size: 1rem !important; line-height: 1.55 !important; }
+.ds-lions-mane .hero-title { font-size: 3.4rem !important; line-height: 1 !important; }
+.ds-lions-mane .hero-eyebrow { font-size: 1.05rem !important; }
+.ds-lions-mane .hero-body p { font-size: 1rem !important; line-height: 1.65 !important; }
+.ds-lions-mane .mechanism h2,
+.ds-lions-mane .learn h2,
+.ds-lions-mane .cta-wrap h2 { font-size: 2rem !important; }
+.ds-lions-mane .split h2,
+.ds-lions-mane .dose h2 { font-size: 1.7rem !important; }
+.ds-lions-mane .mechanism-intro { font-size: 1rem !important; line-height: 1.55 !important; }
+.ds-lions-mane .point h4 { font-size: 1rem !important; }
+.ds-lions-mane .point p { font-size: 0.97rem !important; line-height: 1.6 !important; }
+.ds-lions-mane .focus-block h3 { font-size: 0.95rem !important; }
+.ds-lions-mane .focus-list li { font-size: 1rem !important; }
+.ds-lions-mane .dose-cell-label { font-size: 0.72rem !important; }
+.ds-lions-mane .dose-cell-value { font-size: 1.4rem !important; }
+.ds-lions-mane .dose-cell.highlight .dose-cell-value { font-size: 1.7rem !important; }
+.ds-lions-mane .dose-note { font-size: 0.82rem !important; }
+.ds-lions-mane .mechanism-footnote { font-size: 0.82rem !important; }
+.ds-lions-mane .learn-intro { font-size: 1rem !important; }
+.ds-lions-mane .study-meta { font-size: 0.7rem !important; }
+.ds-lions-mane .study-title { font-size: 1rem !important; }
+.ds-lions-mane .study-desc { font-size: 0.9rem !important; }
+.ds-lions-mane .study-arrow { font-size: 0.85rem !important; }
+.ds-lions-mane .ingredient-nav a { font-size: 0.85rem !important; }
+.ds-lions-mane .btn { font-size: 0.95rem !important; }
+.ds-lions-mane .cta-wrap p { font-size: 1rem !important; }
+
+/* Mechanism eyebrow opacity (was being inherited weirdly) */
+.ds-lions-mane .mechanism-eyebrow { color: #0A0A0A !important; opacity: 0.7; font-size: 0.72rem !important; }
 </style>
 
 <div class="ds-lions-mane">

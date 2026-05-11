@@ -3701,5 +3701,16 @@ html body .policies .rte a:hover {
   html body .policies .rte h3 { font-size: 17px !important; }
   html body .policies .rte p,
   html body .policies .rte li { font-size: 15px !important; }
+}/* === FORCE POLICY TITLE COLOR === */
+html body .policies,
+html body .policies * {
+  --color-foreground: 10, 10, 10 !important;
+}
+
+html body .policies h1,
+html body .policies h1.title,
+html body .policies .title,
+html body .policies .title--primary {
+  color: #0A0A0A !important;
 }
 }

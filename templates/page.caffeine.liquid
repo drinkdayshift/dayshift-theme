@@ -1,4 +1,156 @@
-{%- comment -%} Caffeine (Green Tea) — final clean version with pairing section {%- endcomment -%}
+{%- comment -%} Caffeine (Green Tea) — fully SEO + AI optimized {%- endcomment -%}
+
+{%- comment -%} === SEO META + STRUCTURED DATA === {%- endcomment -%}
+{%- assign seo_title = "Caffeine | Clean Caffeine From Green Tea | DayShift" -%}
+{%- assign seo_desc = "DayShift uses 120 mg of natural caffeine from green tea leaf extract, paired 2:1 with 240 mg of L-theanine for clean, smooth energy without the crash." -%}
+{%- assign seo_image = 'caffeine-hero.png' | asset_url -%}
+{%- assign seo_url = shop.url | append: '/pages/caffeine' -%}
+
+<meta name="description" content="{{ seo_desc }}">
+<link rel="canonical" href="{{ seo_url }}">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="{{ seo_title }}">
+<meta property="og:description" content="{{ seo_desc }}">
+<meta property="og:url" content="{{ seo_url }}">
+<meta property="og:image" content="{{ seo_image }}">
+<meta property="og:site_name" content="DayShift">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ seo_title }}">
+<meta name="twitter:description" content="{{ seo_desc }}">
+<meta name="twitter:image" content="{{ seo_image }}">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Caffeine: Clean Caffeine From Green Tea",
+  "description": "{{ seo_desc }}",
+  "image": "{{ seo_image }}",
+  "datePublished": "2026-05-11",
+  "dateModified": "{{ 'now' | date: '%Y-%m-%d' }}",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".hero-body p", ".mechanism-intro"]
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "DayShift",
+    "url": "{{ shop.url }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DayShift",
+    "logo": { "@type": "ImageObject", "url": "{{ 'dayshift-logo.png' | asset_url }}" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "{{ seo_url }}" },
+  "about": [
+    { "@type": "Thing", "name": "Caffeine" },
+    { "@type": "Thing", "name": "Green Tea Extract" },
+    { "@type": "Thing", "name": "L-Theanine" },
+    { "@type": "Thing", "name": "Nootropic" },
+    { "@type": "Thing", "name": "Adenosine" },
+    { "@type": "Thing", "name": "Focus" },
+    { "@type": "Thing", "name": "Alertness" }
+  ],
+  "citation": [
+    {
+      "@type": "ScholarlyArticle",
+      "name": "The effects of L-theanine, caffeine and their combination on cognition and mood",
+      "author": "Haskell CF, et al.",
+      "datePublished": "2008",
+      "isPartOf": { "@type": "Periodical", "name": "Biological Psychology" },
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18006208/"
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "The combined effects of L-theanine and caffeine on cognitive performance and mood",
+      "author": "Owen GN, et al.",
+      "datePublished": "2008",
+      "isPartOf": { "@type": "Periodical", "name": "Nutritional Neuroscience" },
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18681988/"
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Effects of theanine and theanine plus caffeine on cognition, sleep, and mood: a systematic review and meta-analysis",
+      "author": "Payne A, et al.",
+      "datePublished": "2025",
+      "isPartOf": { "@type": "Periodical", "name": "Nutrition Reviews" },
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40314930/"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ shop.url }}" },
+    { "@type": "ListItem", "position": 2, "name": "Ingredients", "item": "{{ shop.url }}/pages/ingredients" },
+    { "@type": "ListItem", "position": 3, "name": "Caffeine", "item": "{{ seo_url }}" }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much caffeine is in DayShift?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Each DayShift packet contains 120 mg of caffeine, sourced from green tea leaf extract. This is roughly the same as a strong cup of coffee and within the 100 to 200 mg dose range studied for cognitive performance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where does DayShift's caffeine come from?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DayShift's caffeine comes from green tea leaf extract, not synthetic caffeine. Green tea caffeine is naturally paired with antioxidants like EGCG and is studied to produce a smoother effect than synthetic caffeine."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does DayShift pair caffeine with L-theanine?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Caffeine on its own can produce jitters and a crash. L-theanine is an amino acid studied for promoting calm, focused brain states. Paired at a 2:1 ratio (L-theanine to caffeine), the combination has been studied for faster reaction times, better attention, and fewer of the over-stimulation effects of caffeine alone. DayShift uses 240 mg of L-theanine and 120 mg of caffeine, exactly the studied ratio."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does DayShift cause a caffeine crash?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DayShift is formulated specifically to reduce the crash associated with caffeine alone. The 2:1 L-theanine to caffeine pairing has been studied for smoother focus and energy, and DayShift also includes adaptogens and amino acids that support sustained mental performance beyond caffeine's window."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is DayShift caffeine natural or synthetic?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DayShift uses natural caffeine from green tea leaf extract. Most energy drinks and pre-workouts use synthetic caffeine, the cheapest form."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I drink coffee with DayShift?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DayShift is designed to give you a complete daily dose of caffeine paired with L-theanine and other nootropics. If you usually drink multiple cups of coffee, consider whether replacing one or more with DayShift makes sense for your total caffeine intake. As with any caffeinated product, monitor your individual tolerance."
+      }
+    }
+  ]
+}
+</script>
 
 <style>
 /* === FONTS === */
@@ -105,7 +257,7 @@ html body .ds-caffeine .mechanism-footnote {
 }
 html body .ds-caffeine .mechanism-footnote em { color: #0A0A0A !important; }
 
-/* === PAIRING SECTION (NEW) === */
+/* === PAIRING SECTION === */
 html body .ds-caffeine .pairing { text-align: center; }
 html body .ds-caffeine .pairing-eyebrow {
   font-size: 14px !important;
@@ -425,11 +577,11 @@ html body .ds-caffeine .btn:hover { background: #000 !important; }
     <section class="learn">
       <h2>Want to Learn More?</h2>
       <p class="learn-intro">Explore the peer-reviewed research on caffeine and the L-theanine pairing.</p>
-     <div class="study-grid">
-  <a class="study" href="https://pubmed.ncbi.nlm.nih.gov/18006208/" target="_blank" rel="noopener"><div class="study-meta">RCT &middot; Biological Psychology, 2008</div><div class="study-title">L-theanine, caffeine, and their combination on cognition and mood</div><p class="study-desc">Haskell et al. RCT comparing L-theanine alone, caffeine alone, and the combination. The combined group showed faster reaction time and improved sentence verification accuracy versus caffeine alone.</p><span class="study-arrow">Read on PubMed &rarr;</span></a>
-  <a class="study" href="https://pubmed.ncbi.nlm.nih.gov/18681988/" target="_blank" rel="noopener"><div class="study-meta">RCT &middot; Nutritional Neuroscience, 2008</div><div class="study-title">Combined effects of L-theanine and caffeine on cognitive performance and mood</div><p class="study-desc">Owen et al. The L-theanine and caffeine combination improved attention-switching speed and accuracy at 60 minutes and reduced susceptibility to distracting information.</p><span class="study-arrow">Read on PubMed &rarr;</span></a>
-  <a class="study" href="https://pubmed.ncbi.nlm.nih.gov/40314930/" target="_blank" rel="noopener"><div class="study-meta">Meta-Analysis &middot; Nutrition Reviews, 2025</div><div class="study-title">Effects of theanine and theanine plus caffeine on cognition, sleep, and mood</div><p class="study-desc">Payne et al. Systematic review and meta-analysis of 50 RCTs. Theanine plus caffeine produced small-to-moderate improvements in reaction time, attention, and digit vigilance accuracy.</p><span class="study-arrow">Read on PubMed &rarr;</span></a>
-</div>
+      <div class="study-grid">
+        <a class="study" href="https://pubmed.ncbi.nlm.nih.gov/18006208/" target="_blank" rel="noopener"><div class="study-meta">RCT &middot; Biological Psychology, 2008</div><div class="study-title">L-theanine, caffeine, and their combination on cognition and mood</div><p class="study-desc">Haskell et al. RCT comparing L-theanine alone, caffeine alone, and the combination. The combined group showed faster reaction time and improved sentence verification accuracy versus caffeine alone.</p><span class="study-arrow">Read on PubMed &rarr;</span></a>
+        <a class="study" href="https://pubmed.ncbi.nlm.nih.gov/18681988/" target="_blank" rel="noopener"><div class="study-meta">RCT &middot; Nutritional Neuroscience, 2008</div><div class="study-title">Combined effects of L-theanine and caffeine on cognitive performance and mood</div><p class="study-desc">Owen et al. The L-theanine and caffeine combination improved attention-switching speed and accuracy at 60 minutes and reduced susceptibility to distracting information.</p><span class="study-arrow">Read on PubMed &rarr;</span></a>
+        <a class="study" href="https://pubmed.ncbi.nlm.nih.gov/40314930/" target="_blank" rel="noopener"><div class="study-meta">Meta-Analysis &middot; Nutrition Reviews, 2025</div><div class="study-title">Effects of theanine and theanine plus caffeine on cognition, sleep, and mood</div><p class="study-desc">Payne et al. Systematic review and meta-analysis of 50 RCTs. Theanine plus caffeine produced small-to-moderate improvements in reaction time, attention, and digit vigilance accuracy.</p><span class="study-arrow">Read on PubMed &rarr;</span></a>
+      </div>
     </section>
 
     <nav class="ingredient-nav" aria-label="Other ingredient pages">

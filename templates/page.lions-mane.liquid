@@ -1,4 +1,156 @@
-{%- comment -%} Lion's Mane — final clean version with intro + Why We Use It updates + 4 studies {%- endcomment -%}
+{%- comment -%} Lion's Mane — fully SEO + AI optimized {%- endcomment -%}
+
+{%- comment -%} === SEO META + STRUCTURED DATA === {%- endcomment -%}
+{%- assign seo_title = "Lion's Mane | The Focus Mushroom | DayShift" -%}
+{%- assign seo_desc = "Lion's Mane (Hericium erinaceus) is one of the most studied functional mushrooms for cognitive performance. DayShift uses 2,500 mg of 8:1 concentrated fruiting body extract per packet." -%}
+{%- assign seo_image = 'lions-mane-hero.png' | asset_url -%}
+{%- assign seo_url = shop.url | append: '/pages/lions-mane' -%}
+
+<meta name="description" content="{{ seo_desc }}">
+<link rel="canonical" href="{{ seo_url }}">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="{{ seo_title }}">
+<meta property="og:description" content="{{ seo_desc }}">
+<meta property="og:url" content="{{ seo_url }}">
+<meta property="og:image" content="{{ seo_image }}">
+<meta property="og:site_name" content="DayShift">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ seo_title }}">
+<meta name="twitter:description" content="{{ seo_desc }}">
+<meta name="twitter:image" content="{{ seo_image }}">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Lion's Mane: The Focus Mushroom",
+  "description": "{{ seo_desc }}",
+  "image": "{{ seo_image }}",
+  "datePublished": "2026-05-11",
+  "dateModified": "{{ 'now' | date: '%Y-%m-%d' }}",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".hero-body p", ".mechanism-intro"]
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "DayShift",
+    "url": "{{ shop.url }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DayShift",
+    "logo": { "@type": "ImageObject", "url": "{{ 'dayshift-logo.png' | asset_url }}" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "{{ seo_url }}" },
+  "about": [
+    { "@type": "Thing", "name": "Lion's Mane" },
+    { "@type": "Thing", "name": "Hericium erinaceus" },
+    { "@type": "Thing", "name": "Functional Mushroom" },
+    { "@type": "Thing", "name": "Nootropic" },
+    { "@type": "Thing", "name": "Nerve Growth Factor" },
+    { "@type": "Thing", "name": "Cognitive Performance" },
+    { "@type": "Thing", "name": "Memory" }
+  ],
+  "citation": [
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Effects of Hericium erinaceus on Cognition, Stress, and Mood in Young Healthy Adults: A Pilot Trial",
+      "author": "Docherty S, et al.",
+      "datePublished": "2023",
+      "isPartOf": { "@type": "Periodical", "name": "Nutrients" },
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38004235/"
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Improving effects of the mushroom Yamabushitake (Hericium erinaceus) on mild cognitive impairment: a double-blind placebo-controlled clinical trial",
+      "author": "Mori K, et al.",
+      "datePublished": "2009",
+      "isPartOf": { "@type": "Periodical", "name": "Phytotherapy Research" },
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18844328/"
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Reduction of depression and anxiety by 4 weeks Hericium erinaceus intake",
+      "author": "Nagano M, et al.",
+      "datePublished": "2010",
+      "isPartOf": { "@type": "Periodical", "name": "Biomedical Research" },
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20834180/"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ shop.url }}" },
+    { "@type": "ListItem", "position": 2, "name": "Ingredients", "item": "{{ shop.url }}/pages/ingredients" },
+    { "@type": "ListItem", "position": 3, "name": "Lion's Mane", "item": "{{ seo_url }}" }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Lion's Mane?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lion's Mane (Hericium erinaceus) is a functional mushroom used for centuries in traditional Chinese and Japanese practices and one of the most studied mushrooms in modern cognitive research. Its active compounds, hericenones and erinacines, are studied for their role in supporting Nerve Growth Factor (NGF) and brain cell function."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does Lion's Mane do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lion's Mane is studied for its role in supporting Nerve Growth Factor (NGF), healthy brain cell function, memory, and long-term cognitive health. Its effects are most pronounced with consistent daily use over weeks and months."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much Lion's Mane is in DayShift?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DayShift contains the equivalent of 2,500 mg of Lion's Mane per packet, sourced from an 8:1 concentrated fruiting body extract. This is well within the 1,000 to 3,000 mg dose range used in clinical research."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between fruiting body and mycelium Lion's Mane?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The fruiting body is the mushroom you would recognize, and the mycelium is the root-like structure that grows underground. The active compounds most studied for cognitive support, hericenones and erinacines, are concentrated in the fruiting body. Many cheaper supplements use mycelium grown on grain, which dilutes the active compound content. DayShift uses an 8:1 concentrated fruiting body extract."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does Lion's Mane take to work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lion's Mane is studied as a compounding ingredient, meaning its effects build with consistent daily use. Some research has shown acute effects on cognitive tasks after a single dose, while the most-cited cognitive trials measured effects after four to sixteen weeks of daily intake."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Lion's Mane safe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lion's Mane has been used in food and traditional practices for centuries and has a strong modern safety record in clinical trials. As with any supplement, consult your healthcare provider if you are pregnant, nursing, taking medication, or have a mushroom allergy."
+      }
+    }
+  ]
+}
+</script>
 
 <style>
 /* === FONTS === */
@@ -176,7 +328,7 @@ html body .ds-lions-mane .learn-intro {
   max-width: 640px; margin: 0 auto 48px !important;
 }
 html body .ds-lions-mane .study-grid {
-display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; text-align: left;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; text-align: left;
 }
 html body .ds-lions-mane .study {
   display: block; padding: 28px; border: 1px solid #E5E5E5;
@@ -361,11 +513,11 @@ html body .ds-lions-mane .btn:hover { background: #000 !important; }
     <section class="learn">
       <h2>Want to Learn More?</h2>
       <p class="learn-intro">Explore the peer-reviewed research on Lion's Mane (<em>Hericium erinaceus</em>) and cognitive function.</p>
-    <div class="study-grid">
-  <a class="study" href="https://pubmed.ncbi.nlm.nih.gov/38004235/" target="_blank" rel="noopener"><div class="study-meta">RCT &middot; Nutrients, 2023</div><div class="study-title">Acute and chronic effects of Lion's Mane supplementation on cognition, stress, and mood</div><p class="study-desc">Docherty et al. Pilot study in healthy young adults. A single dose produced quicker Stroop task performance, and 28 days of supplementation showed a trend toward reduced stress.</p><span class="study-arrow">Read on PubMed &rarr;</span></a>
-  <a class="study" href="https://pubmed.ncbi.nlm.nih.gov/18844328/" target="_blank" rel="noopener"><div class="study-meta">RCT &middot; Phytotherapy Research, 2009</div><div class="study-title">Improving effects of Yamabushitake (Hericium erinaceus) on mild cognitive impairment</div><p class="study-desc">Mori et al. 16 weeks of Lion's Mane supplementation improved cognitive function scores in adults with mild cognitive impairment versus placebo.</p><span class="study-arrow">Read on PubMed &rarr;</span></a>
-  <a class="study" href="https://pubmed.ncbi.nlm.nih.gov/20834180/" target="_blank" rel="noopener"><div class="study-meta">RCT &middot; Biomedical Research, 2010</div><div class="study-title">Reduction of depression and anxiety by 4 weeks Hericium erinaceus intake</div><p class="study-desc">Nagano et al. Four weeks of Lion's Mane reduced depression and anxiety markers versus placebo in women.</p><span class="study-arrow">Read on PubMed &rarr;</span></a>
-</div>
+      <div class="study-grid">
+        <a class="study" href="https://pubmed.ncbi.nlm.nih.gov/38004235/" target="_blank" rel="noopener"><div class="study-meta">RCT &middot; Nutrients, 2023</div><div class="study-title">Acute and chronic effects of Lion's Mane supplementation on cognition, stress, and mood</div><p class="study-desc">Docherty et al. Pilot study in healthy young adults. A single dose produced quicker Stroop task performance, and 28 days of supplementation showed a trend toward reduced stress.</p><span class="study-arrow">Read on PubMed &rarr;</span></a>
+        <a class="study" href="https://pubmed.ncbi.nlm.nih.gov/18844328/" target="_blank" rel="noopener"><div class="study-meta">RCT &middot; Phytotherapy Research, 2009</div><div class="study-title">Improving effects of Yamabushitake (Hericium erinaceus) on mild cognitive impairment</div><p class="study-desc">Mori et al. 16 weeks of Lion's Mane supplementation improved cognitive function scores in adults with mild cognitive impairment versus placebo.</p><span class="study-arrow">Read on PubMed &rarr;</span></a>
+        <a class="study" href="https://pubmed.ncbi.nlm.nih.gov/20834180/" target="_blank" rel="noopener"><div class="study-meta">RCT &middot; Biomedical Research, 2010</div><div class="study-title">Reduction of depression and anxiety by 4 weeks Hericium erinaceus intake</div><p class="study-desc">Nagano et al. Four weeks of Lion's Mane reduced depression and anxiety markers versus placebo in women.</p><span class="study-arrow">Read on PubMed &rarr;</span></a>
+      </div>
     </section>
 
     <nav class="ingredient-nav" aria-label="Other ingredient pages">

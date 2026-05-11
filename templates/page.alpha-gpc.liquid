@@ -1,4 +1,156 @@
-{%- comment -%} Alpha-GPC — final clean version with 3 verified studies {%- endcomment -%}
+{%- comment -%} Alpha-GPC — fully SEO + AI optimized {%- endcomment -%}
+
+{%- comment -%} === SEO META + STRUCTURED DATA === {%- endcomment -%}
+{%- assign seo_title = "Alpha-GPC | The Focus & Memory Precursor | DayShift" -%}
+{%- assign seo_desc = "Alpha-GPC is the most bioavailable choline source studied for supporting acetylcholine, the neurotransmitter behind focus and memory. DayShift uses 300 mg per packet." -%}
+{%- assign seo_image = 'alpha-gpc-hero.png' | asset_url -%}
+{%- assign seo_url = shop.url | append: '/pages/alpha-gpc' -%}
+
+<meta name="description" content="{{ seo_desc }}">
+<link rel="canonical" href="{{ seo_url }}">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="{{ seo_title }}">
+<meta property="og:description" content="{{ seo_desc }}">
+<meta property="og:url" content="{{ seo_url }}">
+<meta property="og:image" content="{{ seo_image }}">
+<meta property="og:site_name" content="DayShift">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ seo_title }}">
+<meta name="twitter:description" content="{{ seo_desc }}">
+<meta name="twitter:image" content="{{ seo_image }}">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Alpha-GPC: The Focus & Memory Precursor",
+  "description": "{{ seo_desc }}",
+  "image": "{{ seo_image }}",
+  "datePublished": "2026-05-11",
+  "dateModified": "{{ 'now' | date: '%Y-%m-%d' }}",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".hero-body p", ".mechanism-intro"]
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "DayShift",
+    "url": "{{ shop.url }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DayShift",
+    "logo": { "@type": "ImageObject", "url": "{{ 'dayshift-logo.png' | asset_url }}" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "{{ seo_url }}" },
+  "about": [
+    { "@type": "Thing", "name": "Alpha-GPC" },
+    { "@type": "Thing", "name": "Alpha-Glyceryl Phosphorylcholine" },
+    { "@type": "Thing", "name": "Choline" },
+    { "@type": "Thing", "name": "Acetylcholine" },
+    { "@type": "Thing", "name": "Nootropic" },
+    { "@type": "Thing", "name": "Focus" },
+    { "@type": "Thing", "name": "Memory" }
+  ],
+  "citation": [
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Acute Alpha-Glyceryl Phosphorylcholine Supplementation Enhances Cognitive Performance in Healthy Men",
+      "author": "Kerksick CM, et al.",
+      "datePublished": "2024",
+      "isPartOf": { "@type": "Periodical", "name": "Nutrients" },
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39683633/"
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "The effect of 6 days of alpha-glycerylphosphorylcholine on isometric strength",
+      "author": "Bellar D, et al.",
+      "datePublished": "2015",
+      "isPartOf": { "@type": "Periodical", "name": "Journal of the International Society of Sports Nutrition" },
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26582972/"
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "A comparative study of free plasma choline levels following alpha-glycerylphosphorylcholine and citicoline administration",
+      "author": "Gatti G, et al.",
+      "datePublished": "1992",
+      "isPartOf": { "@type": "Periodical", "name": "International Journal of Clinical Pharmacology, Therapy, and Toxicology" },
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1428296/"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ shop.url }}" },
+    { "@type": "ListItem", "position": 2, "name": "Ingredients", "item": "{{ shop.url }}/pages/ingredients" },
+    { "@type": "ListItem", "position": 3, "name": "Alpha-GPC", "item": "{{ seo_url }}" }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Alpha-GPC?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Alpha-GPC (Alpha-Glyceryl Phosphorylcholine) is a choline compound studied for its role in supporting acetylcholine, the neurotransmitter your brain uses for focus, memory, and learning. It is one of the most bioavailable choline sources, meaning it reaches the brain more efficiently than most alternatives."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does Alpha-GPC do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Alpha-GPC is studied for its role in supplying choline to the brain, which is then used to make acetylcholine. Acetylcholine is the neurotransmitter behind focus, attention, learning, and memory. Research has linked Alpha-GPC to acute cognitive performance, reaction time, and working memory."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much Alpha-GPC is in DayShift?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Each DayShift packet contains 300 mg of Alpha-GPC, dosed within the 300 to 700 mg range used in clinical research on cognitive performance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between Alpha-GPC and other choline sources?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Alpha-GPC is one of the most bioavailable forms of choline, meaning the body absorbs and uses more of what you take. Research has shown Alpha-GPC produces substantially higher plasma choline levels than alternatives like citicoline within 30 minutes, and significantly more than cheaper forms like choline bitartrate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How fast does Alpha-GPC work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Alpha-GPC is studied as an acute cognitive support compound. Research shows it is absorbed quickly and reaches plasma choline peaks within about 30 minutes of intake, which is why it has been studied for short-term cognitive performance and reaction time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Alpha-GPC safe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Alpha-GPC has a strong safety record in clinical trials at the doses used for cognitive support. As with any supplement, consult your healthcare provider if you are pregnant, nursing, or taking medication."
+      }
+    }
+  ]
+}
+</script>
 
 <style>
 /* === FONTS === */

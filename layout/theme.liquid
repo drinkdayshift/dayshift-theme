@@ -330,6 +330,69 @@
     text-transform: uppercase !important;
   }
 </style>
+{%- comment -%} DAYSHIFT POLICY PAGE STYLING — INLINE OVERRIDE {%- endcomment -%}
+<style>
+@font-face { font-family: "AeonikDS"; src: url("https://cdn.shopify.com/s/files/1/0962/3676/5551/files/aeonik-regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "AeonikDS"; src: url("https://cdn.shopify.com/s/files/1/0962/3676/5551/files/aeonik-bold.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+
+html body main .shopify-policy__container,
+html body main .shopify-policy__container * {
+  font-family: "AeonikDS", -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-style: normal !important;
+}
+
+html body main .shopify-policy__container {
+  max-width: 880px !important;
+  margin: 0 auto !important;
+  padding: 80px 32px 96px !important;
+  background: #fff !important;
+}
+
+html body main .shopify-policy__container .shopify-policy__title,
+html body main .shopify-policy__container .shopify-policy__title h1 {
+  font-size: 64px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.05 !important;
+  text-align: center !important;
+  color: #0A0A0A !important;
+  margin: 0 0 56px 0 !important;
+  display: block !important;
+  opacity: 1 !important;
+}
+
+html body main .shopify-policy__container .shopify-policy__body .rte,
+html body main .shopify-policy__container .shopify-policy__body .rte * {
+  color: #1f1f1f !important;
+  opacity: 1 !important;
+}
+
+html body main .shopify-policy__container .shopify-policy__body .rte p {
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 1.7 !important;
+  margin: 0 0 18px 0 !important;
+  color: #1f1f1f !important;
+}
+
+html body main .shopify-policy__container .shopify-policy__body .rte strong,
+html body main .shopify-policy__container .shopify-policy__body .rte b {
+  font-weight: 700 !important;
+  color: #0A0A0A !important;
+}
+
+html body main .shopify-policy__container .shopify-policy__body .rte a {
+  color: #6B2FE0 !important;
+  text-decoration: underline !important;
+}
+
+@media (max-width: 720px) {
+  html body main .shopify-policy__container { padding: 48px 22px 64px !important; }
+  html body main .shopify-policy__container .shopify-policy__title h1 { font-size: 40px !important; margin-bottom: 36px !important; }
+  html body main .shopify-policy__container .shopify-policy__body .rte p { font-size: 15px !important; }
+}
+</style>
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">

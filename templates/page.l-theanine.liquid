@@ -1,4 +1,156 @@
-{%- comment -%} L-Theanine — final clean version with pairing section + 3 verified studies {%- endcomment -%}
+{%- comment -%} L-Theanine — fully SEO + AI optimized {%- endcomment -%}
+
+{%- comment -%} === SEO META + STRUCTURED DATA === {%- endcomment -%}
+{%- assign seo_title = "L-Theanine | The Calm Focus Amino Acid | DayShift" -%}
+{%- assign seo_desc = "L-theanine is an amino acid found in green tea, studied for promoting calm focus through alpha brain wave activity. DayShift uses 240 mg per packet, paired 2:1 with caffeine." -%}
+{%- assign seo_image = 'l-theanine-hero.png' | asset_url -%}
+{%- assign seo_url = shop.url | append: '/pages/l-theanine' -%}
+
+<meta name="description" content="{{ seo_desc }}">
+<link rel="canonical" href="{{ seo_url }}">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="{{ seo_title }}">
+<meta property="og:description" content="{{ seo_desc }}">
+<meta property="og:url" content="{{ seo_url }}">
+<meta property="og:image" content="{{ seo_image }}">
+<meta property="og:site_name" content="DayShift">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ seo_title }}">
+<meta name="twitter:description" content="{{ seo_desc }}">
+<meta name="twitter:image" content="{{ seo_image }}">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "L-Theanine: The Calm Focus Amino Acid",
+  "description": "{{ seo_desc }}",
+  "image": "{{ seo_image }}",
+  "datePublished": "2026-05-11",
+  "dateModified": "{{ 'now' | date: '%Y-%m-%d' }}",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".hero-body p", ".mechanism-intro"]
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "DayShift",
+    "url": "{{ shop.url }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DayShift",
+    "logo": { "@type": "ImageObject", "url": "{{ 'dayshift-logo.png' | asset_url }}" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "{{ seo_url }}" },
+  "about": [
+    { "@type": "Thing", "name": "L-Theanine" },
+    { "@type": "Thing", "name": "Amino Acid" },
+    { "@type": "Thing", "name": "Green Tea" },
+    { "@type": "Thing", "name": "Alpha Brain Waves" },
+    { "@type": "Thing", "name": "Nootropic" },
+    { "@type": "Thing", "name": "Calm Focus" },
+    { "@type": "Thing", "name": "Caffeine Pairing" }
+  ],
+  "citation": [
+    {
+      "@type": "ScholarlyArticle",
+      "name": "L-theanine, a natural constituent in tea, and its effect on mental state",
+      "author": "Nobre AC, et al.",
+      "datePublished": "2008",
+      "isPartOf": { "@type": "Periodical", "name": "Asia Pacific Journal of Clinical Nutrition" },
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18296328/"
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "The effects of L-theanine, caffeine and their combination on cognition and mood",
+      "author": "Haskell CF, et al.",
+      "datePublished": "2008",
+      "isPartOf": { "@type": "Periodical", "name": "Biological Psychology" },
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18006208/"
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "L-theanine reduces psychological and physiological stress responses",
+      "author": "Kimura K, et al.",
+      "datePublished": "2007",
+      "isPartOf": { "@type": "Periodical", "name": "Biological Psychology" },
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16930802/"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ shop.url }}" },
+    { "@type": "ListItem", "position": 2, "name": "Ingredients", "item": "{{ shop.url }}/pages/ingredients" },
+    { "@type": "ListItem", "position": 3, "name": "L-Theanine", "item": "{{ seo_url }}" }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is L-theanine?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "L-theanine is an amino acid found naturally in tea leaves, particularly green tea. It is one of the most studied amino acids for cognitive support and is most known for its role in supporting alpha brain wave activity, the brain state associated with calm, focused attention."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does L-theanine do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "L-theanine is studied for its role in promoting alpha brain wave activity, supporting calm focus, helping the body manage a healthy stress response, and counterbalancing the stimulating effects of caffeine."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much L-theanine is in DayShift?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Each DayShift packet contains 240 mg of L-theanine, paired with 120 mg of caffeine in a 2:1 ratio. This is the exact dose and ratio used in the most-cited research on L-theanine and caffeine for cognitive performance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the 2:1 ratio of L-theanine to caffeine?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The 2:1 ratio refers to two parts L-theanine to one part caffeine. This is the ratio used in the most-cited human trials on the combination, which have studied effects on reaction time, attention accuracy, and reduced over-stimulation versus caffeine alone. DayShift uses 240 mg L-theanine and 120 mg caffeine to match this ratio exactly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does L-theanine make you sleepy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. L-theanine is studied for promoting calm focus, not drowsiness. It is associated with alpha brain wave activity, the brain state of relaxed alertness, rather than the delta waves of deep sleep. When paired with caffeine, L-theanine supports clear, calm focus without sedation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is L-theanine safe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "L-theanine has been consumed in tea for centuries and has a strong modern safety record in clinical trials. As with any supplement, consult your healthcare provider if you are pregnant, nursing, or taking medication."
+      }
+    }
+  ]
+}
+</script>
 
 <style>
 /* === FONTS === */

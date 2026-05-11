@@ -1,4 +1,4 @@
-{%- comment -%} Rhodiola Rosea — final clean version with 3 verified studies {%- endcomment -%}
+{%- comment -%} Rhodiola Rosea — fully SEO + AI optimized {%- endcomment -%}
 
 {%- comment -%} === SEO META + STRUCTURED DATA === {%- endcomment -%}
 {%- assign seo_title = "Rhodiola Rosea | The Stress-Proof Adaptogen | DayShift" -%}
@@ -28,7 +28,17 @@
   "headline": "Rhodiola Rosea: The Stress-Proof Adaptogen",
   "description": "{{ seo_desc }}",
   "image": "{{ seo_image }}",
-  "author": { "@type": "Organization", "name": "DayShift" },
+  "datePublished": "2026-05-11",
+  "dateModified": "{{ 'now' | date: '%Y-%m-%d' }}",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".hero-body p", ".mechanism-intro"]
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "DayShift",
+    "url": "{{ shop.url }}"
+  },
   "publisher": {
     "@type": "Organization",
     "name": "DayShift",
@@ -80,6 +90,63 @@
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ shop.url }}" },
     { "@type": "ListItem", "position": 2, "name": "Ingredients", "item": "{{ shop.url }}/pages/ingredients" },
     { "@type": "ListItem", "position": 3, "name": "Rhodiola Rosea", "item": "{{ seo_url }}" }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Rhodiola Rosea?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rhodiola Rosea is an arctic root used for centuries in Russia and Scandinavia and one of the most studied adaptogens in modern research. Adaptogens are a defined category of plants that help the body maintain balance under stress. Rhodiola has the deepest research record for mental endurance and fatigue resistance under demand."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does Rhodiola Rosea do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rhodiola Rosea is studied for its role in supporting the body's stress response (HPA axis), helping maintain a balanced cortisol response, and supporting mental endurance during periods of fatigue and demanding cognitive work."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much Rhodiola Rosea is in DayShift?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Each DayShift packet contains 250 mg of Rhodiola Rosea, standardized for salidroside and rosavin, dosed within the 200 to 400 mg range used in clinical research on stress and cognitive endurance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are salidroside and rosavin?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Salidroside and rosavin are the two active compounds in Rhodiola Rosea most studied for adaptogenic effects. The standardized extract used in human research is calibrated to deliver specific levels of both. DayShift uses a standardized extract to match the research."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between Rhodiola and Panax Ginseng?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both are adaptogens, but they support different things. Rhodiola is most studied for stress adaptation and fatigue resistance. Panax Ginseng is most studied for sustained cognitive performance and working memory. DayShift includes both for complementary effects."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Rhodiola Rosea safe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rhodiola Rosea has been used for centuries and has a strong modern safety record in clinical trials. As with any supplement, consult your healthcare provider if you are pregnant, nursing, or taking medication."
+      }
+    }
   ]
 }
 </script>

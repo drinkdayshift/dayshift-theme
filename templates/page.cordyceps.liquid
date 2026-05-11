@@ -1,4 +1,164 @@
-{%- comment -%} Cordyceps — final clean version {%- endcomment -%}
+{%- comment -%} Cordyceps — fully SEO + AI optimized {%- endcomment -%}
+
+{%- comment -%} === SEO META + STRUCTURED DATA === {%- endcomment -%}
+{%- assign seo_title = "Cordyceps | The Energy Mushroom | DayShift" -%}
+{%- assign seo_desc = "Cordyceps militaris is a functional mushroom studied for cellular energy, ATP production, and physical stamina. DayShift uses 1,500 mg per packet, standardized for cordycepin." -%}
+{%- assign seo_image = 'cordyceps-hero.png' | asset_url -%}
+{%- assign seo_url = shop.url | append: '/pages/cordyceps' -%}
+
+<meta name="description" content="{{ seo_desc }}">
+<link rel="canonical" href="{{ seo_url }}">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="{{ seo_title }}">
+<meta property="og:description" content="{{ seo_desc }}">
+<meta property="og:url" content="{{ seo_url }}">
+<meta property="og:image" content="{{ seo_image }}">
+<meta property="og:site_name" content="DayShift">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ seo_title }}">
+<meta name="twitter:description" content="{{ seo_desc }}">
+<meta name="twitter:image" content="{{ seo_image }}">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Cordyceps: The Energy Mushroom",
+  "description": "{{ seo_desc }}",
+  "image": "{{ seo_image }}",
+  "datePublished": "2026-05-11",
+  "dateModified": "{{ 'now' | date: '%Y-%m-%d' }}",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".hero-body p", ".mechanism-intro"]
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "DayShift",
+    "url": "{{ shop.url }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DayShift",
+    "logo": { "@type": "ImageObject", "url": "{{ 'dayshift-logo.png' | asset_url }}" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "{{ seo_url }}" },
+  "about": [
+    { "@type": "Thing", "name": "Cordyceps" },
+    { "@type": "Thing", "name": "Cordyceps militaris" },
+    { "@type": "Thing", "name": "Functional Mushroom" },
+    { "@type": "Thing", "name": "Cordycepin" },
+    { "@type": "Thing", "name": "ATP" },
+    { "@type": "Thing", "name": "Cellular Energy" },
+    { "@type": "Thing", "name": "Physical Stamina" }
+  ],
+  "citation": [
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Cordyceps militaris improves tolerance to high-intensity exercise after acute and chronic supplementation",
+      "author": "Hirsch KR, et al.",
+      "datePublished": "2017",
+      "isPartOf": { "@type": "Periodical", "name": "Journal of Dietary Supplements" },
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27931809/"
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Effect of Cs-4 (Cordyceps sinensis) on exercise performance in healthy older subjects",
+      "author": "Chen S, et al.",
+      "datePublished": "2010",
+      "isPartOf": { "@type": "Periodical", "name": "Journal of Alternative and Complementary Medicine" },
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20804368/"
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Pharmacological and therapeutic potential of Cordyceps with reference to Cordycepin",
+      "author": "Tuli HS, et al.",
+      "datePublished": "2014",
+      "isPartOf": { "@type": "Periodical", "name": "3 Biotech" },
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28324538/"
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Cordyceps militaris: chemistry, biology, and pharmacological activities",
+      "author": "Phull AR, et al.",
+      "datePublished": "2020",
+      "isPartOf": { "@type": "Periodical", "name": "Phytotherapy Research" },
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32048278/"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ shop.url }}" },
+    { "@type": "ListItem", "position": 2, "name": "Ingredients", "item": "{{ shop.url }}/pages/ingredients" },
+    { "@type": "ListItem", "position": 3, "name": "Cordyceps", "item": "{{ seo_url }}" }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Cordyceps?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cordyceps (Cordyceps militaris) is a functional mushroom used for centuries in Tibetan and Chinese traditional practices and one of the most studied mushrooms in modern research on cellular energy. Its active compounds, cordycepin and adenosine, have been studied for their role in supporting ATP production, the molecule cells use as fuel."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does Cordyceps do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cordyceps is studied for its role in supporting cellular energy production (ATP), oxygen utilization during sustained activity, physical and mental stamina, and a healthy response to physical stress."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much Cordyceps is in DayShift?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DayShift contains 1,500 mg of Cordyceps militaris per packet, standardized for cordycepin content. This is within the 1,000 to 3,000 mg dose range used in clinical research on energy and endurance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between Cordyceps militaris and Cordyceps sinensis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both are species of Cordyceps used in traditional practices. Cordyceps sinensis is the wild Tibetan species, which is rare and expensive. Cordyceps militaris is the cultivated species used in most modern research and contains higher concentrations of cordycepin, the most studied active compound. DayShift uses Cordyceps militaris."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Cordyceps a stimulant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Cordyceps is not a stimulant. It works at the cellular level by supporting your body's natural ATP production, which is different from how caffeine and other stimulants work. This is why Cordyceps is studied for sustained energy rather than acute alertness."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Cordyceps safe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cordyceps has been used in food and traditional practices for centuries and has a strong modern safety record in clinical trials. As with any supplement, consult your healthcare provider if you are pregnant, nursing, taking medication, or have a mushroom allergy."
+      }
+    }
+  ]
+}
+</script>
 
 <style>
 /* === FONTS === */
@@ -103,9 +263,9 @@ html body .ds-cordyceps .mechanism-footnote {
 html body .ds-cordyceps .mechanism-footnote em { color: #0A0A0A !important; }
 
 /* === WHY WE USE IT === */
-html body .ds-cordyceps .split { display: grid; grid-template-columns: 1.1fr 1fr; gap: 64px; align-items: center; }
+html body .ds-cordyceps .split { display: grid; grid-template-columns: 1fr 1.1fr; gap: 64px; align-items: center; }
 html body .ds-cordyceps .split-image {
-  width: 100%; height: auto; max-height: 580px;
+  width: 100%; height: auto; max-height: 480px;
   object-fit: contain; border-radius: 18px; background: #fff;
 }
 html body .ds-cordyceps .split p {
@@ -176,7 +336,7 @@ html body .ds-cordyceps .learn-intro {
   max-width: 640px; margin: 0 auto 48px !important;
 }
 html body .ds-cordyceps .study-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; text-align: left;
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; text-align: left;
 }
 html body .ds-cordyceps .study {
   display: block; padding: 28px; border: 1px solid #E5E5E5;
@@ -318,10 +478,10 @@ html body .ds-cordyceps .btn:hover { background: #000 !important; }
       <p class="mechanism-intro">Cordyceps is studied for one thing: how the body produces and sustains energy at the cellular level. Four mechanisms explain why it lasts.</p>
       <div class="mechanism-card">
         <div class="mechanism-points">
-          <div class="point"><h4><span class="point-num">1.</span>Supports cellular energy production.</h4><p>Cordyceps contains cordycepin and adenosine, compounds that have been studied for their role in supporting your body's production of ATP, the molecule every cell uses as fuel. Steady ATP means steady energy.</p></div>
-          <div class="point"><h4><span class="point-num">2.</span>Helps the body manage fatigue.</h4><p>Cordyceps is classified as an adaptogen, meaning it may help the body adapt to physical and mental stress. Adaptogens have been studied for their role in maintaining performance under demanding conditions.</p></div>
-          <div class="point"><h4><span class="point-num">3.</span>Supports cellular health and recovery.</h4><p>Bioactive polysaccharides in Cordyceps may help support a healthy inflammatory response and antioxidant balance, contributing to how well your cells function and recover under daily stress.</p></div>
-          <div class="point"><h4><span class="point-num">4.</span>Supports oxygen utilization.</h4><p>Research suggests Cordyceps may help the body use oxygen more efficiently during sustained activity. More efficient oxygen use supports endurance without the crash that comes with stimulants.</p></div>
+          <div class="point"><h4><span class="point-num">1.</span>Supports cellular energy production.</h4><p>Cordyceps contains cordycepin and adenosine, compounds studied for their role in supporting your body's production of ATP, the molecule cells use as fuel. Steady ATP supports steady energy.</p></div>
+          <div class="point"><h4><span class="point-num">2.</span>Helps the body manage fatigue.</h4><p>Cordyceps is classified as an adaptogen, meaning it may help support physical and mental performance under stress.</p></div>
+          <div class="point"><h4><span class="point-num">3.</span>Supports recovery.</h4><p>Bioactive compounds in Cordyceps may help support a healthy inflammatory response and antioxidant balance after daily stress.</p></div>
+          <div class="point"><h4><span class="point-num">4.</span>Supports oxygen utilization.</h4><p>Research suggests Cordyceps may help the body use oxygen more efficiently during sustained activity.</p></div>
         </div>
       </div>
       <p class="mechanism-footnote">Summarized from published research on <em>Cordyceps militaris</em> and cellular energy.</p>
@@ -331,7 +491,8 @@ html body .ds-cordyceps .btn:hover { background: #000 !important; }
       <img class="split-image" src="{{ 'cordyceps-cluster.jpg' | asset_url }}" alt="Cordyceps militaris cluster" width="1466" height="1084" loading="lazy" />
       <div>
         <h2>Why We Use It</h2>
-        <p>DayShift is built on two layers: ingredients you feel within an hour, and ingredients that build over weeks. Cordyceps is in the second layer. With daily use, it supports the cellular systems behind sustained energy: ATP production, oxygen utilization, and the body's response to stress. We use <em>Cordyceps militaris</em> specifically (the cultivated species, not wild <em>sinensis</em>) because it contains higher levels of cordycepin, the compound most studied for energy support.</p>
+        <p>DayShift is built with ingredients you can feel quickly and ingredients that build over time. Cordyceps sits in the second layer, supporting the cellular systems behind sustained energy, oxygen utilization, and resilience to stress.</p>
+        <p>We use <em>Cordyceps militaris</em> specifically because it contains cordycepin, one of the key compounds studied for cellular energy support.</p>
         <div class="focus-block">
           <h3>Key Focus Areas</h3>
           <ul class="focus-list">
@@ -361,11 +522,12 @@ html body .ds-cordyceps .btn:hover { background: #000 !important; }
     <section class="learn">
       <h2>Want to Learn More?</h2>
       <p class="learn-intro">Explore the peer-reviewed research on Cordyceps (<em>Cordyceps militaris</em>) and cellular energy.</p>
-<div class="study-grid">
-  <a class="study" href="https://pubmed.ncbi.nlm.nih.gov/27408987/" target="_blank" rel="noopener"><div class="study-meta">RCT &middot; J Diet Suppl, 2017</div><div class="study-title">Cordyceps militaris improves tolerance to high-intensity exercise</div><p class="study-desc">Hirsch et al. Three weeks of a Cordyceps militaris-containing mushroom blend improved VO2 max and time-to-exhaustion during high-intensity cycling vs placebo.</p><span class="study-arrow">Read on PubMed &rarr;</span></a>
-  <a class="study" href="https://pubmed.ncbi.nlm.nih.gov/20804368/" target="_blank" rel="noopener"><div class="study-meta">RCT &middot; J Altern Complement Med, 2010</div><div class="study-title">Effect of Cs-4 (Cordyceps sinensis) on exercise performance in healthy older subjects</div><p class="study-desc">Chen et al. 12 weeks of Cordyceps at 333 mg three times daily improved metabolic threshold by 10.5% and ventilatory threshold by 8.5% in adults aged 50-75.</p><span class="study-arrow">Read on PubMed &rarr;</span></a>
-  <a class="study" href="https://pubmed.ncbi.nlm.nih.gov/28324458/" target="_blank" rel="noopener"><div class="study-meta">Review &middot; 3 Biotech, 2014</div><div class="study-title">Pharmacological and therapeutic potential of Cordyceps with reference to cordycepin</div><p class="study-desc">Tuli et al. Comprehensive review of cordycepin's biological and pharmacological actions across multiple body systems.</p><span class="study-arrow">Read on PubMed &rarr;</span></a>
-</div>
+      <div class="study-grid">
+        <a class="study" href="https://pubmed.ncbi.nlm.nih.gov/27931809/" target="_blank" rel="noopener"><div class="study-meta">RCT &middot; J Diet Suppl, 2017</div><div class="study-title">Cordyceps militaris improves tolerance to high-intensity exercise</div><p class="study-desc">Hirsch et al. Adults supplementing with Cordyceps showed improved exercise tolerance and time-to-exhaustion versus placebo.</p><span class="study-arrow">Read on PubMed &rarr;</span></a>
+        <a class="study" href="https://pubmed.ncbi.nlm.nih.gov/20804368/" target="_blank" rel="noopener"><div class="study-meta">RCT &middot; J Altern Complement Med, 2010</div><div class="study-title">Effect of Cs-4 (Cordyceps sinensis) on exercise performance in healthy older subjects</div><p class="study-desc">Chen et al. Older adults taking Cordyceps daily showed measurable improvements in metabolic and ventilatory threshold.</p><span class="study-arrow">Read on PubMed &rarr;</span></a>
+        <a class="study" href="https://pubmed.ncbi.nlm.nih.gov/28324538/" target="_blank" rel="noopener"><div class="study-meta">Review &middot; 3 Biotech, 2014</div><div class="study-title">Pharmacological and therapeutic potential of Cordyceps with reference to Cordycepin</div><p class="study-desc">Tuli et al. Review of bioactive compounds and their roles in cellular energy and antioxidant activity.</p><span class="study-arrow">Read on PubMed &rarr;</span></a>
+        <a class="study" href="https://pubmed.ncbi.nlm.nih.gov/32048278/" target="_blank" rel="noopener"><div class="study-meta">Review &middot; Phytother Res, 2020</div><div class="study-title">Cordyceps militaris: chemistry, biology, and pharmacological activities</div><p class="study-desc">Overview of cordycepin and adenosine, the compounds linked to Cordyceps' energy and endurance effects.</p><span class="study-arrow">Read on PubMed &rarr;</span></a>
+      </div>
     </section>
 
     <nav class="ingredient-nav" aria-label="Other ingredient pages">

@@ -1,0 +1,454 @@
+{%- comment -%} L-Theanine — final clean version with pairing section + 3 verified studies {%- endcomment -%}
+
+<style>
+/* === FONTS === */
+@font-face { font-family: "Aeonik"; src: url("https://cdn.shopify.com/s/files/1/0962/3676/5551/files/aeonik-regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Aeonik"; src: url("https://cdn.shopify.com/s/files/1/0962/3676/5551/files/aeonik-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Aeonik"; src: url("https://cdn.shopify.com/s/files/1/0962/3676/5551/files/aeonik-medium.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Aeonik"; src: url("https://cdn.shopify.com/s/files/1/0962/3676/5551/files/aeonik-bold.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Aeonik Condensed"; src: url("https://cdn.shopify.com/s/files/1/0962/3676/5551/files/aeonik-condensed-regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Aeonik Condensed"; src: url("https://cdn.shopify.com/s/files/1/0962/3676/5551/files/aeonik-condensed-bold.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+
+/* === BASELINE === */
+html body .ds-l-theanine,
+html body .ds-l-theanine *,
+html body .ds-l-theanine *::before,
+html body .ds-l-theanine *::after {
+  font-family: "Aeonik", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+  color: #0A0A0A !important;
+  box-sizing: border-box !important;
+  font-style: normal;
+}
+html body .ds-l-theanine em,
+html body .ds-l-theanine i,
+html body .ds-l-theanine .hero-eyebrow,
+html body .ds-l-theanine .mechanism-footnote em { font-style: italic !important; }
+
+html body .ds-l-theanine .study-meta,
+html body .ds-l-theanine .mechanism-eyebrow,
+html body .ds-l-theanine .pairing-eyebrow,
+html body .ds-l-theanine .focus-block h3,
+html body .ds-l-theanine .dose-cell-label {
+  font-family: "Aeonik Condensed", "Aeonik", sans-serif !important;
+}
+
+/* === LAYOUT === */
+html body .ds-l-theanine { background: #fff; }
+html body .ds-l-theanine .wrap { max-width: 1100px; margin: 0 auto; padding: 80px 32px; }
+html body .ds-l-theanine section { margin-bottom: 80px !important; }
+
+/* === HEADINGS === */
+html body .ds-l-theanine .hero-title,
+html body .ds-l-theanine .mechanism h2,
+html body .ds-l-theanine .pairing h2,
+html body .ds-l-theanine .split h2,
+html body .ds-l-theanine .dose h2,
+html body .ds-l-theanine .learn h2,
+html body .ds-l-theanine .cta-wrap h2 {
+  font-family: "Aeonik", sans-serif !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.05 !important;
+  margin: 0 !important;
+  color: #0A0A0A !important;
+}
+html body .ds-l-theanine .hero-title { font-size: 64px !important; margin-bottom: 14px !important; }
+html body .ds-l-theanine .mechanism h2,
+html body .ds-l-theanine .learn h2 { font-size: 40px !important; margin-bottom: 16px !important; }
+html body .ds-l-theanine .pairing h2 { font-size: 40px !important; margin-bottom: 32px !important; }
+html body .ds-l-theanine .cta-wrap h2 { font-size: 36px !important; margin-bottom: 14px !important; }
+html body .ds-l-theanine .split h2,
+html body .ds-l-theanine .dose h2 { font-size: 32px !important; margin-bottom: 16px !important; }
+
+/* === HERO === */
+html body .ds-l-theanine .hero { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+html body .ds-l-theanine .hero-eyebrow {
+  font-family: "Aeonik", sans-serif !important;
+  font-style: italic !important;
+  font-weight: 700 !important;
+  font-size: 20px !important;
+  margin: 0 0 24px 0 !important;
+  color: #0A0A0A !important;
+}
+html body .ds-l-theanine .hero-body p {
+  font-size: 18px !important; line-height: 1.6 !important;
+  margin: 0 0 18px 0 !important; color: #1f1f1f !important;
+}
+html body .ds-l-theanine .hero-image {
+  width: 100%; height: auto; max-height: 540px;
+  border-radius: 18px; object-fit: contain; background: #fff;
+}
+
+/* === MECHANISM === */
+html body .ds-l-theanine .mechanism { text-align: center; }
+html body .ds-l-theanine .mechanism-intro {
+  font-size: 18px !important; line-height: 1.6 !important;
+  color: #555 !important; max-width: 640px; margin: 0 auto 48px !important;
+}
+html body .ds-l-theanine .mechanism-card {
+  background: #EDE5FF; border-radius: 18px; padding: 56px; text-align: left;
+}
+html body .ds-l-theanine .mechanism-points { display: grid; gap: 28px; }
+html body .ds-l-theanine .point h4 {
+  font-size: 18px !important; font-weight: 700 !important;
+  margin: 0 0 6px 0 !important; color: #0A0A0A !important;
+}
+html body .ds-l-theanine .point-num { font-weight: 700 !important; margin-right: 4px; color: #0A0A0A !important; }
+html body .ds-l-theanine .point p {
+  font-size: 17px !important; line-height: 1.6 !important;
+  color: #1f1f1f !important; margin: 0 !important;
+}
+html body .ds-l-theanine .mechanism-footnote {
+  font-size: 14px !important; color: #555 !important;
+  margin: 32px auto 0 !important; text-align: center;
+}
+html body .ds-l-theanine .mechanism-footnote em { color: #0A0A0A !important; }
+
+/* === PAIRING SECTION === */
+html body .ds-l-theanine .pairing { text-align: center; }
+html body .ds-l-theanine .pairing-eyebrow {
+  font-size: 14px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.14em !important;
+  color: #4a6d3a !important;
+  font-weight: 700 !important;
+  margin: 0 0 14px 0 !important;
+}
+html body .ds-l-theanine .pairing-card {
+  background: #EFF5E5;
+  border-radius: 18px;
+  padding: 56px;
+  text-align: left;
+  max-width: 880px;
+  margin: 0 auto;
+}
+html body .ds-l-theanine .pairing-card p {
+  font-size: 17px !important; line-height: 1.6 !important;
+  color: #1f1f1f !important; margin: 0 0 18px 0 !important;
+}
+html body .ds-l-theanine .pairing-card p:last-child { margin: 0 !important; }
+html body .ds-l-theanine .pairing-card strong { font-weight: 700 !important; color: #0A0A0A !important; }
+html body .ds-l-theanine .pairing-ratio {
+  text-align: center;
+  font-family: "Aeonik", sans-serif !important;
+  font-size: 56px !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em;
+  color: #0A0A0A !important;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+html body .ds-l-theanine .pairing-ratio-label {
+  text-align: center;
+  font-family: "Aeonik Condensed", "Aeonik", sans-serif !important;
+  font-size: 13px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.14em !important;
+  color: #4a6d3a !important;
+  font-weight: 700 !important;
+  margin: 0 0 32px 0 !important;
+}
+
+/* === WHY WE USE IT === */
+html body .ds-l-theanine .split { display: grid; grid-template-columns: 1.1fr 1fr; gap: 64px; align-items: center; }
+html body .ds-l-theanine .split-image {
+  width: 100%; height: auto; max-height: 580px;
+  object-fit: contain; border-radius: 18px; background: #fff;
+}
+html body .ds-l-theanine .split p {
+  font-size: 17px !important; line-height: 1.6 !important;
+  color: #1f1f1f !important; margin: 0 0 16px 0 !important;
+}
+html body .ds-l-theanine .focus-block { margin-top: 32px; }
+html body .ds-l-theanine .focus-block h3 {
+  font-size: 14px !important; font-weight: 700 !important;
+  text-transform: uppercase !important; letter-spacing: 0.1em !important;
+  margin: 0 0 16px 0 !important; color: #0A0A0A !important;
+}
+html body .ds-l-theanine .focus-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+html body .ds-l-theanine .focus-list li {
+  display: flex; align-items: center; gap: 12px;
+  font-size: 17px !important; color: #1f1f1f !important;
+}
+html body .ds-l-theanine .focus-list li::before {
+  content: ""; width: 20px; height: 20px; flex: 0 0 20px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%230A0A0A' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'><polyline points='4 11 8 15 16 5'/></svg>");
+  background-size: contain; background-repeat: no-repeat;
+}
+
+/* === DOSE === */
+html body .ds-l-theanine .dose { margin-bottom: 56px !important; }
+html body .ds-l-theanine .dose-sub {
+  font-size: 17px !important; color: #555 !important;
+  margin: 0 0 32px 0 !important;
+}
+html body .ds-l-theanine .dose-table {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  border: 1px solid #E5E5E5; border-radius: 18px; overflow: hidden;
+}
+html body .ds-l-theanine .dose-cell { padding: 32px 28px; border-right: 1px solid #E5E5E5; }
+html body .ds-l-theanine .dose-cell:last-child { border-right: none; }
+html body .ds-l-theanine .dose-cell-label {
+  font-size: 13px !important; text-transform: uppercase !important;
+  letter-spacing: 0.12em !important; color: #555 !important;
+  font-weight: 600 !important; margin: 0 0 14px 0 !important;
+}
+html body .ds-l-theanine .dose-cell-value {
+  font-size: 24px !important; font-weight: 400 !important; color: #0A0A0A !important;
+}
+html body .ds-l-theanine .dose-cell.highlight { background: #FFD9B3; }
+html body .ds-l-theanine .dose-cell.highlight .dose-cell-label {
+  font-family: "Aeonik", sans-serif !important;
+  font-size: 18px !important; font-weight: 800 !important;
+  letter-spacing: 0.04em !important; color: #0A0A0A !important;
+  margin: 0 0 16px 0 !important;
+}
+html body .ds-l-theanine .dose-cell.highlight .dose-cell-value {
+  font-size: 28px !important; font-weight: 700 !important;
+}
+html body .ds-l-theanine .dose-note {
+  font-size: 14px !important; color: #555 !important; margin-top: 16px !important;
+}
+
+/* === MID-PAGE GET STARTED === */
+html body .ds-l-theanine .mid-cta {
+  text-align: center;
+  margin: 0 0 56px 0 !important;
+}
+
+/* === STUDIES === */
+html body .ds-l-theanine .learn { text-align: center; margin-bottom: 48px !important; }
+html body .ds-l-theanine .learn-intro {
+  font-size: 18px !important; color: #555 !important;
+  max-width: 640px; margin: 0 auto 48px !important;
+}
+html body .ds-l-theanine .study-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; text-align: left;
+}
+html body .ds-l-theanine .study {
+  display: block; padding: 28px; border: 1px solid #E5E5E5;
+  border-radius: 14px; text-decoration: none; background: #fff;
+}
+html body .ds-l-theanine .study:hover { border-color: #0A0A0A; }
+html body .ds-l-theanine .study-meta {
+  font-size: 12px !important; text-transform: uppercase !important;
+  letter-spacing: 0.12em !important; color: #555 !important;
+  font-weight: 700 !important; margin: 0 0 12px 0 !important;
+}
+html body .ds-l-theanine .study-title {
+  font-size: 18px !important; font-weight: 700 !important;
+  color: #0A0A0A !important; margin: 0 0 10px 0 !important; line-height: 1.4 !important;
+}
+html body .ds-l-theanine .study-desc {
+  font-size: 15px !important; color: #555 !important;
+  line-height: 1.55 !important; margin: 0 0 16px 0 !important;
+}
+html body .ds-l-theanine .study-arrow {
+  font-size: 15px !important; color: #0A0A0A !important; font-weight: 600 !important;
+}
+
+/* === INGREDIENT NAV === */
+html body .ds-l-theanine .ingredient-nav {
+  display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
+  margin-bottom: 40px !important;
+}
+html body .ds-l-theanine .ingredient-nav a {
+  display: inline-block !important;
+  padding: 12px 24px !important;
+  border-radius: 999px !important;
+  background: #F5F5F4 !important;
+  color: #1f1f1f !important;
+  text-decoration: none !important;
+  font-family: "Aeonik", sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  border: 1px solid transparent !important;
+}
+html body .ds-l-theanine .ingredient-nav a:hover {
+  background: #fff !important; border-color: #0A0A0A !important; color: #0A0A0A !important;
+}
+
+/* === FINAL CTA === */
+html body .ds-l-theanine .cta-wrap {
+  text-align: center;
+  padding: 36px 32px !important;
+  border-radius: 18px;
+  margin-bottom: 64px;
+  background: radial-gradient(ellipse at 50% 30%, #FFCCD9 0%, #F5A0B8 55%, #E89BB0 100%) !important;
+}
+html body .ds-l-theanine .cta-wrap h2 {
+  font-size: 36px !important;
+  margin: 0 0 14px 0 !important;
+  color: #0A0A0A !important;
+}
+html body .ds-l-theanine .cta-wrap p.cta-lead {
+  font-size: 17px !important;
+  color: #1f1f1f !important;
+  margin: 0 auto 14px auto !important;
+  font-weight: 500 !important;
+  line-height: 1.3 !important;
+  max-width: 640px;
+}
+html body .ds-l-theanine .cta-wrap p.cta-guarantee {
+  font-size: 15px !important;
+  color: #1f1f1f !important;
+  max-width: 540px;
+  margin: 0 auto 24px auto !important;
+  line-height: 1.4 !important;
+  font-weight: 400 !important;
+}
+html body .ds-l-theanine .cta-wrap p.cta-fineprint {
+  font-size: 13px !important;
+  color: #4a4a4a !important;
+  margin: 16px 0 0 0 !important;
+  letter-spacing: 0.02em !important;
+}
+
+/* === BUTTON === */
+html body .ds-l-theanine .btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  background: #0A0A0A !important;
+  color: #fff !important;
+  text-decoration: none !important;
+  padding: 10px 36px !important;
+  border-radius: 999px !important;
+  font-size: 20px !important;
+  font-weight: 400 !important;
+  font-family: "Aeonik", sans-serif !important;
+  letter-spacing: 0 !important;
+}
+html body .ds-l-theanine .btn,
+html body .ds-l-theanine .btn * {
+  color: #fff !important;
+  font-weight: 400 !important;
+}
+html body .ds-l-theanine .btn:hover { background: #000 !important; }
+
+/* === MOBILE === */
+@media (max-width: 820px) {
+  html body .ds-l-theanine .wrap { padding: 56px 22px; }
+  html body .ds-l-theanine section { margin-bottom: 56px !important; }
+  html body .ds-l-theanine .hero,
+  html body .ds-l-theanine .split { grid-template-columns: 1fr; gap: 32px; }
+  html body .ds-l-theanine .hero-title { font-size: 44px !important; }
+  html body .ds-l-theanine .mechanism h2,
+  html body .ds-l-theanine .learn h2 { font-size: 30px !important; }
+  html body .ds-l-theanine .pairing h2 { font-size: 28px !important; }
+  html body .ds-l-theanine .cta-wrap h2 { font-size: 26px !important; }
+  html body .ds-l-theanine .split h2,
+  html body .ds-l-theanine .dose h2 { font-size: 26px !important; }
+  html body .ds-l-theanine .mechanism-card,
+  html body .ds-l-theanine .pairing-card { padding: 32px 24px; }
+  html body .ds-l-theanine .pairing-ratio { font-size: 44px !important; }
+  html body .ds-l-theanine .dose-table { grid-template-columns: 1fr; }
+  html body .ds-l-theanine .dose-cell { border-right: none; border-bottom: 1px solid #E5E5E5; }
+  html body .ds-l-theanine .dose-cell:last-child { border-bottom: none; }
+  html body .ds-l-theanine .study-grid { grid-template-columns: 1fr; }
+  html body .ds-l-theanine .cta-wrap { padding: 40px 22px !important; }
+}
+</style>
+
+<div class="ds-l-theanine">
+  <div class="wrap">
+
+    <section class="hero">
+      <div class="hero-body">
+        <h1 class="hero-title">L-Theanine</h1>
+        <p class="hero-eyebrow">The Calm Focus Amino Acid</p>
+        <p>L-theanine is an amino acid found in tea leaves, particularly green tea. It's the molecule behind tea's signature feel: calm focus, without the buzz of coffee or the drowsiness of relaxation.</p>
+        <p>Today, L-theanine is one of the most studied amino acids for cognitive support. The research keeps coming back to alpha brain wave activity, the brain state associated with calm, focused attention.</p>
+      </div>
+      <img class="hero-image" src="{{ 'l-theanine-hero.png' | asset_url }}" alt="L-theanine, the calm focus amino acid found in green tea" width="1664" height="1034" loading="lazy" />
+    </section>
+
+    <section class="mechanism">
+      <h2>How L-Theanine Works</h2>
+      <p class="mechanism-intro">L-theanine is one of the few amino acids studied for direct effects on brain state. Four mechanisms explain why.</p>
+      <div class="mechanism-card">
+        <div class="mechanism-points">
+          <div class="point"><h4><span class="point-num">1.</span>Promotes alpha brain wave activity.</h4><p>L-theanine has been studied for its role in promoting alpha brain wave activity, the brain state associated with calm, focused attention. It's why a cup of green tea feels different from a cup of coffee.</p></div>
+          <div class="point"><h4><span class="point-num">2.</span>Supports neurotransmitter activity.</h4><p>L-theanine plays a role in supporting GABA, dopamine, and serotonin, the neurotransmitters that influence calm, mood, and motivation.</p></div>
+          <div class="point"><h4><span class="point-num">3.</span>Counterbalances stimulants.</h4><p>L-theanine works in counterbalance to stimulants like caffeine. Where caffeine increases alertness, L-theanine supports focused attention without the jittery edge.</p></div>
+          <div class="point"><h4><span class="point-num">4.</span>Supports a calm stress response.</h4><p>L-theanine has been studied for its role in supporting a calm response to stress. It's part of why green tea has long been associated with focused calm rather than the buzz of stronger caffeinated drinks.</p></div>
+        </div>
+      </div>
+      <p class="mechanism-footnote">Summarized from published research on L-theanine and cognitive performance.</p>
+    </section>
+
+    <section class="pairing">
+      <p class="pairing-eyebrow">The Pairing</p>
+      <h2>L-Theanine + Caffeine</h2>
+      <div class="pairing-card">
+        <div class="pairing-ratio">2 : 1</div>
+        <p class="pairing-ratio-label">L-Theanine to Caffeine</p>
+        <p>L-theanine on its own supports a calm, focused state. But it's most studied when paired with caffeine.</p>
+        <p>At a 2:1 ratio (L-theanine to caffeine), the combination has been studied for faster reaction times, better attention accuracy, and a focus state that's both alert and calm.</p>
+        <p>DayShift uses exactly that ratio: <strong>240 mg of L-theanine, 120 mg of caffeine</strong>, every packet.</p>
+      </div>
+    </section>
+
+    <section class="split">
+      <img class="split-image" src="{{ 'l-theanine-cluster.webp' | asset_url }}" alt="L-theanine source detail" width="1466" height="1084" loading="lazy" />
+      <div>
+        <h2>Why We Use It</h2>
+        <p>L-theanine is the counterbalance. Caffeine alone produces alertness but can also produce jitters and energy spikes. L-theanine supports a cleaner focus from the caffeine and a more sustained energy curve.</p>
+        <p>240 mg per packet is calibrated for that role: paired at exactly 2:1 with caffeine, the ratio used in the published research on cognitive performance.</p>
+        <div class="focus-block">
+          <h3>Key Focus Areas</h3>
+          <ul class="focus-list">
+            <li>Calm Focus</li>
+            <li>Sustained Attention</li>
+            <li>Stress Support</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="dose">
+      <h2>How Our Dose Stacks Up.</h2>
+      <p class="dose-sub">A clinical-grade dose, delivered daily.</p>
+      <div class="dose-table">
+        <div class="dose-cell"><div class="dose-cell-label">Clinical Studies</div><div class="dose-cell-value">100 to 400 mg</div></div>
+        <div class="dose-cell"><div class="dose-cell-label">Typical Supplement</div><div class="dose-cell-value">100 mg</div></div>
+        <div class="dose-cell highlight"><div class="dose-cell-label">DayShift</div><div class="dose-cell-value">240 mg</div></div>
+      </div>
+      <p class="dose-note">DayShift uses the 2:1 ratio with caffeine, the dose studied for cognitive performance.</p>
+    </section>
+
+    <div class="mid-cta">
+      <a class="btn" href="/products">Get Started &#x27F6;</a>
+    </div>
+
+    <section class="learn">
+      <h2>Want to Learn More?</h2>
+      <p class="learn-intro">Explore the peer-reviewed research on L-theanine and the caffeine pairing.</p>
+      <div class="study-grid">
+        <a class="study" href="https://pubmed.ncbi.nlm.nih.gov/18296328/" target="_blank" rel="noopener"><div class="study-meta">RCT &middot; Asia Pac J Clin Nutr, 2008</div><div class="study-title">L-theanine, a natural constituent in tea, and its effect on mental state</div><p class="study-desc">Nobre et al. 50 mg of L-theanine significantly increased alpha brain wave activity in healthy participants, the EEG-measured state associated with relaxed alertness.</p><span class="study-arrow">Read on PubMed &rarr;</span></a>
+        <a class="study" href="https://pubmed.ncbi.nlm.nih.gov/18006208/" target="_blank" rel="noopener"><div class="study-meta">RCT &middot; Biological Psychology, 2008</div><div class="study-title">L-theanine, caffeine, and their combination on cognition and mood</div><p class="study-desc">Haskell et al. RCT comparing L-theanine alone, caffeine alone, and the combination. The combined group showed faster reaction time and improved sentence verification accuracy versus caffeine alone.</p><span class="study-arrow">Read on PubMed &rarr;</span></a>
+        <a class="study" href="https://pubmed.ncbi.nlm.nih.gov/16930802/" target="_blank" rel="noopener"><div class="study-meta">RCT &middot; Biological Psychology, 2007</div><div class="study-title">L-theanine reduces psychological and physiological stress responses</div><p class="study-desc">Kimura et al. Participants given L-theanine before a mental arithmetic stress task showed reduced heart rate and salivary IgA stress markers, linked to attenuated sympathetic nervous activation.</p><span class="study-arrow">Read on PubMed &rarr;</span></a>
+      </div>
+    </section>
+
+    <nav class="ingredient-nav" aria-label="Other ingredient pages">
+      <a href="/pages/lions-mane">Lion's Mane</a>
+      <a href="/pages/cordyceps">Cordyceps</a>
+      <a href="/pages/caffeine">Caffeine</a>
+      <a href="/pages/alpha-gpc">Alpha-GPC</a>
+      <a href="/pages/nalt">NALT</a>
+      <a href="/pages/rhodiola">Rhodiola Rosea</a>
+      <a href="/pages/panax-ginseng">Panax Ginseng</a>
+    </nav>
+
+    <div class="cta-wrap">
+      <h2>Make The Shift Today.</h2>
+      <p class="cta-lead">240 mg of L-theanine, 120 mg of caffeine, and clinical doses of six other ingredients in every packet.</p>
+      <p class="cta-guarantee">Try it risk-free. Complete your first 10 servings and don't feel a difference? We'll refund you completely.</p>
+      <a class="btn" href="/products">Try DayShift &#x27F6;</a>
+      <p class="cta-fineprint">From $49/mo &bull; Free shipping &bull; Cancel anytime</p>
+    </div>
+
+  </div>
+</div>

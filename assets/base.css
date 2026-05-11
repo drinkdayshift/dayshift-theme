@@ -3594,34 +3594,31 @@ details-disclosure > details {
   100% {
     transform: translateX(100%) scaleX(0);
   }
- /* === DAYSHIFT POLICY PAGE STYLING === */
+/* === DAYSHIFT POLICY PAGE STYLING === */
 
 @font-face { font-family: "Aeonik"; src: url("https://cdn.shopify.com/s/files/1/0962/3676/5551/files/aeonik-regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
 @font-face { font-family: "Aeonik"; src: url("https://cdn.shopify.com/s/files/1/0962/3676/5551/files/aeonik-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
 @font-face { font-family: "Aeonik"; src: url("https://cdn.shopify.com/s/files/1/0962/3676/5551/files/aeonik-medium.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
 @font-face { font-family: "Aeonik"; src: url("https://cdn.shopify.com/s/files/1/0962/3676/5551/files/aeonik-bold.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
 
-html body .policies,
-html body .policies *,
-html body .policies *::before,
-html body .policies *::after {
+html body .shopify-policy__container,
+html body .shopify-policy__container * {
   font-family: "Aeonik", -apple-system, BlinkMacSystemFont, sans-serif !important;
   font-weight: 400 !important;
   font-style: normal !important;
   color: #1f1f1f !important;
 }
 
-html body .policies {
+html body .shopify-policy__container {
   max-width: 880px !important;
   margin: 0 auto !important;
   padding: 80px 32px 96px !important;
   background: #fff !important;
 }
 
-html body .policies h1,
-html body .policies h1.title,
-html body .policies .title,
-html body .policies .title--primary {
+html body .shopify-policy__title,
+html body .shopify-policy__title h1,
+html body .shopify-policy__title h1 * {
   font-size: 64px !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
@@ -3630,10 +3627,9 @@ html body .policies .title--primary {
   text-align: center !important;
   color: #0A0A0A !important;
   margin: 0 0 56px 0 !important;
-  display: block !important;
 }
 
-html body .policies .rte h2 {
+html body .shopify-policy__body h2 {
   font-size: 32px !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
@@ -3643,7 +3639,7 @@ html body .policies .rte h2 {
   color: #0A0A0A !important;
 }
 
-html body .policies .rte h3 {
+html body .shopify-policy__body h3 {
   font-size: 20px !important;
   font-weight: 700 !important;
   line-height: 1.3 !important;
@@ -3651,7 +3647,7 @@ html body .policies .rte h3 {
   color: #0A0A0A !important;
 }
 
-html body .policies .rte p {
+html body .shopify-policy__body p {
   font-size: 16px !important;
   font-weight: 400 !important;
   line-height: 1.7 !important;
@@ -3659,13 +3655,13 @@ html body .policies .rte p {
   color: #1f1f1f !important;
 }
 
-html body .policies .rte ul,
-html body .policies .rte ol {
+html body .shopify-policy__body ul,
+html body .shopify-policy__body ol {
   margin: 0 0 20px 0 !important;
   padding-left: 24px !important;
 }
 
-html body .policies .rte li {
+html body .shopify-policy__body li {
   font-size: 16px !important;
   font-weight: 400 !important;
   line-height: 1.7 !important;
@@ -3673,34 +3669,34 @@ html body .policies .rte li {
   color: #1f1f1f !important;
 }
 
-html body .policies .rte strong,
-html body .policies .rte b {
+html body .shopify-policy__body strong,
+html body .shopify-policy__body b {
   font-weight: 700 !important;
   color: #0A0A0A !important;
 }
 
-html body .policies .rte em,
-html body .policies .rte i {
+html body .shopify-policy__body em,
+html body .shopify-policy__body i {
   font-style: italic !important;
 }
 
-html body .policies .rte a {
+html body .shopify-policy__body a {
   color: #6B2FE0 !important;
   text-decoration: underline !important;
   text-underline-offset: 2px !important;
 }
 
-html body .policies .rte a:hover {
+html body .shopify-policy__body a:hover {
   color: #4a1fa3 !important;
 }
 
 @media (max-width: 720px) {
-  html body .policies { padding: 48px 22px 64px !important; }
-  html body .policies h1 { font-size: 40px !important; margin-bottom: 36px !important; }
-  html body .policies .rte h2 { font-size: 24px !important; margin-top: 48px !important; }
-  html body .policies .rte h3 { font-size: 17px !important; }
-  html body .policies .rte p,
-  html body .policies .rte li { font-size: 15px !important; }
+  html body .shopify-policy__container { padding: 48px 22px 64px !important; }
+  html body .shopify-policy__title h1 { font-size: 40px !important; margin-bottom: 36px !important; }
+  html body .shopify-policy__body h2 { font-size: 24px !important; margin-top: 48px !important; }
+  html body .shopify-policy__body h3 { font-size: 17px !important; }
+  html body .shopify-policy__body p,
+  html body .shopify-policy__body li { font-size: 15px !important; }
 }
 
 /* === FORCE POLICY TITLE COLOR === */

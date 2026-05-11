@@ -1,4 +1,156 @@
-{%- comment -%} NALT — final clean version with 3 verified studies {%- endcomment -%}
+{%- comment -%} NALT — fully SEO + AI optimized {%- endcomment -%}
+
+{%- comment -%} === SEO META + STRUCTURED DATA === {%- endcomment -%}
+{%- assign seo_title = "NALT | The Dopamine Builder | DayShift" -%}
+{%- assign seo_desc = "N-Acetyl L-Tyrosine (NALT) is the amino acid behind motivation and mental drive, a more bioavailable form of L-tyrosine. DayShift uses 800 mg per packet, dosed for cognitive performance under demand." -%}
+{%- assign seo_image = 'NALT-hero.png' | asset_url -%}
+{%- assign seo_url = shop.url | append: '/pages/nalt' -%}
+
+<meta name="description" content="{{ seo_desc }}">
+<link rel="canonical" href="{{ seo_url }}">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="{{ seo_title }}">
+<meta property="og:description" content="{{ seo_desc }}">
+<meta property="og:url" content="{{ seo_url }}">
+<meta property="og:image" content="{{ seo_image }}">
+<meta property="og:site_name" content="DayShift">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ seo_title }}">
+<meta name="twitter:description" content="{{ seo_desc }}">
+<meta name="twitter:image" content="{{ seo_image }}">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "NALT: The Dopamine Builder",
+  "description": "{{ seo_desc }}",
+  "image": "{{ seo_image }}",
+  "datePublished": "2026-05-11",
+  "dateModified": "{{ 'now' | date: '%Y-%m-%d' }}",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".hero-body p", ".mechanism-intro"]
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "DayShift",
+    "url": "{{ shop.url }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DayShift",
+    "logo": { "@type": "ImageObject", "url": "{{ 'dayshift-logo.png' | asset_url }}" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "{{ seo_url }}" },
+  "about": [
+    { "@type": "Thing", "name": "NALT" },
+    { "@type": "Thing", "name": "N-Acetyl L-Tyrosine" },
+    { "@type": "Thing", "name": "L-Tyrosine" },
+    { "@type": "Thing", "name": "Dopamine" },
+    { "@type": "Thing", "name": "Norepinephrine" },
+    { "@type": "Thing", "name": "Working Memory" },
+    { "@type": "Thing", "name": "Cognitive Performance Under Stress" }
+  ],
+  "citation": [
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Effect of tyrosine supplementation on clinical and healthy populations under stress or cognitive demands: a review",
+      "author": "Jongkees BJ, et al.",
+      "datePublished": "2015",
+      "isPartOf": { "@type": "Periodical", "name": "Journal of Psychiatric Research" },
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26424423/"
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Tyrosine improves working memory in a multitasking environment",
+      "author": "Thomas JR, et al.",
+      "datePublished": "1999",
+      "isPartOf": { "@type": "Periodical", "name": "Pharmacology Biochemistry and Behavior" },
+      "url": "https://pubmed.ncbi.nlm.nih.gov/10548261/"
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Working memory reloaded: tyrosine repletes updating in the N-back task",
+      "author": "Colzato LS, et al.",
+      "datePublished": "2013",
+      "isPartOf": { "@type": "Periodical", "name": "Frontiers in Behavioral Neuroscience" },
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24379768/"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ shop.url }}" },
+    { "@type": "ListItem", "position": 2, "name": "Ingredients", "item": "{{ shop.url }}/pages/ingredients" },
+    { "@type": "ListItem", "position": 3, "name": "NALT", "item": "{{ seo_url }}" }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is NALT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "NALT stands for N-Acetyl L-Tyrosine, a more bioavailable form of the amino acid L-tyrosine. L-tyrosine is the building block your brain uses to make dopamine and norepinephrine, the neurotransmitters behind focus, motivation, and alertness. NALT is one of the most studied amino acids for sustaining cognitive performance under stress and demand."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does NALT do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "NALT is studied for its role in supplying tyrosine to the brain, which is then used to make dopamine (the neurotransmitter behind motivation and drive) and norepinephrine (the neurotransmitter behind alertness and focus). It is most studied for cognitive performance during long stretches of demand, stress, or fatigue."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much NALT is in DayShift?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Each DayShift packet contains 800 mg of NALT, dosed within the 300 to 800 mg range used in clinical research on cognitive performance under demand."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between NALT and L-tyrosine?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "NALT (N-Acetyl L-Tyrosine) is a more soluble form of L-tyrosine. The N-acetyl group makes the molecule easier for the body to absorb and use. Both deliver tyrosine to the brain, but NALT is studied as a more bioavailable option."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When does NALT work best?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Research suggests NALT is most useful when the brain is depleting catecholamines faster than usual, such as during long stretches of focus, multitasking, stress, or fatigue. It supports what happens when the day demands more than baseline."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is NALT safe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "NALT has a strong safety record in clinical trials at the doses used for cognitive support. As with any supplement, consult your healthcare provider if you are pregnant, nursing, or taking medication, including thyroid medication or MAOIs."
+      }
+    }
+  ]
+}
+</script>
 
 <style>
 /* === FONTS === */
@@ -51,7 +203,7 @@ html body .ds-nalt .cta-wrap h2 {
   margin: 0 !important;
   color: #0A0A0A !important;
 }
-html body .ds-nalt .hero-title { font-size: 44px !important; margin-bottom: 14px !important; }
+html body .ds-nalt .hero-title { font-size: 52px !important; margin-bottom: 14px !important; }
 html body .ds-nalt .mechanism h2,
 html body .ds-nalt .learn h2 { font-size: 40px !important; margin-bottom: 16px !important; }
 html body .ds-nalt .cta-wrap h2 { font-size: 36px !important; margin-bottom: 14px !important; }
@@ -306,7 +458,7 @@ html body .ds-nalt .btn:hover { background: #000 !important; }
     <section class="hero">
       <div class="hero-body">
         <h1 class="hero-title">N-Acetyl L-Tyrosine (NALT)</h1>
-<p class="hero-eyebrow">The Dopamine Builder</p>
+        <p class="hero-eyebrow">The Dopamine Builder</p>
         <p>N-Acetyl L-Tyrosine (NALT) is the amino acid behind motivation and mental drive. It's a more bioavailable form of L-tyrosine, the building block your brain uses to make dopamine and norepinephrine, the neurotransmitters behind focus, motivation, and alertness.</p>
         <p>NALT is one of the most studied amino acids for sustaining cognitive performance under pressure. Where most nootropics support a baseline, NALT supports what happens when the day demands more than that.</p>
       </div>

@@ -1,0 +1,208 @@
+{%- comment -%} DayShift Disclaimer Page — self-contained template with styling and content {%- endcomment -%}
+
+{%- comment -%} === SEO META === {%- endcomment -%}
+{%- assign seo_title = "Disclaimer | DayShift" -%}
+{%- assign seo_desc = "Important health, safety, and usage information about DayShift, including FDA disclaimer, caffeine content, Proposition 65 warning, allergen notice, and adverse reaction guidance." -%}
+{%- assign seo_url = shop.url | append: '/pages/disclaimer' -%}
+
+<meta name="description" content="{{ seo_desc }}">
+<link rel="canonical" href="{{ seo_url }}">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="{{ seo_title }}">
+<meta property="og:description" content="{{ seo_desc }}">
+<meta property="og:url" content="{{ seo_url }}">
+<meta property="og:site_name" content="DayShift">
+
+<style>
+@font-face { font-family: "AeonikDS"; src: url("https://cdn.shopify.com/s/files/1/0962/3676/5551/files/aeonik-regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "AeonikDS"; src: url("https://cdn.shopify.com/s/files/1/0962/3676/5551/files/aeonik-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "AeonikDS"; src: url("https://cdn.shopify.com/s/files/1/0962/3676/5551/files/aeonik-medium.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "AeonikDS"; src: url("https://cdn.shopify.com/s/files/1/0962/3676/5551/files/aeonik-bold.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+
+html body .ds-disclaimer,
+html body .ds-disclaimer * {
+  font-family: "AeonikDS", -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-style: normal !important;
+}
+
+html body .ds-disclaimer {
+  max-width: 880px !important;
+  margin: 0 auto !important;
+  padding: 80px 32px 96px !important;
+  background: #fff !important;
+  color: #1f1f1f !important;
+}
+
+html body .ds-disclaimer .ds-disclaimer-header {
+  border-bottom: 1px solid #E5E5E5;
+  padding-bottom: 32px;
+  margin-bottom: 56px;
+}
+
+html body .ds-disclaimer h1.ds-disclaimer-title {
+  font-size: 64px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.05 !important;
+  text-align: center !important;
+  color: #0A0A0A !important;
+  margin: 0 0 16px 0 !important;
+  display: block !important;
+}
+
+html body .ds-disclaimer .ds-disclaimer-meta {
+  font-size: 14px !important;
+  color: #555 !important;
+  text-align: center !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+}
+html body .ds-disclaimer .ds-disclaimer-meta strong {
+  color: #0A0A0A !important;
+  font-weight: 600 !important;
+}
+
+html body .ds-disclaimer h2 {
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.2 !important;
+  margin: 48px 0 16px 0 !important;
+  color: #0A0A0A !important;
+}
+
+html body .ds-disclaimer p {
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 1.7 !important;
+  margin: 0 0 16px 0 !important;
+  color: #1f1f1f !important;
+}
+
+html body .ds-disclaimer .ds-disclaimer-warning {
+  background: #FFF1D6 !important;
+  border-radius: 12px;
+  padding: 24px 28px;
+  margin: 0 0 16px 0 !important;
+}
+
+html body .ds-disclaimer .ds-disclaimer-warning p {
+  margin: 0 !important;
+  font-weight: 500 !important;
+  color: #0A0A0A !important;
+}
+
+html body .ds-disclaimer strong {
+  font-weight: 700 !important;
+  color: #0A0A0A !important;
+}
+
+html body .ds-disclaimer a {
+  color: #6B2FE0 !important;
+  text-decoration: underline !important;
+  text-underline-offset: 2px;
+}
+html body .ds-disclaimer a:hover {
+  color: #4a1fa3 !important;
+}
+
+html body .ds-disclaimer .ds-disclaimer-contact {
+  margin-top: 56px;
+  padding: 28px;
+  background: #F5F5F4;
+  border-radius: 12px;
+  font-size: 15px !important;
+  line-height: 1.7 !important;
+}
+html body .ds-disclaimer .ds-disclaimer-contact p {
+  margin: 0 0 4px 0 !important;
+  font-size: 15px !important;
+}
+
+html body .ds-disclaimer .ds-disclaimer-footer-nav {
+  margin-top: 64px;
+  padding-top: 32px;
+  border-top: 1px solid #E5E5E5;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+html body .ds-disclaimer .ds-disclaimer-footer-nav a {
+  display: inline-block !important;
+  padding: 8px 16px !important;
+  background: #F5F5F4 !important;
+  color: #1f1f1f !important;
+  text-decoration: none !important;
+  border-radius: 999px !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+}
+
+@media (max-width: 720px) {
+  html body .ds-disclaimer { padding: 48px 22px 64px !important; }
+  html body .ds-disclaimer h1.ds-disclaimer-title { font-size: 40px !important; }
+  html body .ds-disclaimer h2 { font-size: 18px !important; margin-top: 36px !important; }
+  html body .ds-disclaimer p { font-size: 15px !important; }
+}
+</style>
+
+<div class="ds-disclaimer">
+
+  <header class="ds-disclaimer-header">
+    <h1 class="ds-disclaimer-title">Disclaimer</h1>
+    <p class="ds-disclaimer-meta">
+      <strong>Effective Date:</strong> June 1, 2026 &middot;
+      <strong>Last Updated:</strong> June 1, 2026
+    </p>
+  </header>
+
+  <h2>1. FDA Statement</h2>
+  <p>These statements have not been evaluated by the U.S. Food and Drug Administration. DayShift is a dietary supplement and is not intended to diagnose, treat, cure, or prevent any disease.</p>
+
+  <h2>2. Consult Your Healthcare Provider</h2>
+  <p>Always consult a qualified healthcare professional before beginning any new supplement regimen, especially if you are pregnant, nursing, taking prescription or over-the-counter medications, or have a pre-existing medical condition.</p>
+
+  <h2>3. Usage Restrictions and Caffeine</h2>
+  <p>DayShift is not intended for individuals under the age of 18. Each serving contains approximately 120 mg of caffeine, comparable to a standard cup of brewed coffee. DayShift is intended for daily use at a frequency of approximately five (5) servings per week. Limit your total daily caffeine intake from all sources accordingly.</p>
+
+  <h2>4. Results May Vary</h2>
+  <p>Statements about DayShift's effects describe the role of its ingredients in supporting normal cognitive function, energy, and mood. Individual results vary, and DayShift does not guarantee any specific outcome. Information about ingredient research is summarized from published studies for general consumer education and does not substitute medical advice.</p>
+
+  <h2>5. Endorsement and Affiliate Disclosure</h2>
+  <p>Individuals appearing on the DayShift website, social media, advertising, and email marketing may have received free product, monetary compensation, affiliate commission, or other material consideration in exchange for their endorsement. Endorsements reflect the honest personal experience of the individual and are not a guarantee of similar results for any other consumer.</p>
+
+  <h2>6. Informational Use Only</h2>
+  <p>The content provided on the DayShift website, in our marketing communications, and in customer service responses is for general informational purposes only. It does not constitute medical, nutritional, or legal advice and should not be relied upon as a substitute for advice from a qualified professional.</p>
+
+  <h2>7. California Proposition 65 Warning</h2>
+  <div class="ds-disclaimer-warning">
+    <p><strong>WARNING:</strong> This product can expose you to chemicals known to the State of California to cause cancer and reproductive harm. For more information, go to <a href="https://www.P65Warnings.ca.gov" target="_blank" rel="noopener">www.P65Warnings.ca.gov</a>.</p>
+  </div>
+
+  <h2>8. Allergen Notice</h2>
+  <p>DayShift is manufactured at a facility that handles milk, soy, fish, tree nuts, peanuts, and wheat. The facility implements strict allergen control programs, but persons with severe allergies should consult their healthcare provider before consuming DayShift. For full allergen and ingredient information, see our <a href="/policies/terms-of-service">Terms of Service</a>.</p>
+
+  <h2>9. Adverse Reaction</h2>
+  <p>Discontinue use immediately and consult a qualified healthcare professional if you experience any adverse reaction to DayShift, including but not limited to nausea, headache, rapid heartbeat, dizziness, anxiety, or any allergic reaction. Notify us at <a href="mailto:support@drinkdayshift.com">support@drinkdayshift.com</a> so that we may assist you and document the event.</p>
+
+  <h2>10. Contact</h2>
+  <div class="ds-disclaimer-contact">
+    <p><strong>Luma Brands LLC, doing business as DayShift</strong></p>
+    <p>3023 Thomas Avenue, #1502</p>
+    <p>Dallas, TX 75204</p>
+    <p><a href="mailto:support@drinkdayshift.com">support@drinkdayshift.com</a></p>
+  </div>
+
+  <nav class="ds-disclaimer-footer-nav" aria-label="Other policies">
+    <a href="/policies/privacy-policy">Privacy Policy</a>
+    <a href="/policies/terms-of-service">Terms of Service</a>
+    <a href="/policies/refund-policy">Refund Policy</a>
+    <a href="/policies/shipping-policy">Shipping Policy</a>
+  </nav>
+
+</div>

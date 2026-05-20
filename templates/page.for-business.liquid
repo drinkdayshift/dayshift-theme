@@ -1,0 +1,520 @@
+{%- comment -%} DayShift For Business Page — self-contained template with styling, content, and Shopify contact form {%- endcomment -%}
+
+{%- comment -%} === SEO META === {%- endcomment -%}
+{%- assign seo_title = "For Business | DayShift" -%}
+{%- assign seo_desc = "DayShift for offices and teams. Sharper focus, sustained energy, and a perk your team uses every workday. Email us for a quote within one business day." -%}
+{%- assign seo_url = shop.url | append: '/pages/for-business' -%}
+
+<meta name="description" content="{{ seo_desc }}">
+<link rel="canonical" href="{{ seo_url }}">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ seo_title }}">
+<meta property="og:description" content="{{ seo_desc }}">
+<meta property="og:url" content="{{ seo_url }}">
+<meta property="og:site_name" content="DayShift">
+
+<style>
+@font-face { font-family: "AeonikDS"; src: url("https://cdn.shopify.com/s/files/1/0962/3676/5551/files/aeonik-regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "AeonikDS"; src: url("https://cdn.shopify.com/s/files/1/0962/3676/5551/files/aeonik-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "AeonikDS"; src: url("https://cdn.shopify.com/s/files/1/0962/3676/5551/files/aeonik-medium.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "AeonikDS"; src: url("https://cdn.shopify.com/s/files/1/0962/3676/5551/files/aeonik-bold.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+
+html body .ds-fb,
+html body .ds-fb * {
+  font-family: "AeonikDS", -apple-system, BlinkMacSystemFont, sans-serif !important;
+  box-sizing: border-box;
+}
+
+html body .ds-fb {
+  width: 100%;
+  background: #fff;
+  color: #0A0A0A;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+html body .ds-fb .container {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+html body .ds-fb section { padding: 96px 0; }
+
+@media (max-width: 720px) {
+  html body .ds-fb section { padding: 64px 0; }
+}
+
+/* ============ HERO ============ */
+
+html body .ds-fb .hero {
+  text-align: center;
+  padding-top: 64px;
+}
+
+html body .ds-fb h1.hero-title {
+  font-size: 72px !important;
+  font-weight: 700 !important;
+  line-height: 1.02 !important;
+  letter-spacing: -0.02em !important;
+  text-transform: uppercase !important;
+  margin: 0 auto 48px !important;
+  max-width: 800px !important;
+  color: #0A0A0A !important;
+}
+
+html body .ds-fb .hero-photo {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 48px;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: #F4F4F4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+html body .ds-fb .hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+html body .ds-fb .hero-photo-placeholder {
+  color: #6E6E73;
+  font-size: 14px;
+  text-align: center;
+  padding: 24px;
+}
+
+html body .ds-fb .hero-sub {
+  font-size: 19px !important;
+  line-height: 1.55 !important;
+  color: #1f1f1f !important;
+  max-width: 640px !important;
+  margin: 0 auto 24px !important;
+}
+
+html body .ds-fb .hero-callout {
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  color: #0A0A0A !important;
+  margin: 0 auto 32px !important;
+}
+
+@media (max-width: 720px) {
+  html body .ds-fb h1.hero-title { font-size: 44px !important; letter-spacing: -0.015em !important; margin-bottom: 32px !important; }
+  html body .ds-fb .hero-sub { font-size: 17px !important; }
+  html body .ds-fb .hero-callout { font-size: 17px !important; }
+  html body .ds-fb .hero-photo { margin-bottom: 36px; }
+}
+
+/* ============ BUTTONS ============ */
+
+html body .ds-fb .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #0A0A0A !important;
+  color: #fff !important;
+  text-decoration: none !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  padding: 18px 32px !important;
+  border-radius: 999px !important;
+  transition: background 200ms ease, transform 200ms ease;
+  border: none;
+  cursor: pointer;
+  font-family: inherit !important;
+}
+
+html body .ds-fb .btn-primary:hover {
+  background: #FF8300 !important;
+}
+
+html body .ds-fb .btn-primary .arrow {
+  display: inline-block;
+  transition: transform 200ms ease;
+}
+
+html body .ds-fb .btn-primary:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* ============ SECTION 2 — WHY ============ */
+
+html body .ds-fb .why {
+  background: #fff;
+  text-align: center;
+}
+
+html body .ds-fb .section-eyebrow {
+  display: inline-block;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  color: #6E6E73 !important;
+  margin-bottom: 16px !important;
+}
+
+html body .ds-fb h2.section-title {
+  font-size: 42px !important;
+  font-weight: 700 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.015em !important;
+  text-transform: uppercase !important;
+  margin-bottom: 56px !important;
+  color: #0A0A0A !important;
+}
+
+html body .ds-fb .section-sub {
+  font-size: 18px !important;
+  line-height: 1.55 !important;
+  color: #1f1f1f !important;
+  max-width: 560px !important;
+  margin: -40px auto 56px !important;
+}
+
+@media (max-width: 720px) {
+  html body .ds-fb h2.section-title { font-size: 30px !important; margin-bottom: 40px !important; }
+  html body .ds-fb .section-sub { font-size: 16px !important; margin: -24px auto 40px !important; }
+}
+
+html body .ds-fb .why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 8px;
+}
+
+@media (max-width: 720px) {
+  html body .ds-fb .why-grid { grid-template-columns: 1fr; gap: 16px; }
+}
+
+html body .ds-fb .why-card {
+  background: #F4F4F4;
+  border-radius: 16px;
+  padding: 36px 28px;
+  text-align: left;
+}
+
+html body .ds-fb .why-card .num {
+  font-size: 36px !important;
+  font-weight: 700 !important;
+  color: #0A0A0A !important;
+  margin-bottom: 16px !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1 !important;
+}
+
+html body .ds-fb .why-card h3 {
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  margin-bottom: 12px !important;
+  color: #0A0A0A !important;
+}
+
+html body .ds-fb .why-card p {
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+  color: #1f1f1f !important;
+}
+
+/* ============ FAQ ============ */
+
+html body .ds-fb .faq {
+  background: #fff;
+  text-align: center;
+}
+
+html body .ds-fb .faq-list {
+  max-width: 720px;
+  margin: 16px auto 0;
+  text-align: left;
+}
+
+html body .ds-fb details.faq-item {
+  border-bottom: 1px solid #E5E5E5;
+  padding: 24px 0;
+}
+
+html body .ds-fb details.faq-item:first-of-type {
+  border-top: 1px solid #E5E5E5;
+}
+
+html body .ds-fb details.faq-item summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  color: #0A0A0A !important;
+  cursor: pointer;
+  list-style: none;
+  padding-right: 8px;
+}
+
+html body .ds-fb details.faq-item summary::-webkit-details-marker { display: none; }
+
+html body .ds-fb details.faq-item summary::after {
+  content: "+";
+  font-size: 24px;
+  font-weight: 400;
+  color: #0A0A0A;
+  margin-left: 16px;
+  transition: transform 200ms ease;
+}
+
+html body .ds-fb details.faq-item[open] summary::after { content: "–"; }
+
+html body .ds-fb details.faq-item p {
+  font-size: 16px !important;
+  line-height: 1.65 !important;
+  color: #1f1f1f !important;
+  margin-top: 16px !important;
+  padding-right: 32px !important;
+}
+
+@media (max-width: 720px) {
+  html body .ds-fb details.faq-item summary { font-size: 16px !important; }
+  html body .ds-fb details.faq-item p { font-size: 15px !important; }
+}
+
+/* ============ CONTACT FORM ============ */
+
+html body .ds-fb .contact {
+  background: #F4F4F4;
+  text-align: center;
+}
+
+html body .ds-fb .contact .section-title { margin-bottom: 16px !important; }
+
+html body .ds-fb .form-wrap {
+  max-width: 520px;
+  margin: 40px auto 0;
+  text-align: left;
+}
+
+html body .ds-fb .form-field { margin-bottom: 24px; }
+
+html body .ds-fb .form-field label {
+  display: block;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  color: #0A0A0A !important;
+  margin-bottom: 8px !important;
+  letter-spacing: 0.02em !important;
+}
+
+html body .ds-fb .form-field input,
+html body .ds-fb .form-field select,
+html body .ds-fb .form-field textarea {
+  width: 100%;
+  font-family: inherit !important;
+  font-size: 16px !important;
+  color: #0A0A0A !important;
+  background: #fff !important;
+  border: 1px solid #E5E5E5 !important;
+  border-radius: 10px !important;
+  padding: 14px 16px !important;
+  transition: border-color 150ms ease;
+}
+
+html body .ds-fb .form-field input:focus,
+html body .ds-fb .form-field select:focus,
+html body .ds-fb .form-field textarea:focus {
+  outline: none !important;
+  border-color: #0A0A0A !important;
+}
+
+html body .ds-fb .form-field textarea { resize: vertical; min-height: 120px; }
+
+html body .ds-fb .form-submit { margin-top: 8px; text-align: center; }
+
+html body .ds-fb .form-submit button {
+  width: 100%;
+  justify-content: center;
+  padding: 18px 32px !important;
+}
+
+html body .ds-fb .form-foot {
+  text-align: center;
+  font-size: 13px !important;
+  color: #6E6E73 !important;
+  margin-top: 24px !important;
+  line-height: 1.5 !important;
+}
+
+html body .ds-fb .form-success {
+  background: #E8F5E9;
+  color: #1B5E20;
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin-bottom: 24px;
+  font-size: 15px;
+  text-align: center;
+  font-weight: 500;
+}
+
+html body .ds-fb .form-errors {
+  background: #FFEBEE;
+  color: #B71C1C;
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin-bottom: 24px;
+  font-size: 15px;
+}
+
+html body .ds-fb .form-errors p { margin: 0; }
+html body .ds-fb .form-errors p + p { margin-top: 4px; }
+
+</style>
+
+<main class="ds-fb">
+
+  <!-- ============ SECTION 1: HERO ============ -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="hero-title">Built for the workday.<br>At scale.</h1>
+      <div class="hero-photo">
+        {%- comment -%} Replace with corrected office hero shot: 12 mL packet, "Citrus Yuzu" flavor, "Daily Productivity Boost" descriptor. Upload via Shopify Files and swap the placeholder div below with an <img> tag. {%- endcomment -%}
+        <div class="hero-photo-placeholder">[ Office hero photo ]<br>Marble counter, motion-blurred professionals in background, DayShift sachet centered.</div>
+      </div>
+      <p class="hero-sub">Introduce a new kind of efficiency to the office. No slow mornings, no 3 p.m. crashes, no Thursday burnout. Just consistent productivity.</p>
+      <p class="hero-callout">Stock the office today.</p>
+      <a href="#contact" class="btn-primary">Get Started <span class="arrow">&rarr;</span></a>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 2: WHY TEAMS CHOOSE DAYSHIFT ============ -->
+  <section class="why">
+    <div class="container">
+      <h2 class="section-title">Why teams choose DayShift.</h2>
+
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="num">01</div>
+          <h3>A perk that gets used.</h3>
+          <p>DayShift fits naturally into the workday, opened with morning emails, before meetings, or when the afternoon stretch hits. Five days a week, right at the desk, no refrigeration necessary.</p>
+        </div>
+        <div class="why-card">
+          <div class="num">02</div>
+          <h3>Cleaner than the coffee run.</h3>
+          <p>Each sachet pours into water for clean caffeine, functional mushrooms, and dosed nootropics in one easy drink. No waiting on another coffee, no overloaded fridge, no afternoon crash cycle.</p>
+        </div>
+        <div class="why-card">
+          <div class="num">03</div>
+          <h3>Easy for teams to expense.</h3>
+          <p>Every order, on request, comes with an itemized invoice, making it simple for your team to submit, approve, and track DayShift as an office purchase.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 3: FAQ ============ -->
+  <section class="faq">
+    <div class="container">
+      <span class="section-eyebrow">Quick Answers</span>
+      <h2 class="section-title">Low risk. High flexibility.</h2>
+
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary>Can we cancel or pause anytime?</summary>
+          <p>Yes. No contracts. Pause, skip, swap flavors, or cancel from your account portal anytime. We don't lock you in.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>What if our team doesn't like it?</summary>
+          <p>First orders come with a 30-day money-back guarantee. Swap flavors anytime at no charge.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>What if our team size changes month to month?</summary>
+          <p>Adjust your order quantity any month. No penalties, no minimums beyond 10 employees.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>How does delivery work?</summary>
+          <p>Free shipping on every order. Ships in 1 to 2 business days, delivered in 3 to 7. USPS or UPS.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Is this tax-deductible?</summary>
+          <p>Most companies expense DayShift as a wellness or productivity benefit. Talk to your CPA about the right category for your business. Not tax advice.</p>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 4: CONTACT FORM ============ -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2 class="section-title">Tell us about your team.</h2>
+      <p class="section-sub">We respond by email within one business day. No calls unless you ask.</p>
+
+      {%- form 'contact', class: 'form-wrap' -%}
+
+        {%- if form.posted_successfully? -%}
+          <p class="form-success">Thanks. We received your message and will respond by email within one business day.</p>
+        {%- endif -%}
+
+        {%- if form.errors -%}
+          <div class="form-errors">
+            {%- for field in form.errors -%}
+              <p>Please complete the {{ form.errors.translated_fields[field] | downcase }} field correctly.</p>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+
+        <div class="form-field">
+          <label for="fb-name">Full name</label>
+          <input type="text" id="fb-name" name="contact[name]" required>
+        </div>
+
+        <div class="form-field">
+          <label for="fb-business">Your business</label>
+          <input type="text" id="fb-business" name="contact[company]" required>
+        </div>
+
+        <div class="form-field">
+          <label for="fb-email">Email</label>
+          <input type="email" id="fb-email" name="contact[email]" required>
+        </div>
+
+        <div class="form-field">
+          <label for="fb-team-size">Team size</label>
+          <select id="fb-team-size" name="contact[team-size]" required>
+            <option value="">Select team size</option>
+            <option value="10-25">10 to 25</option>
+            <option value="26-50">26 to 50</option>
+            <option value="51-100">51 to 100</option>
+            <option value="101-250">101 to 250</option>
+            <option value="250+">250+</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="fb-notes">Anything else we should know? (optional)</label>
+          <textarea id="fb-notes" name="contact[body]" placeholder="A short note about your team, timeline, or any questions."></textarea>
+        </div>
+
+        <div class="form-submit">
+          <button type="submit" class="btn-primary">Send <span class="arrow">&rarr;</span></button>
+        </div>
+
+      {%- endform -%}
+
+      <p class="form-foot">No spam. No calls unless you ask. We respond by email within one business day.</p>
+    </div>
+  </section>
+
+</main>

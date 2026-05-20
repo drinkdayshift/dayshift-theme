@@ -1,0 +1,372 @@
+{%- comment -%} DayShift Contact Page — self-contained template with styling, content, and Shopify contact form {%- endcomment -%}
+
+{%- comment -%} === SEO META === {%- endcomment -%}
+{%- assign seo_title = "Contact DayShift | Customer Support & Subscription Help" -%}
+{%- assign seo_desc = "Get in touch with DayShift. Email our team about your order, subscription, press, or anything else. We respond within one business day." -%}
+{%- assign seo_url = shop.url | append: '/pages/contact' -%}
+
+<meta name="description" content="{{ seo_desc }}">
+<link rel="canonical" href="{{ seo_url }}">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ seo_title }}">
+<meta property="og:description" content="{{ seo_desc }}">
+<meta property="og:url" content="{{ seo_url }}">
+<meta property="og:site_name" content="DayShift">
+
+<style>
+@font-face { font-family: "AeonikDS"; src: url("https://cdn.shopify.com/s/files/1/0962/3676/5551/files/aeonik-regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "AeonikDS"; src: url("https://cdn.shopify.com/s/files/1/0962/3676/5551/files/aeonik-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "AeonikDS"; src: url("https://cdn.shopify.com/s/files/1/0962/3676/5551/files/aeonik-medium.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "AeonikDS"; src: url("https://cdn.shopify.com/s/files/1/0962/3676/5551/files/aeonik-bold.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+
+html body .ds-contact,
+html body .ds-contact * {
+  font-family: "AeonikDS", -apple-system, BlinkMacSystemFont, sans-serif !important;
+  box-sizing: border-box;
+}
+
+html body .ds-contact {
+  width: 100%;
+  background: #fff;
+  color: #0A0A0A;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+html body .ds-contact .container {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+html body .ds-contact section { padding: 56px 0; }
+
+@media (max-width: 720px) {
+  html body .ds-contact section { padding: 44px 0; }
+}
+
+/* ============ HERO ============ */
+
+html body .ds-contact .hero {
+  text-align: center;
+  padding-top: 64px;
+  padding-bottom: 24px;
+}
+
+html body .ds-contact h1.hero-title {
+  font-size: 52px !important;
+  font-weight: 700 !important;
+  line-height: 1.04 !important;
+  letter-spacing: -0.02em !important;
+  text-transform: uppercase !important;
+  margin: 0 auto 24px !important;
+  max-width: 760px !important;
+  color: #0A0A0A !important;
+}
+
+html body .ds-contact .hero-sub {
+  font-size: 19px !important;
+  line-height: 1.55 !important;
+  color: #1f1f1f !important;
+  max-width: 620px !important;
+  margin: 0 auto !important;
+}
+
+@media (max-width: 720px) {
+  html body .ds-contact h1.hero-title { font-size: 36px !important; letter-spacing: -0.015em !important; margin-bottom: 20px !important; }
+  html body .ds-contact .hero-sub { font-size: 17px !important; }
+}
+
+/* ============ SHARED SECTION HEADINGS ============ */
+
+html body .ds-contact h2.section-title {
+  font-size: 38px !important;
+  font-weight: 700 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.015em !important;
+  text-transform: uppercase !important;
+  margin-bottom: 20px !important;
+  color: #0A0A0A !important;
+}
+
+html body .ds-contact .section-sub {
+  font-size: 18px !important;
+  line-height: 1.55 !important;
+  color: #1f1f1f !important;
+  max-width: 560px !important;
+  margin: 0 auto 40px !important;
+}
+
+@media (max-width: 720px) {
+  html body .ds-contact h2.section-title { font-size: 28px !important; }
+  html body .ds-contact .section-sub { font-size: 16px !important; margin-bottom: 28px !important; }
+}
+
+/* ============ BUTTONS ============ */
+
+html body .ds-contact .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #0A0A0A !important;
+  color: #fff !important;
+  text-decoration: none !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  padding: 18px 32px !important;
+  border-radius: 999px !important;
+  transition: background 200ms ease, transform 200ms ease;
+  border: none;
+  cursor: pointer;
+  font-family: inherit !important;
+}
+
+html body .ds-contact .btn-primary:hover {
+  background: #FF8300 !important;
+}
+
+html body .ds-contact .btn-primary .arrow {
+  display: inline-block;
+  transition: transform 200ms ease;
+}
+
+html body .ds-contact .btn-primary:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* ============ FORM SECTION ============ */
+
+html body .ds-contact .contact-section {
+  background: #F4F4F4;
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 56px;
+}
+
+html body .ds-contact .form-wrap {
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+html body .ds-contact .form-field { margin-bottom: 24px; }
+
+html body .ds-contact .form-field label {
+  display: block;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  color: #0A0A0A !important;
+  margin-bottom: 8px !important;
+  letter-spacing: 0.02em !important;
+}
+
+html body .ds-contact .form-field input,
+html body .ds-contact .form-field select,
+html body .ds-contact .form-field textarea {
+  width: 100%;
+  font-family: inherit !important;
+  font-size: 16px !important;
+  color: #0A0A0A !important;
+  background: #fff !important;
+  border: 1px solid #E5E5E5 !important;
+  border-radius: 10px !important;
+  padding: 14px 16px !important;
+  transition: border-color 150ms ease;
+}
+
+html body .ds-contact .form-field input:focus,
+html body .ds-contact .form-field select:focus,
+html body .ds-contact .form-field textarea:focus {
+  outline: none !important;
+  border-color: #0A0A0A !important;
+}
+
+html body .ds-contact .form-field textarea { resize: vertical; min-height: 140px; }
+
+html body .ds-contact .form-submit { margin-top: 8px; text-align: center; }
+
+html body .ds-contact .form-submit button {
+  width: 100%;
+  justify-content: center;
+  padding: 18px 32px !important;
+}
+
+html body .ds-contact .form-foot {
+  text-align: center;
+  font-size: 13px !important;
+  color: #6E6E73 !important;
+  margin-top: 24px !important;
+  line-height: 1.5 !important;
+}
+
+html body .ds-contact .form-success {
+  background: #E8F5E9;
+  color: #1B5E20;
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin-bottom: 24px;
+  font-size: 15px;
+  text-align: center;
+  font-weight: 500;
+}
+
+html body .ds-contact .form-errors {
+  background: #FFEBEE;
+  color: #B71C1C;
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin-bottom: 24px;
+  font-size: 15px;
+}
+
+html body .ds-contact .form-errors p { margin: 0; }
+html body .ds-contact .form-errors p + p { margin-top: 4px; }
+
+/* ============ REACH SECTION ============ */
+
+html body .ds-contact .reach {
+  background: #fff;
+  text-align: center;
+  padding-top: 56px;
+  padding-bottom: 72px;
+}
+
+html body .ds-contact .reach-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 880px;
+  margin: 24px auto 0;
+}
+
+@media (max-width: 720px) {
+  html body .ds-contact .reach-grid { grid-template-columns: 1fr; gap: 16px; }
+}
+
+html body .ds-contact .reach-card {
+  background: #F4F4F4;
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: center;
+}
+
+html body .ds-contact .reach-card h3 {
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  color: #6E6E73 !important;
+  margin-bottom: 12px !important;
+}
+
+html body .ds-contact .reach-card p,
+html body .ds-contact .reach-card a {
+  font-size: 16px !important;
+  line-height: 1.55 !important;
+  color: #0A0A0A !important;
+  margin: 0 !important;
+}
+
+html body .ds-contact .reach-card a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+html body .ds-contact .reach-card a:hover { color: #FF8300 !important; }
+
+</style>
+
+<main class="ds-contact">
+
+  <!-- ============ SECTION 1: HERO ============ -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="hero-title">Get in touch.</h1>
+      <p class="hero-sub">We respond by email within one business day. Reach out about your subscription, an order, press, or anything else.</p>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 2: CONTACT FORM ============ -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+
+      {%- form 'contact', class: 'form-wrap' -%}
+
+        {%- if form.posted_successfully? -%}
+          <p class="form-success">Thanks. We received your message and will respond by email within one business day.</p>
+        {%- endif -%}
+
+        {%- if form.errors -%}
+          <div class="form-errors">
+            {%- for field in form.errors -%}
+              <p>Please complete the {{ form.errors.translated_fields[field] | downcase }} field correctly.</p>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+
+        <div class="form-field">
+          <label for="contact-name">Full name</label>
+          <input type="text" id="contact-name" name="contact[name]" required>
+        </div>
+
+        <div class="form-field">
+          <label for="contact-email">Email</label>
+          <input type="email" id="contact-email" name="contact[email]" required>
+        </div>
+
+        <div class="form-field">
+          <label for="contact-subject">Subject</label>
+          <select id="contact-subject" name="contact[subject]" required>
+            <option value="">Select a subject</option>
+            <option value="My order">My order</option>
+            <option value="My subscription">My subscription</option>
+            <option value="Press inquiry">Press inquiry</option>
+            <option value="Retail / Wholesale">Retail / Wholesale</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="contact-body">Message</label>
+          <textarea id="contact-body" name="contact[body]" placeholder="Tell us what's going on. Include your order number if it helps." required></textarea>
+        </div>
+
+        <div class="form-submit">
+          <button type="submit" class="btn-primary">Send <span class="arrow">&rarr;</span></button>
+        </div>
+
+      {%- endform -%}
+
+      <p class="form-foot">No spam. We respond by email within one business day.</p>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 3: OTHER WAYS TO REACH ============ -->
+  <section class="reach">
+    <div class="container">
+      <h2 class="section-title">Other ways to reach us.</h2>
+
+      <div class="reach-grid">
+
+        <div class="reach-card">
+          <h3>Email</h3>
+          <p><a href="mailto:support@drinkdayshift.com">support@drinkdayshift.com</a></p>
+        </div>
+
+        <div class="reach-card">
+          <h3>Mailing Address</h3>
+          <p>Luma Brands LLC dba DayShift<br>3023 Thomas Avenue, #1502<br>Dallas, TX 75204</p>
+        </div>
+
+        <div class="reach-card">
+          <h3>For Business</h3>
+          <p>Office and team orders.<br><a href="/pages/for-business">Visit For Business &rarr;</a></p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>

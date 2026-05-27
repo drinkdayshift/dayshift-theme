@@ -1,0 +1,366 @@
+{%- comment -%} DayShift Article Page — self-contained editorial template {%- endcomment -%}
+
+{%- assign seo_title = article.title | append: ' | DayShift' -%}
+{%- if article.excerpt != blank -%}
+  {%- assign seo_desc = article.excerpt | strip_html | truncate: 160 -%}
+{%- else -%}
+  {%- assign seo_desc = article.content | strip_html | truncate: 160 -%}
+{%- endif -%}
+{%- assign seo_url = shop.url | append: article.url -%}
+
+<meta name="description" content="{{ seo_desc }}">
+<link rel="canonical" href="{{ seo_url }}">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="{{ article.title | escape }}">
+<meta property="og:description" content="{{ seo_desc }}">
+<meta property="og:url" content="{{ seo_url }}">
+<meta property="og:site_name" content="DayShift">
+{%- if article.image -%}<meta property="og:image" content="{{ article.image | img_url: '1600x' }}">{%- endif -%}
+<meta property="article:published_time" content="{{ article.published_at | date: '%Y-%m-%dT%H:%M:%S%z' }}">
+{%- if article.author != blank -%}<meta property="article:author" content="{{ article.author | escape }}">{%- endif -%}
+
+<style>
+@font-face { font-family: "AeonikDS"; src: url("https://cdn.shopify.com/s/files/1/0962/3676/5551/files/aeonik-regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "AeonikDS"; src: url("https://cdn.shopify.com/s/files/1/0962/3676/5551/files/aeonik-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "AeonikDS"; src: url("https://cdn.shopify.com/s/files/1/0962/3676/5551/files/aeonik-medium.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "AeonikDS"; src: url("https://cdn.shopify.com/s/files/1/0962/3676/5551/files/aeonik-bold.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+
+html body .ds-article,
+html body .ds-article * {
+  font-family: "AeonikDS", -apple-system, BlinkMacSystemFont, sans-serif !important;
+  box-sizing: border-box;
+}
+
+html body .ds-article {
+  width: 100%;
+  background: #fff;
+  color: #0A0A0A;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+html body .ds-article .container { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+html body .ds-article .container-wide { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+
+html body .ds-article .breadcrumb { padding: 32px 0 16px; font-size: 14px; }
+html body .ds-article .breadcrumb a { color: #6E6E73 !important; text-decoration: none !important; transition: color 150ms ease; }
+html body .ds-article .breadcrumb a:hover { color: #FF8300 !important; }
+html body .ds-article .breadcrumb .separator { color: #6E6E73; margin: 0 8px; }
+
+html body .ds-article .article-header { padding: 24px 0 40px; text-align: center; }
+
+html body .ds-article .article-tag {
+  display: inline-block;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: #FF8300 !important;
+  margin-bottom: 20px !important;
+}
+
+html body .ds-article h1.article-title {
+  font-size: 52px !important;
+  font-weight: 700 !important;
+  line-height: 1.08 !important;
+  letter-spacing: -0.02em !important;
+  margin: 0 auto 24px !important;
+  color: #0A0A0A !important;
+  max-width: 720px !important;
+}
+
+html body .ds-article .article-meta {
+  font-size: 14px !important;
+  color: #6E6E73 !important;
+  margin: 0 !important;
+  line-height: 1.5 !important;
+}
+
+@media (max-width: 720px) {
+  html body .ds-article h1.article-title { font-size: 34px !important; letter-spacing: -0.015em !important; }
+}
+
+html body .ds-article .article-hero {
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto 48px;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: #F4F4F4;
+}
+
+html body .ds-article .article-hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+@media (max-width: 720px) {
+  html body .ds-article .article-hero { border-radius: 0; margin-bottom: 32px; }
+}
+
+html body .ds-article .article-body { padding: 0 0 64px; font-size: 18px !important; line-height: 1.75 !important; color: #1f1f1f !important; }
+
+html body .ds-article .article-body p { font-size: 18px !important; line-height: 1.75 !important; color: #1f1f1f !important; margin: 0 0 24px 0 !important; }
+
+html body .ds-article .article-body h2 {
+  font-size: 32px !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.015em !important;
+  margin: 56px 0 20px 0 !important;
+  color: #0A0A0A !important;
+}
+
+html body .ds-article .article-body h3 {
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  line-height: 1.25 !important;
+  margin: 40px 0 16px 0 !important;
+  color: #0A0A0A !important;
+}
+
+html body .ds-article .article-body a {
+  color: #FF8300 !important;
+  text-decoration: underline !important;
+  text-underline-offset: 3px;
+}
+
+html body .ds-article .article-body a:hover { color: #d96f00 !important; }
+html body .ds-article .article-body strong { font-weight: 700 !important; color: #0A0A0A !important; }
+html body .ds-article .article-body em { font-style: italic !important; }
+
+html body .ds-article .article-body ul,
+html body .ds-article .article-body ol { margin: 0 0 24px 0 !important; padding-left: 24px !important; }
+
+html body .ds-article .article-body li { font-size: 18px !important; line-height: 1.75 !important; margin-bottom: 8px !important; color: #1f1f1f !important; }
+
+html body .ds-article .article-body blockquote {
+  margin: 32px 0 !important;
+  padding: 0 0 0 24px !important;
+  border-left: 4px solid #FF8300;
+  font-style: italic;
+  color: #1f1f1f;
+  font-size: 20px !important;
+  line-height: 1.55 !important;
+}
+
+html body .ds-article .article-body img {
+  max-width: 100% !important;
+  height: auto !important;
+  border-radius: 12px !important;
+  margin: 32px 0 !important;
+  display: block;
+}
+
+@media (max-width: 720px) {
+  html body .ds-article .article-body p,
+  html body .ds-article .article-body li { font-size: 17px !important; }
+  html body .ds-article .article-body h2 { font-size: 26px !important; margin-top: 40px !important; }
+  html body .ds-article .article-body h3 { font-size: 20px !important; }
+}
+
+html body .ds-article .article-tags { padding: 16px 0 48px; display: flex; flex-wrap: wrap; gap: 8px; }
+
+html body .ds-article .article-tags a {
+  display: inline-block;
+  padding: 6px 14px !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  color: #0A0A0A !important;
+  background: #F4F4F4 !important;
+  border-radius: 999px !important;
+  text-decoration: none !important;
+}
+
+html body .ds-article .article-tags a:hover { background: #E5E5E5 !important; }
+
+html body .ds-article .article-cta {
+  background: #FFF6EC;
+  padding: 64px 24px;
+  text-align: center;
+  margin-top: 24px;
+}
+
+html body .ds-article .article-cta h2 {
+  font-size: 38px !important;
+  font-weight: 700 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.015em !important;
+  text-transform: uppercase !important;
+  margin: 0 auto 16px !important;
+  color: #0A0A0A !important;
+}
+
+html body .ds-article .article-cta p {
+  font-size: 17px !important;
+  line-height: 1.55 !important;
+  color: #1f1f1f !important;
+  max-width: 540px !important;
+  margin: 0 auto 28px !important;
+}
+
+html body .ds-article .article-cta .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #0A0A0A !important;
+  color: #fff !important;
+  text-decoration: none !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  padding: 18px 32px !important;
+  border-radius: 999px !important;
+  transition: background 200ms ease;
+}
+
+html body .ds-article .article-cta .btn-primary:hover { background: #FF8300 !important; }
+
+@media (max-width: 720px) {
+  html body .ds-article .article-cta h2 { font-size: 28px !important; }
+  html body .ds-article .article-cta p { font-size: 16px !important; }
+}
+
+html body .ds-article .related { padding: 80px 0; background: #fff; }
+
+html body .ds-article .related h2.section-title {
+  font-size: 32px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  text-align: center;
+  margin: 0 auto 40px !important;
+  color: #0A0A0A !important;
+  letter-spacing: -0.015em !important;
+}
+
+html body .ds-article .related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+@media (max-width: 980px) { html body .ds-article .related-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { html body .ds-article .related-grid { grid-template-columns: 1fr; gap: 28px; } html body .ds-article .related { padding: 56px 0; } }
+
+html body .ds-article .related-card {
+  display: block;
+  text-decoration: none !important;
+  color: #0A0A0A !important;
+  transition: transform 200ms ease;
+}
+
+html body .ds-article .related-card:hover { transform: translateY(-4px); }
+
+html body .ds-article .related-card-img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: #F4F4F4;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+html body .ds-article .related-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+html body .ds-article .related-card-tag {
+  display: inline-block;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  color: #FF8300 !important;
+  margin-bottom: 8px !important;
+}
+
+html body .ds-article .related-card-title {
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
+  margin: 0 !important;
+  color: #0A0A0A !important;
+}
+
+html body .ds-article .related-card:hover .related-card-title { color: #FF8300 !important; }
+</style>
+
+<main class="ds-article">
+
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="separator">/</span>
+      <a href="{{ blog.url }}">{{ blog.title }}</a>
+      <span class="separator">/</span>
+      <span>{{ article.title }}</span>
+    </nav>
+  </div>
+
+  <header class="article-header">
+    <div class="container">
+      {%- if article.tags.size > 0 -%}<span class="article-tag">{{ article.tags.first }}</span>{%- endif -%}
+      <h1 class="article-title">{{ article.title }}</h1>
+      {%- assign word_count = article.content | strip_html | split: ' ' | size -%}
+      {%- assign read_min = word_count | divided_by: 200 -%}
+      {%- if read_min < 1 -%}{%- assign read_min = 1 -%}{%- endif -%}
+      <p class="article-meta">
+        {%- if article.author != blank -%}By {{ article.author }} &middot; {%- endif -%}
+        {{ article.published_at | date: '%B %-d, %Y' }} &middot; {{ read_min }} min read
+      </p>
+    </div>
+  </header>
+
+  {%- if article.image -%}
+    <div class="container-wide">
+      <div class="article-hero">
+        <img src="{{ article.image | img_url: '1600x' }}" alt="{{ article.title | escape }}">
+      </div>
+    </div>
+  {%- endif -%}
+
+  <article class="container">
+    <div class="article-body">{{ article.content }}</div>
+
+    {%- if article.tags.size > 0 -%}
+      <div class="article-tags">
+        {%- for tag in article.tags -%}
+          <a href="{{ blog.url }}/tagged/{{ tag | handleize }}">{{ tag }}</a>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </article>
+
+  <section class="article-cta">
+    <h2>Make the Shift.</h2>
+    <p>One packet. Eight clinical-strength ingredients. Sharp focus and clean energy for the hours that matter most.</p>
+    <a href="/products/dayshift" class="btn-primary">Shop DayShift &rarr;</a>
+  </section>
+
+  {%- if blog.articles.size > 1 -%}
+  <section class="related">
+    <div class="container-wide">
+      <h2 class="section-title">Keep Reading</h2>
+      <div class="related-grid">
+        {%- assign related_count = 0 -%}
+        {%- for related_article in blog.articles -%}
+          {%- if related_count < 3 and related_article.id != article.id -%}
+            {%- assign related_count = related_count | plus: 1 -%}
+            <a href="{{ related_article.url }}" class="related-card">
+              {%- if related_article.image -%}
+                <div class="related-card-img">
+                  <img src="{{ related_article.image | img_url: '600x' }}" alt="{{ related_article.title | escape }}" loading="lazy">
+                </div>
+              {%- else -%}
+                <div class="related-card-img"></div>
+              {%- endif -%}
+              {%- if related_article.tags.size > 0 -%}
+                <span class="related-card-tag">{{ related_article.tags.first }}</span>
+              {%- endif -%}
+              <h3 class="related-card-title">{{ related_article.title }}</h3>
+            </a>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </section>
+  {%- endif -%}
+
+</main>

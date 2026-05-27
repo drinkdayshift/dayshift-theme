@@ -1,0 +1,270 @@
+{%- comment -%} DayShift Blog Listing Page — self-contained template {%- endcomment -%}
+
+{%- assign seo_title = "Blog | DayShift" -%}
+{%- assign seo_desc = "Notes from DayShift on the science, the workday, the ingredients, and the founder. Built for ambitious people who think for a living." -%}
+{%- assign seo_url = shop.url | append: blog.url -%}
+
+<meta name="description" content="{{ seo_desc }}">
+<link rel="canonical" href="{{ seo_url }}">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ seo_title }}">
+<meta property="og:description" content="{{ seo_desc }}">
+<meta property="og:url" content="{{ seo_url }}">
+<meta property="og:site_name" content="DayShift">
+
+<style>
+@font-face { font-family: "AeonikDS"; src: url("https://cdn.shopify.com/s/files/1/0962/3676/5551/files/aeonik-regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "AeonikDS"; src: url("https://cdn.shopify.com/s/files/1/0962/3676/5551/files/aeonik-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "AeonikDS"; src: url("https://cdn.shopify.com/s/files/1/0962/3676/5551/files/aeonik-medium.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "AeonikDS"; src: url("https://cdn.shopify.com/s/files/1/0962/3676/5551/files/aeonik-bold.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+
+html body .ds-blog,
+html body .ds-blog * {
+  font-family: "AeonikDS", -apple-system, BlinkMacSystemFont, sans-serif !important;
+  box-sizing: border-box;
+}
+
+html body .ds-blog {
+  width: 100%;
+  background: #fff;
+  color: #0A0A0A;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+html body .ds-blog .container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+html body .ds-blog .hero {
+  text-align: center;
+  padding: 80px 0 32px;
+}
+
+html body .ds-blog h1.hero-title {
+  font-size: 64px !important;
+  font-weight: 700 !important;
+  line-height: 1.02 !important;
+  letter-spacing: -0.02em !important;
+  text-transform: uppercase !important;
+  margin: 0 auto 20px !important;
+  color: #0A0A0A !important;
+}
+
+html body .ds-blog .hero-sub {
+  font-size: 19px !important;
+  line-height: 1.55 !important;
+  color: #1f1f1f !important;
+  max-width: 600px !important;
+  margin: 0 auto !important;
+}
+
+@media (max-width: 720px) {
+  html body .ds-blog .hero { padding: 56px 0 24px; }
+  html body .ds-blog h1.hero-title { font-size: 44px !important; letter-spacing: -0.015em !important; }
+  html body .ds-blog .hero-sub { font-size: 17px !important; }
+}
+
+html body .ds-blog .tag-filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  padding: 24px 0 48px;
+}
+
+html body .ds-blog .tag-pill {
+  display: inline-block;
+  padding: 8px 18px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: #0A0A0A !important;
+  background: #F4F4F4 !important;
+  border-radius: 999px !important;
+  text-decoration: none !important;
+  transition: background 150ms ease, color 150ms ease;
+}
+
+html body .ds-blog .tag-pill:hover { background: #E5E5E5 !important; }
+html body .ds-blog .tag-pill.active { background: #0A0A0A !important; color: #fff !important; }
+
+@media (max-width: 720px) {
+  html body .ds-blog .tag-filter { padding: 8px 0 32px; }
+  html body .ds-blog .tag-pill { font-size: 13px !important; padding: 7px 14px !important; }
+}
+
+html body .ds-blog .article-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  padding-bottom: 80px;
+}
+
+@media (max-width: 980px) { html body .ds-blog .article-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; } }
+@media (max-width: 640px) { html body .ds-blog .article-grid { grid-template-columns: 1fr; gap: 32px; padding-bottom: 56px; } }
+
+html body .ds-blog .article-card {
+  display: block;
+  text-decoration: none !important;
+  color: #0A0A0A !important;
+  transition: transform 200ms ease;
+}
+
+html body .ds-blog .article-card:hover { transform: translateY(-4px); }
+
+html body .ds-blog .article-card-img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: #F4F4F4;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+html body .ds-blog .article-card-img img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+
+html body .ds-blog .article-card-tag {
+  display: inline-block;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  color: #FF8300 !important;
+  margin-bottom: 12px !important;
+}
+
+html body .ds-blog .article-card-title {
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  line-height: 1.25 !important;
+  letter-spacing: -0.01em !important;
+  margin: 0 0 12px 0 !important;
+  color: #0A0A0A !important;
+}
+
+html body .ds-blog .article-card:hover .article-card-title { color: #FF8300 !important; }
+
+html body .ds-blog .article-card-excerpt {
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+  color: #1f1f1f !important;
+  margin: 0 0 12px 0 !important;
+}
+
+html body .ds-blog .article-card-meta {
+  font-size: 13px !important;
+  color: #6E6E73 !important;
+  margin: 0 !important;
+  line-height: 1.4 !important;
+}
+
+html body .ds-blog .pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 32px 0 80px;
+}
+
+html body .ds-blog .pagination a,
+html body .ds-blog .pagination span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 14px;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  color: #0A0A0A !important;
+  text-decoration: none !important;
+  border-radius: 8px;
+  background: #F4F4F4;
+  transition: background 150ms ease;
+}
+
+html body .ds-blog .pagination a:hover { background: #E5E5E5; }
+html body .ds-blog .pagination .current { background: #0A0A0A; color: #fff !important; }
+
+html body .ds-blog .empty-state {
+  text-align: center;
+  padding: 64px 24px 96px;
+  color: #6E6E73;
+  font-size: 16px;
+}
+</style>
+
+<main class="ds-blog">
+
+  <section class="hero">
+    <div class="container">
+      <h1 class="hero-title">{{ blog.title | default: 'Blog' }}</h1>
+      <p class="hero-sub">Notes on the science, the workday, the ingredients, and the founder. Built for ambitious people who think for a living.</p>
+    </div>
+  </section>
+
+  {%- if blog.all_tags.size > 0 -%}
+  <div class="container">
+    <nav class="tag-filter" aria-label="Filter by category">
+      <a href="{{ blog.url }}" class="tag-pill {% if current_tags == nil or current_tags.size == 0 %}active{% endif %}">All</a>
+      {%- for tag in blog.all_tags -%}
+        <a href="{{ blog.url }}/tagged/{{ tag | handleize }}" class="tag-pill {% if current_tags contains tag %}active{% endif %}">{{ tag }}</a>
+      {%- endfor -%}
+    </nav>
+  </div>
+  {%- endif -%}
+
+  <div class="container">
+    {%- paginate blog.articles by 12 -%}
+      {%- if blog.articles.size > 0 -%}
+        <div class="article-grid">
+          {%- for article in blog.articles -%}
+            <a href="{{ article.url }}" class="article-card">
+              {%- if article.image -%}
+                <div class="article-card-img">
+                  <img src="{{ article.image | image_url: width: 800 }}" alt="{{ article.image.alt | default: article.title | escape }}" loading="lazy">
+                </div>
+              {%- else -%}
+                <div class="article-card-img"></div>
+              {%- endif -%}
+              {%- if article.tags.size > 0 -%}
+                <span class="article-card-tag">{{ article.tags.first }}</span>
+              {%- endif -%}
+              <h2 class="article-card-title">{{ article.title }}</h2>
+              {%- if article.excerpt != blank -%}
+                <p class="article-card-excerpt">{{ article.excerpt | strip_html | truncate: 140 }}</p>
+              {%- else -%}
+                <p class="article-card-excerpt">{{ article.content | strip_html | truncate: 140 }}</p>
+              {%- endif -%}
+              {%- assign word_count = article.content | strip_html | split: ' ' | size -%}
+              {%- assign read_min = word_count | divided_by: 200 -%}
+              {%- if read_min < 1 -%}{%- assign read_min = 1 -%}{%- endif -%}
+              <p class="article-card-meta">{{ article.published_at | date: '%B %-d, %Y' }} &middot; {{ read_min }} min read</p>
+            </a>
+          {%- endfor -%}
+        </div>
+
+        {%- if paginate.pages > 1 -%}
+          <nav class="pagination" aria-label="Pagination">
+            {%- if paginate.previous -%}<a href="{{ paginate.previous.url }}">&larr; Previous</a>{%- endif -%}
+            {%- for part in paginate.parts -%}
+              {%- if part.is_link -%}<a href="{{ part.url }}">{{ part.title }}</a>
+              {%- else -%}<span class="current">{{ part.title }}</span>{%- endif -%}
+            {%- endfor -%}
+            {%- if paginate.next -%}<a href="{{ paginate.next.url }}">Next &rarr;</a>{%- endif -%}
+          </nav>
+        {%- endif -%}
+
+      {%- else -%}
+        <div class="empty-state"><p>No posts yet. Check back soon.</p></div>
+      {%- endif -%}
+    {%- endpaginate -%}
+  </div>
+
+</main>

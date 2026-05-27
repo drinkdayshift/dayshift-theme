@@ -227,9 +227,8 @@ html body .ds-blog .empty-state {
           {%- for article in blog.articles -%}
             <a href="{{ article.url }}" class="article-card">
               {%- if article.image -%}
-                {%- assign img_alt = article.image.alt | default: article.title -%}
                 <div class="article-card-img">
-                  <img src="{{ article.image | img_url: '800x' }}" alt="{{ img_alt | escape }}" loading="lazy">
+                  <img src="{{ article.image | image_url: width: 800 }}" alt="{{ article.image.alt | default: article.title | escape }}" loading="lazy">
                 </div>
               {%- else -%}
                 <div class="article-card-img"></div>

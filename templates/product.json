@@ -101,6 +101,12 @@
         "klaviyo_reviews_product_reviews_KLN7fU": {
           "type": "shopify://apps/klaviyo-reviews/blocks/product-reviews/db20e365-d984-4ac4-9655-e1588d951ca9",
           "settings": {}
+        },
+        "klaviyo_reviews_average_rating_EzVrBK": {
+          "type": "shopify://apps/klaviyo-reviews/blocks/average-rating/db20e365-d984-4ac4-9655-e1588d951ca9",
+          "settings": {
+            "product": "{{product}}"
+          }
         }
       },
       "block_order": [
@@ -117,7 +123,8 @@
         "collapsible-row-2",
         "collapsible-row-3",
         "share",
-        "klaviyo_reviews_product_reviews_KLN7fU"
+        "klaviyo_reviews_product_reviews_KLN7fU",
+        "klaviyo_reviews_average_rating_EzVrBK"
       ],
       "settings": {
         "enable_sticky_info": true,

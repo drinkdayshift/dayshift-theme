@@ -1,24 +1,20 @@
-{%- comment -%} DayShift Ingredients Index — self-contained template. Cards link to each ingredient page. {%- endcomment -%}
-
 {%- comment -%}
   ============================================================
   PHOTOS
   ------------------------------------------------------------
-  These pull from Content > Files by filename via file_url.
-  If a filename below does not match exactly what is in Files,
-  just fix the filename string. A missing file shows a clean
-  gray block instead of a broken image.
+  These pull the same hero images used on each ingredient
+  page, from the theme's assets folder via asset_url.
   ============================================================
 {%- endcomment -%}
 
-{%- assign img_lions_mane   = "lions-mane-hero.png"     | file_url -%}
-{%- assign img_alpha_gpc    = "alpha-gpc-hero.png"      | file_url -%}
-{%- assign img_caffeine     = "caffeine-hero.png"       | file_url -%}
-{%- assign img_l_theanine   = "l-theanine-hero.png"     | file_url -%}
-{%- assign img_cordyceps    = "cordyceps-hero.png"      | file_url -%}
-{%- assign img_nalt         = "nalt-hero.png"           | file_url -%}
-{%- assign img_panax        = "panax-ginseng-hero.png"  | file_url -%}
-{%- assign img_rhodiola     = "rhodiola-rosea-hero.png" | file_url -%}
+{%- assign img_lions_mane   = "lions-mane-hero.png"     | asset_url -%}
+{%- assign img_alpha_gpc    = "alpha-gpc-hero.png"      | asset_url -%}
+{%- assign img_caffeine     = "caffeine-hero.png"       | asset_url -%}
+{%- assign img_l_theanine   = "l-theanine-hero.png"     | asset_url -%}
+{%- assign img_cordyceps    = "cordyceps-hero.png"      | asset_url -%}
+{%- assign img_nalt         = "NALT-hero.png"           | asset_url -%}
+{%- assign img_panax        = "panax-ginseng-hero.png"  | asset_url -%}
+{%- assign img_rhodiola     = "rhodiola-rosea-hero.png" | asset_url -%}
 
 {%- comment -%} === SEO META === {%- endcomment -%}
 {%- assign seo_title = "Ingredients | What's Inside DayShift" -%}

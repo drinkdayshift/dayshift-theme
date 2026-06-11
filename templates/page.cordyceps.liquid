@@ -1,8 +1,8 @@
-{%- comment -%} Cordyceps — fully SEO + AI optimized {%- endcomment -%}
+{%- comment -%} Cordyceps — DSHEA-compliant rewrite, 8:1 framing, parallel to Lion's Mane page {%- endcomment -%}
 
 {%- comment -%} === SEO META + STRUCTURED DATA === {%- endcomment -%}
 {%- assign seo_title = "Cordyceps | The Energy Mushroom | DayShift" -%}
-{%- assign seo_desc = "Cordyceps militaris is a functional mushroom studied for cellular energy, ATP production, and physical stamina. DayShift uses 1,500 mg per packet, standardized for cordycepin." -%}
+{%- assign seo_desc = "Cordyceps militaris is a clinically researched functional mushroom for cellular energy and stamina. DayShift uses an 8:1 organic Cordyceps militaris fruiting body extract per packet." -%}
 {%- assign seo_image = 'cordyceps-hero.png' | asset_url -%}
 {%- assign seo_url = shop.url | append: '/pages/cordyceps' -%}
 
@@ -50,6 +50,7 @@
     { "@type": "Thing", "name": "Cordyceps militaris" },
     { "@type": "Thing", "name": "Functional Mushroom" },
     { "@type": "Thing", "name": "Cordycepin" },
+    { "@type": "Thing", "name": "Adenosine" },
     { "@type": "Thing", "name": "ATP" },
     { "@type": "Thing", "name": "Cellular Energy" },
     { "@type": "Thing", "name": "Physical Stamina" }
@@ -70,14 +71,6 @@
       "datePublished": "2010",
       "isPartOf": { "@type": "Periodical", "name": "Journal of Alternative and Complementary Medicine" },
       "url": "https://pubmed.ncbi.nlm.nih.gov/20804368/"
-    },
-    {
-      "@type": "ScholarlyArticle",
-      "name": "Pharmacological and therapeutic potential of Cordyceps with reference to Cordycepin",
-      "author": "Tuli HS, et al.",
-      "datePublished": "2014",
-      "isPartOf": { "@type": "Periodical", "name": "3 Biotech" },
-      "url": "https://pubmed.ncbi.nlm.nih.gov/28324538/"
     },
     {
       "@type": "ScholarlyArticle",
@@ -129,7 +122,7 @@
       "name": "How much Cordyceps is in DayShift?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "DayShift contains 1,500 mg of Cordyceps militaris per packet, standardized for cordycepin content. This is within the 1,000 to 3,000 mg dose range used in clinical research on energy and endurance."
+        "text": "DayShift contains 187.5 mg of an 8:1 organic Cordyceps militaris fruiting body extract per packet, equivalent to 1,500 mg of dried fruiting body. This is within the dose range used in clinical research on Cordyceps and cellular energy."
       }
     },
     {
@@ -145,7 +138,7 @@
       "name": "Is Cordyceps a stimulant?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Cordyceps is not a stimulant. It works at the cellular level by supporting your body's natural ATP production, which is different from how caffeine and other stimulants work. This is why Cordyceps is studied for sustained energy rather than acute alertness."
+        "text": "No. Cordyceps is not a stimulant. It works at the cellular level by supporting your body's natural ATP production. This is why Cordyceps is studied for sustained energy support over time rather than acute alertness."
       }
     },
     {
@@ -288,6 +281,19 @@ html body .ds-cordyceps .focus-list li::before {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%230A0A0A' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'><polyline points='4 11 8 15 16 5'/></svg>");
   background-size: contain; background-repeat: no-repeat;
 }
+html body .ds-cordyceps .credibility-badges {
+  display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px;
+}
+html body .ds-cordyceps .credibility-badge {
+  display: inline-block;
+  padding: 8px 14px !important;
+  background: #EDE5FF !important;
+  color: #4A1DB0 !important;
+  border-radius: 999px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+}
 
 /* === DOSE === */
 html body .ds-cordyceps .dose { margin-bottom: 56px !important; }
@@ -309,6 +315,13 @@ html body .ds-cordyceps .dose-cell-label {
 html body .ds-cordyceps .dose-cell-value {
   font-size: 24px !important; font-weight: 400 !important; color: #0A0A0A !important;
 }
+html body .ds-cordyceps .dose-cell-sub {
+  font-size: 13px !important;
+  color: #666 !important;
+  margin-top: 6px !important;
+  font-weight: 400 !important;
+  font-style: italic !important;
+}
 html body .ds-cordyceps .dose-cell.highlight { background: #FFD9B3; }
 html body .ds-cordyceps .dose-cell.highlight .dose-cell-label {
   font-family: "Aeonik", sans-serif !important;
@@ -319,15 +332,16 @@ html body .ds-cordyceps .dose-cell.highlight .dose-cell-label {
 html body .ds-cordyceps .dose-cell.highlight .dose-cell-value {
   font-size: 28px !important; font-weight: 700 !important;
 }
+html body .ds-cordyceps .dose-cell.highlight .dose-cell-sub {
+  color: #1f1f1f !important;
+}
 html body .ds-cordyceps .dose-note {
   font-size: 14px !important; color: #555 !important; margin-top: 16px !important;
+  line-height: 1.55 !important;
 }
 
 /* === MID-PAGE GET STARTED === */
-html body .ds-cordyceps .mid-cta {
-  text-align: center;
-  margin: 0 0 56px 0 !important;
-}
+html body .ds-cordyceps .mid-cta { text-align: center; margin: 0 0 56px 0 !important; }
 
 /* === STUDIES === */
 html body .ds-cordyceps .learn { text-align: center; margin-bottom: 48px !important; }
@@ -336,7 +350,7 @@ html body .ds-cordyceps .learn-intro {
   max-width: 640px; margin: 0 auto 48px !important;
 }
 html body .ds-cordyceps .study-grid {
-  display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; text-align: left;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; text-align: left;
 }
 html body .ds-cordyceps .study {
   display: block; padding: 28px; border: 1px solid #E5E5E5;
@@ -386,7 +400,7 @@ html body .ds-cordyceps .cta-wrap {
   text-align: center;
   padding: 36px 32px !important;
   border-radius: 18px;
-  margin-bottom: 64px;
+  margin-bottom: 48px;
   background: radial-gradient(ellipse at 50% 30%, #FFCCD9 0%, #F5A0B8 55%, #E89BB0 100%) !important;
 }
 html body .ds-cordyceps .cta-wrap h2 {
@@ -417,6 +431,21 @@ html body .ds-cordyceps .cta-wrap p.cta-fineprint {
   letter-spacing: 0.02em !important;
 }
 
+/* === LEGAL FOOTER === */
+html body .ds-cordyceps .legal-footer {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto !important;
+  padding-top: 32px;
+  border-top: 1px solid #E5E5E5;
+}
+html body .ds-cordyceps .legal-footer p {
+  font-size: 13px !important;
+  color: #666 !important;
+  line-height: 1.55 !important;
+  margin: 0 0 10px 0 !important;
+}
+
 /* === BUTTON === */
 html body .ds-cordyceps .btn {
   display: inline-flex !important;
@@ -433,10 +462,7 @@ html body .ds-cordyceps .btn {
   letter-spacing: 0 !important;
 }
 html body .ds-cordyceps .btn,
-html body .ds-cordyceps .btn * {
-  color: #fff !important;
-  font-weight: 400 !important;
-}
+html body .ds-cordyceps .btn * { color: #fff !important; font-weight: 400 !important; }
 html body .ds-cordyceps .btn:hover { background: #000 !important; }
 
 /* === MOBILE === */
@@ -467,18 +493,18 @@ html body .ds-cordyceps .btn:hover { background: #000 !important; }
       <div class="hero-body">
         <h1 class="hero-title">Cordyceps</h1>
         <p class="hero-eyebrow">The Energy Mushroom</p>
-        <p>Cordyceps (<em>Cordyceps militaris</em>) has been used for centuries in Tibetan and Chinese traditional practices, valued for its ability to support endurance and stamina. Sherpas in the Himalayas have used it for generations during long climbs at altitude.</p>
-        <p>Today, it's one of the most studied functional mushrooms for cellular energy. Unlike stimulants that push the body, Cordyceps works alongside it, supporting the systems that produce ATP, the fuel your cells run on.</p>
+        <p>Cordyceps (<em>Cordyceps militaris</em>) has been used for centuries in Tibetan and Chinese traditional practices, valued for its role in supporting endurance and stamina. Sherpas in the Himalayas have used it for generations during long climbs at altitude.</p>
+        <p>Today, it is one of the most studied functional mushrooms for cellular energy. It works at a cellular level, supporting the systems that produce ATP, the molecule your cells use as fuel.</p>
       </div>
       <img class="hero-image" src="{{ 'cordyceps-hero.png' | asset_url }}" alt="Cordyceps militaris mushroom" width="1664" height="1034" loading="lazy" />
     </section>
 
     <section class="mechanism">
       <h2>How Cordyceps Works</h2>
-      <p class="mechanism-intro">Cordyceps is studied for one thing: how the body produces and sustains energy at the cellular level. Four mechanisms explain why it lasts.</p>
+      <p class="mechanism-intro">Cordyceps is studied for one thing: how the body produces and sustains energy at the cellular level. Here is what current research suggests.</p>
       <div class="mechanism-card">
         <div class="mechanism-points">
-          <div class="point"><h4><span class="point-num">1.</span>Supports cellular energy production.</h4><p>Cordyceps contains cordycepin and adenosine, compounds studied for their role in supporting your body's production of ATP, the molecule cells use as fuel. Steady ATP supports steady energy.</p></div>
+          <div class="point"><h4><span class="point-num">1.</span>Supports cellular energy production.</h4><p>Cordyceps contains cordycepin and adenosine, compounds studied for their role in supporting your body's natural production of ATP, the molecule cells use as fuel.</p></div>
           <div class="point"><h4><span class="point-num">2.</span>Helps the body manage fatigue.</h4><p>Cordyceps is classified as an adaptogen, meaning it may help support physical and mental performance under stress.</p></div>
           <div class="point"><h4><span class="point-num">3.</span>Supports recovery.</h4><p>Bioactive compounds in Cordyceps may help support a healthy inflammatory response and antioxidant balance after daily stress.</p></div>
           <div class="point"><h4><span class="point-num">4.</span>Supports oxygen utilization.</h4><p>Research suggests Cordyceps may help the body use oxygen more efficiently during sustained activity.</p></div>
@@ -491,8 +517,14 @@ html body .ds-cordyceps .btn:hover { background: #000 !important; }
       <img class="split-image" src="{{ 'cordyceps-cluster.jpg' | asset_url }}" alt="Cordyceps militaris cluster" width="1466" height="1084" loading="lazy" />
       <div>
         <h2>Why We Use It</h2>
-        <p>DayShift is built with ingredients you can feel quickly and ingredients that build over time. Cordyceps sits in the second layer, supporting the cellular systems behind sustained energy, oxygen utilization, and resilience to stress.</p>
-        <p>We use <em>Cordyceps militaris</em> specifically because it contains cordycepin, one of the key compounds studied for cellular energy support.</p>
+        <p>DayShift is built on two layers: ingredients used for short-term cognitive support, and ingredients used for daily, compounding support. Cordyceps sits in the second layer, supporting the cellular systems behind sustained energy, oxygen utilization, and resilience to stress.</p>
+        <p>We use an 8:1 concentrated USDA Organic <em>Cordyceps militaris</em> fruiting body extract. <em>Cordyceps militaris</em> is the cordycepin-rich species used in most modern clinical research, and our fruiting body extract is concentrated 8 times from raw mushroom to deliver more measurable actives per milligram.</p>
+        <div class="credibility-badges">
+          <span class="credibility-badge">USDA Organic</span>
+          <span class="credibility-badge">8:1 Concentrated Extract</span>
+          <span class="credibility-badge">Cordyceps militaris</span>
+          <span class="credibility-badge">Fruiting Body Only</span>
+        </div>
         <div class="focus-block">
           <h3>Key Focus Areas</h3>
           <ul class="focus-list">
@@ -506,13 +538,13 @@ html body .ds-cordyceps .btn:hover { background: #000 !important; }
 
     <section class="dose">
       <h2>How Our Dose Stacks Up.</h2>
-      <p class="dose-sub">A clinical-grade dose, delivered daily.</p>
+      <p class="dose-sub">A clinically researched dose, delivered daily.</p>
       <div class="dose-table">
         <div class="dose-cell"><div class="dose-cell-label">Clinical Studies</div><div class="dose-cell-value">1,000 to 3,000 mg</div></div>
-        <div class="dose-cell"><div class="dose-cell-label">Typical Supplement</div><div class="dose-cell-value">300 mg</div></div>
-        <div class="dose-cell highlight"><div class="dose-cell-label">DayShift</div><div class="dose-cell-value">1,500 mg</div></div>
+        <div class="dose-cell"><div class="dose-cell-label">Typical Supplement</div><div class="dose-cell-value">750 mg</div></div>
+        <div class="dose-cell highlight"><div class="dose-cell-label">DayShift</div><div class="dose-cell-value">1,500 mg equiv. &dagger;</div><div class="dose-cell-sub">from 187.5 mg actual</div></div>
       </div>
-      <p class="dose-note">DayShift uses a concentrated <em>Cordyceps militaris</em> extract standardized for cordycepin content.</p>
+      <p class="dose-note">&dagger; DayShift contains 187.5 mg of an 8:1 organic <em>Cordyceps militaris</em> fruiting body extract, equivalent to 1,500 mg of dried fruiting body.</p>
     </section>
 
     <div class="mid-cta">
@@ -521,12 +553,26 @@ html body .ds-cordyceps .btn:hover { background: #000 !important; }
 
     <section class="learn">
       <h2>Want to Learn More?</h2>
-      <p class="learn-intro">Explore the peer-reviewed research on Cordyceps (<em>Cordyceps militaris</em>) and cellular energy.</p>
+      <p class="learn-intro">Selected peer-reviewed research on Cordyceps (<em>Cordyceps militaris</em>) and cellular energy.</p>
       <div class="study-grid">
-        <a class="study" href="https://pubmed.ncbi.nlm.nih.gov/27931809/" target="_blank" rel="noopener"><div class="study-meta">RCT &middot; J Diet Suppl, 2017</div><div class="study-title">Cordyceps militaris improves tolerance to high-intensity exercise</div><p class="study-desc">Hirsch et al. Adults supplementing with Cordyceps showed improved exercise tolerance and time-to-exhaustion versus placebo.</p><span class="study-arrow">Read on PubMed &rarr;</span></a>
-        <a class="study" href="https://pubmed.ncbi.nlm.nih.gov/20804368/" target="_blank" rel="noopener"><div class="study-meta">RCT &middot; J Altern Complement Med, 2010</div><div class="study-title">Effect of Cs-4 (Cordyceps sinensis) on exercise performance in healthy older subjects</div><p class="study-desc">Chen et al. Older adults taking Cordyceps daily showed measurable improvements in metabolic and ventilatory threshold.</p><span class="study-arrow">Read on PubMed &rarr;</span></a>
-        <a class="study" href="https://pubmed.ncbi.nlm.nih.gov/28324538/" target="_blank" rel="noopener"><div class="study-meta">Review &middot; 3 Biotech, 2014</div><div class="study-title">Pharmacological and therapeutic potential of Cordyceps with reference to Cordycepin</div><p class="study-desc">Tuli et al. Review of bioactive compounds and their roles in cellular energy and antioxidant activity.</p><span class="study-arrow">Read on PubMed &rarr;</span></a>
-        <a class="study" href="https://pubmed.ncbi.nlm.nih.gov/32048278/" target="_blank" rel="noopener"><div class="study-meta">Review &middot; Phytother Res, 2020</div><div class="study-title">Cordyceps militaris: chemistry, biology, and pharmacological activities</div><p class="study-desc">Overview of cordycepin and adenosine, the compounds linked to Cordyceps' energy and endurance effects.</p><span class="study-arrow">Read on PubMed &rarr;</span></a>
+        <a class="study" href="https://pubmed.ncbi.nlm.nih.gov/27931809/" target="_blank" rel="noopener">
+          <div class="study-meta">RCT &middot; J Diet Suppl, 2017</div>
+          <div class="study-title">Cordyceps militaris improves tolerance to high-intensity exercise</div>
+          <p class="study-desc">Hirsch et al. Adults taking Cordyceps showed improvements in exercise tolerance and time-to-exhaustion versus placebo.</p>
+          <span class="study-arrow">Read on PubMed &rarr;</span>
+        </a>
+        <a class="study" href="https://pubmed.ncbi.nlm.nih.gov/20804368/" target="_blank" rel="noopener">
+          <div class="study-meta">RCT &middot; J Altern Complement Med, 2010</div>
+          <div class="study-title">Effect of Cordyceps on exercise performance in healthy older subjects</div>
+          <p class="study-desc">Chen et al. Twelve weeks of daily Cordyceps intake was associated with improvements in metabolic and ventilatory threshold in healthy older adults.</p>
+          <span class="study-arrow">Read on PubMed &rarr;</span>
+        </a>
+        <a class="study" href="https://pubmed.ncbi.nlm.nih.gov/32048278/" target="_blank" rel="noopener">
+          <div class="study-meta">Review &middot; Phytother Res, 2020</div>
+          <div class="study-title">Cordyceps militaris: chemistry, biology, and pharmacological activities</div>
+          <p class="study-desc">Phull et al. Review of cordycepin, adenosine, and other bioactive compounds studied for their role in energy and endurance support.</p>
+          <span class="study-arrow">Read on PubMed &rarr;</span>
+        </a>
       </div>
     </section>
 
@@ -536,16 +582,21 @@ html body .ds-cordyceps .btn:hover { background: #000 !important; }
       <a href="/pages/l-theanine">L-Theanine</a>
       <a href="/pages/alpha-gpc">Alpha-GPC</a>
       <a href="/pages/nalt">NALT</a>
-      <a href="/pages/rhodiola">Rhodiola Rosea</a>
+      <a href="/pages/rhodiola-rosea">Rhodiola Rosea</a>
       <a href="/pages/panax-ginseng">Panax Ginseng</a>
     </nav>
 
     <div class="cta-wrap">
       <h2>Make The Shift Today.</h2>
-      <p class="cta-lead">1,500 mg of Cordyceps and clinical doses of seven other ingredients in every packet.</p>
+      <p class="cta-lead">Concentrated organic Cordyceps militaris and clinical doses of seven other ingredients in every packet.</p>
       <p class="cta-guarantee">Try it risk-free. Complete your first 10 servings and don't feel a difference? We'll refund you completely.</p>
       <a class="btn" href="/products">Try DayShift &#x27F6;</a>
       <p class="cta-fineprint">From $49/mo &bull; Free shipping &bull; Cancel anytime</p>
+    </div>
+
+    <div class="legal-footer">
+      <p>Manufactured at an FDA-registered, cGMP-certified facility located in Riverside, California.</p>
+      <p>These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
     </div>
 
   </div>

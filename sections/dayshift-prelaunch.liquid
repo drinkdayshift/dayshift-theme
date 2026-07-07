@@ -1,215 +1,188 @@
 {% comment %}
   DayShift — Prelaunch Section
-  Minimal: full-screen photo + centered email signup. No nav, no footer.
+  Full-bleed flanking products + centered signup. Aeonik. No nav, no footer.
 {% endcomment %}
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,900;1,900&family=Barlow:wght@400;500&display=swap');
+  {% assign cdn = 'https://cdn.shopify.com/s/files/1/0962/3676/5551/files/' %}
+  @font-face { font-family: "Aeonik"; src: url("{{ cdn }}aeonik-regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+  @font-face { font-family: "Aeonik"; src: url("{{ cdn }}aeonik-medium.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+  @font-face { font-family: "Aeonik"; src: url("{{ cdn }}aeonik-bold.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
 
-  .shopify-section-header,
-  #shopify-section-header,
-  header.header,
-  .header-wrapper,
-  .announcement-bar,
-  #shopify-section-announcement-bar,
-  .shopify-section-group-header-group,
-  .shopify-section-group-footer-group,
-  footer.footer,
-  #shopify-section-footer {
-    display: none !important;
-  }
+  .shopify-section-header, #shopify-section-header, header.header, .header-wrapper,
+  .announcement-bar, #shopify-section-announcement-bar,
+  .shopify-section-group-header-group, .shopify-section-group-footer-group,
+  footer.footer, #shopify-section-footer { display: none !important; }
 
-  body {
-    margin: 0;
-    padding: 0;
-    background: #0a0a0a;
-  }
+  body { margin: 0; padding: 0; background: #0a0a0a; }
 
   .ds-pl {
+    position: relative;
     min-height: 100vh;
     background: #0a0a0a;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    overflow: hidden;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
     padding: 60px 24px;
-    font-family: 'Barlow', sans-serif;
+    font-family: 'Aeonik', -apple-system, BlinkMacSystemFont, sans-serif;
     -webkit-font-smoothing: antialiased;
     text-align: center;
   }
 
-  .ds-pl__img-wrap {
-    width: 100%;
-    max-width: {{ section.settings.image_max_width }}px;
-    margin: 0 auto 52px;
+  /* Flanking product images */
+  .ds-pl__side { position: absolute; top: 0; bottom: 0; width: {{ section.settings.side_width }}%; z-index: 0; pointer-events: none; }
+  .ds-pl__side img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .ds-pl__side--left  { left: 0; }
+  .ds-pl__side--left img  { object-position: right center; }
+  .ds-pl__side--right { right: 0; }
+  .ds-pl__side--right img { object-position: left center; }
+
+  /* Center scrim for legibility */
+  .ds-pl__scrim {
+    position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background: radial-gradient(ellipse 55% 78% at 50% 50%, rgba(10,10,10,0.94) 34%, rgba(10,10,10,0.45) 100%);
   }
 
-  .ds-pl__img-wrap img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: {{ section.settings.image_radius }}px;
-  }
+  .ds-pl__content { position: relative; z-index: 2; width: 100%; max-width: 460px; }
 
   .ds-pl__logo {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: clamp(48px, 8vw, 96px);
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: -0.02em;
-    color: #ffffff;
-    line-height: 1;
+    font-family: 'Aeonik', sans-serif;
+    font-size: clamp(46px, 8vw, 92px);
+    font-weight: 700; text-transform: uppercase;
+    letter-spacing: -0.02em; color: #ffffff; line-height: 1;
     margin-bottom: 12px;
   }
-
   .ds-pl__tagline {
-    font-family: 'Barlow', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: #888;
-    margin-bottom: 40px;
+    font-size: 13px; font-weight: 500;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: #9a9a9a; margin-bottom: 20px;
   }
-
+  .ds-pl__hook {
+    font-size: 17px; font-weight: 400; color: #d2d2d2;
+    line-height: 1.55; max-width: 420px; margin: 0 auto 40px;
+  }
   .ds-pl__coming-soon {
-    font-family: 'Barlow', sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: #666;
-    margin-bottom: 10px;
+    font-size: 12px; font-weight: 600;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: #777; margin-bottom: 10px;
   }
-
   .ds-pl__signup-text {
-    font-family: 'Barlow', sans-serif;
-    font-size: 15px;
-    font-weight: 400;
-    color: #888;
-    margin-bottom: 24px;
-    line-height: 1.6;
+    font-size: 15px; font-weight: 400; color: #b4b4b4;
+    margin: 0 auto 24px; line-height: 1.6; max-width: 400px;
   }
-
-  .ds-pl__form-wrap {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-  }
-
-  .ds-pl__form {
-    display: flex;
-    gap: 0;
-    width: 100%;
-  }
-
+  .ds-pl__form-wrap { width: 100%; max-width: 400px; margin: 0 auto; }
+  .ds-pl__form { display: flex; gap: 0; width: 100%; }
   .ds-pl__input {
-    flex: 1;
-    background: transparent;
-    border: 1px solid #333;
-    border-right: none;
-    border-radius: 6px 0 0 6px;
-    padding: 14px 18px;
-    font-family: 'Barlow', sans-serif;
-    font-size: 14px;
-    color: #ffffff;
-    outline: none;
-    transition: border-color 0.2s;
-    -webkit-appearance: none;
-    min-width: 0;
+    flex: 1; background: rgba(10,10,10,0.6);
+    border: 1px solid #3a3a3a; border-right: none;
+    border-radius: 6px 0 0 6px; padding: 14px 18px;
+    font-family: 'Aeonik', sans-serif; font-size: 14px;
+    color: #fff; outline: none; transition: border-color 0.2s;
+    -webkit-appearance: none; min-width: 0;
   }
-
-  .ds-pl__input::placeholder { color: #3a3a3a; }
-  .ds-pl__input:focus { border-color: #555; }
-
+  .ds-pl__input::placeholder { color: #5a5a5a; }
+  .ds-pl__input:focus { border-color: #777; }
   .ds-pl__submit {
-    background: #ffffff;
-    color: #0a0a0a;
-    border: 1px solid #ffffff;
-    border-radius: 0 6px 6px 0;
-    padding: 14px 24px;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 15px;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    cursor: pointer;
-    white-space: nowrap;
-    flex-shrink: 0;
+    background: #ffffff; color: #0a0a0a;
+    border: 1px solid #ffffff; border-radius: 0 6px 6px 0;
+    padding: 14px 26px; font-family: 'Aeonik', sans-serif;
+    font-size: 14px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.04em;
+    cursor: pointer; white-space: nowrap; flex-shrink: 0;
     transition: background 0.15s;
   }
-
-  .ds-pl__submit:hover { background: #ddd; }
-
+  .ds-pl__submit:hover { background: #e6e6e6; }
   .ds-pl__fine {
-    margin-top: 14px;
-    font-size: 11px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: #333;
+    margin-top: 14px; font-size: 11px;
+    letter-spacing: 0.06em; text-transform: uppercase; color: #555;
   }
-
   .ds-pl__success {
-    display: none;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    color: #888;
-    font-size: 14px;
-    letter-spacing: 0.04em;
+    display: none; align-items: center; justify-content: center;
+    gap: 8px; color: #d2d2d2; font-size: 15px; line-height: 1.5;
   }
+  .ds-pl__success svg { color: #4ade80; flex-shrink: 0; }
 
-  .ds-pl__success svg { color: #4ade80; }
+  .ds-pl__social { display: flex; gap: 22px; justify-content: center; margin-top: 40px; }
+  .ds-pl__social a { color: #777; display: inline-flex; transition: color 0.15s; }
+  .ds-pl__social a:hover { color: #fff; }
 
+  .ds-pl__footer { margin-top: 44px; max-width: 520px; }
+  .ds-pl__footer-line { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #666; margin-bottom: 10px; }
+  .ds-pl__disclaimer { font-size: 10px; line-height: 1.5; color: #454545; letter-spacing: 0.02em; }
+
+  @media (max-width: 768px) {
+    .ds-pl__side { width: 52%; opacity: 0.2; }
+    .ds-pl__scrim { background: rgba(10,10,10,0.72); }
+  }
   @media (max-width: 500px) {
     .ds-pl { padding: 40px 20px; }
     .ds-pl__form { flex-direction: column; }
-    .ds-pl__input {
-      border-right: 1px solid #333;
-      border-radius: 6px;
-      margin-bottom: 8px;
-    }
+    .ds-pl__input { border-right: 1px solid #3a3a3a; border-radius: 6px; margin-bottom: 8px; }
     .ds-pl__submit { border-radius: 6px; }
   }
 </style>
 
 <div class="ds-pl">
 
-  {% if section.settings.hero_image != blank %}
-    <div class="ds-pl__img-wrap">
-      {{ section.settings.hero_image | image_url: width: 1600 | image_tag: loading: 'eager', alt: 'DayShift' }}
+  {% if section.settings.image_left != blank %}
+    <div class="ds-pl__side ds-pl__side--left">
+      {{ section.settings.image_left | image_url: width: 900 | image_tag: loading: 'eager', alt: 'DayShift' }}
+    </div>
+  {% endif %}
+  {% if section.settings.image_right != blank %}
+    <div class="ds-pl__side ds-pl__side--right">
+      {{ section.settings.image_right | image_url: width: 900 | image_tag: loading: 'eager', alt: 'DayShift sachet' }}
     </div>
   {% endif %}
 
-  <div class="ds-pl__logo">DAYSHIFT</div>
-  <div class="ds-pl__tagline">{{ section.settings.tagline }}</div>
+  <div class="ds-pl__scrim"></div>
 
-  <div class="ds-pl__form-wrap">
-    <p class="ds-pl__coming-soon">Coming Soon</p>
-    <p class="ds-pl__signup-text">Sign up to be the first to know when we launch.</p>
-    <form class="ds-pl__form" id="ds-pl-form" action="/contact#contact_form" method="post" accept-charset="UTF-8">
-      <input type="hidden" name="form_type" value="customer">
-      <input type="hidden" name="utf8" value="✓">
-      <input type="hidden" name="contact[tags]" value="waitlist">
-      <input
-        class="ds-pl__input"
-        type="email"
-        name="contact[email]"
-        placeholder="{{ section.settings.placeholder }}"
-        required
-        aria-label="Email address"
-      >
-      <button class="ds-pl__submit" type="submit">{{ section.settings.button_text }}</button>
-    </form>
+  <div class="ds-pl__content">
+    <div class="ds-pl__logo">DAYSHIFT</div>
+    <div class="ds-pl__tagline">{{ section.settings.tagline }}</div>
 
-    <div class="ds-pl__success" id="ds-pl-success" role="alert">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="20 6 9 17 4 12"/>
-      </svg>
-      {{ section.settings.success_text }}
+    {% if section.settings.hook_text != blank %}
+      <p class="ds-pl__hook">{{ section.settings.hook_text }}</p>
+    {% endif %}
+
+    <div class="ds-pl__form-wrap">
+      <p class="ds-pl__coming-soon">{{ section.settings.status_label }}</p>
+      <p class="ds-pl__signup-text">{{ section.settings.cta_lead }}</p>
+      <form class="ds-pl__form" id="ds-pl-form" action="/contact#contact_form" method="post" accept-charset="UTF-8">
+        <input type="hidden" name="form_type" value="customer">
+        <input type="hidden" name="utf8" value="✓">
+        <input type="hidden" name="contact[tags]" value="waitlist">
+        <input class="ds-pl__input" type="email" name="contact[email]" placeholder="{{ section.settings.placeholder }}" required aria-label="Email address">
+        <button class="ds-pl__submit" type="submit">{{ section.settings.button_text }}</button>
+      </form>
+
+      <div class="ds-pl__success" id="ds-pl-success" role="alert">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        {{ section.settings.success_text }}
+      </div>
+
+      <p class="ds-pl__fine">{{ section.settings.fine_print }}</p>
     </div>
 
-    <p class="ds-pl__fine">{{ section.settings.fine_print }}</p>
+    {% if section.settings.instagram_url != blank or section.settings.tiktok_url != blank %}
+      <div class="ds-pl__social">
+        {% if section.settings.instagram_url != blank %}
+          <a href="{{ section.settings.instagram_url }}" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
+          </a>
+        {% endif %}
+        {% if section.settings.tiktok_url != blank %}
+          <a href="{{ section.settings.tiktok_url }}" target="_blank" rel="noopener" aria-label="TikTok">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.3 2.1 1.6 3.6 3.5 3.9v2.4c-1.3.1-2.5-.3-3.5-1v6.1c0 3.3-2.7 5.6-5.7 5.6-2.9 0-5.3-2.1-5.3-4.9 0-3 2.6-5 5.6-4.6v2.5c-.4-.1-.9-.2-1.3-.2-1.3 0-2.3.9-2.3 2.2 0 1.4 1.1 2.3 2.4 2.3 1.4 0 2.5-1 2.5-2.7V3h1.6z"/></svg>
+          </a>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="ds-pl__footer">
+      {% if section.settings.footer_line != blank %}<p class="ds-pl__footer-line">{{ section.settings.footer_line }}</p>{% endif %}
+      {% if section.settings.disclaimer_text != blank %}<p class="ds-pl__disclaimer">{{ section.settings.disclaimer_text }}</p>{% endif %}
+    </div>
   </div>
 
 </div>
@@ -226,66 +199,25 @@
   "name": "DayShift Prelaunch",
   "tag": "section",
   "settings": [
-    {
-      "type": "image_picker",
-      "id": "hero_image",
-      "label": "Photo"
-    },
-    {
-      "type": "range",
-      "id": "image_max_width",
-      "min": 300,
-      "max": 1000,
-      "step": 20,
-      "unit": "px",
-      "label": "Photo max width",
-      "default": 680
-    },
-    {
-      "type": "range",
-      "id": "image_radius",
-      "min": 0,
-      "max": 32,
-      "step": 2,
-      "unit": "px",
-      "label": "Photo corner radius",
-      "default": 12
-    },
-    {
-      "type": "text",
-      "id": "tagline",
-      "label": "Tagline (below wordmark)",
-      "default": "Fuel The Day. Feel The Shift."
-    },
-    {
-      "type": "text",
-      "id": "placeholder",
-      "label": "Input placeholder",
-      "default": "your@email.com"
-    },
-    {
-      "type": "text",
-      "id": "button_text",
-      "label": "Button text",
-      "default": "Notify Me"
-    },
-    {
-      "type": "text",
-      "id": "success_text",
-      "label": "Success message",
-      "default": "You're on the list."
-    },
-    {
-      "type": "text",
-      "id": "fine_print",
-      "label": "Fine print",
-      "default": "No spam. Unsubscribe anytime."
-    }
+    { "type": "header", "content": "Product photos" },
+    { "type": "image_picker", "id": "image_left", "label": "Left image (bottle)" },
+    { "type": "image_picker", "id": "image_right", "label": "Right image (sachet)" },
+    { "type": "range", "id": "side_width", "min": 20, "max": 45, "step": 1, "unit": "%", "label": "Side image width (desktop)", "default": 34 },
+    { "type": "header", "content": "Copy" },
+    { "type": "text", "id": "tagline", "label": "Tagline (below wordmark)", "default": "Fuel the Day. Feel the Shift." },
+    { "type": "text", "id": "hook_text", "label": "Hook line (what it is)", "default": "A daily nootropic drink. Sharp focus, sustained energy, elevated mood, in one packet." },
+    { "type": "text", "id": "status_label", "label": "Status label", "default": "Launching Soon" },
+    { "type": "text", "id": "cta_lead", "label": "Waitlist lead / incentive", "default": "Join the waitlist for early access and 15% off your first order." },
+    { "type": "text", "id": "placeholder", "label": "Input placeholder", "default": "your@email.com" },
+    { "type": "text", "id": "button_text", "label": "Button text", "default": "Get Early Access" },
+    { "type": "text", "id": "success_text", "label": "Success message", "default": "You're on the list. Your 15% code is on its way to your inbox." },
+    { "type": "text", "id": "fine_print", "label": "Fine print", "default": "No spam. Unsubscribe anytime." },
+    { "type": "header", "content": "Social + footer" },
+    { "type": "url", "id": "instagram_url", "label": "Instagram URL" },
+    { "type": "url", "id": "tiktok_url", "label": "TikTok URL" },
+    { "type": "text", "id": "footer_line", "label": "Footer line", "default": "DRINKDAYSHIFT.COM  ·  MUST BE 18+" },
+    { "type": "textarea", "id": "disclaimer_text", "label": "FDA disclaimer", "default": "These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease." }
   ],
-  "presets": [
-    {
-      "name": "DayShift Prelaunch"
-    }
-  ]
+  "presets": [ { "name": "DayShift Prelaunch" } ]
 }
 {% endschema %}

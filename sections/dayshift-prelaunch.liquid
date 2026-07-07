@@ -120,7 +120,6 @@
     {% endif %}
 
     <div class="ds-pl__form-wrap">
-      <p class="ds-pl__coming-soon">{{ section.settings.status_label }}</p>
       <p class="ds-pl__signup-text">{{ section.settings.cta_lead }}</p>
       <form class="ds-pl__form" id="ds-pl-form" action="/contact#contact_form" method="post" accept-charset="UTF-8">
         <input type="hidden" name="form_type" value="customer">
@@ -166,7 +165,7 @@
   "tag": "section",
   "settings": [
     { "type": "text", "id": "hook_text", "label": "Sub-line (what it is)", "default": "A daily productivity drink engineered for the modern workweek." },
-    { "type": "text", "id": "status_label", "label": "Status label", "default": "Launching Soon" },
+    { "type": "image_picker", "id": "top_image", "label": "Top drip image (oozes into wordmark)" },
     { "type": "text", "id": "cta_lead", "label": "Waitlist lead / incentive", "default": "Join the waitlist for early access and 15% off your first order." },
     { "type": "text", "id": "placeholder", "label": "Input placeholder", "default": "your@email.com" },
     { "type": "text", "id": "button_text", "label": "Button text", "default": "Get Early Access" },

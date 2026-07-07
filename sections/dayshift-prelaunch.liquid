@@ -4,10 +4,9 @@
 {% endcomment %}
 
 <style>
-  {% assign cdn = 'https://cdn.shopify.com/s/files/1/0962/3676/5551/files/' %}
-  @font-face { font-family: "Aeonik"; src: url("{{ cdn }}aeonik-regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
-  @font-face { font-family: "Aeonik"; src: url("{{ cdn }}aeonik-medium.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
-  @font-face { font-family: "Aeonik"; src: url("{{ cdn }}aeonik-bold.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+  @font-face { font-family: "Aeonik"; src: url("https://cdn.shopify.com/s/files/1/0962/3676/5551/files/aeonik-regular.woff2?v=1776969422") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+  @font-face { font-family: "Aeonik"; src: url("https://cdn.shopify.com/s/files/1/0962/3676/5551/files/aeonik-medium.woff2?v=1776969422") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+  @font-face { font-family: "Aeonik"; src: url("https://cdn.shopify.com/s/files/1/0962/3676/5551/files/aeonik-bold.woff2?v=1776969422") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
 
   .shopify-section-header, #shopify-section-header, header.header, .header-wrapper,
   .announcement-bar, #shopify-section-announcement-bar,
@@ -29,7 +28,8 @@
   }
 
   .ds-pl__content { width: 100%; max-width: 480px; }
-
+  .ds-pl__drip { width: clamp(150px, 34vw, 250px); margin: 0 auto -8px; }
+  .ds-pl__drip img { width: 100%; height: auto; display: block; }
   .ds-pl__logo { width: clamp(260px, 60vw, 440px); margin: 0 auto 22px; }
   .ds-pl__logo svg { width: 100%; height: auto; display: block; }
 
